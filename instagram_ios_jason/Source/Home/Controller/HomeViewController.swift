@@ -33,7 +33,7 @@ class HomeViewController: BaseViewController {
     
     //MARK: - 네비게이션 컨트롤러 설정
     private func setupNavigationController() {
-        let itemSize = CGFloat(25)
+        let itemSize = CGFloat(35)
         let spacing = CGFloat(15)
         
         let titleConfig = CustomNaviBarItemConfig(image: UIImage(named: "instagram_logo")) {
@@ -88,7 +88,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         
         switch indexPath.row {
         case 0:
-            return 100
+            return 115
         default:
             return Device.width + 185
         }

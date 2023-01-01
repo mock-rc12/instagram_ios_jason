@@ -9,6 +9,14 @@ import UIKit
 
 class StoryCell: UICollectionViewCell {
     
+    var isMyStory: Bool = false // 내 스토리
+    var isMyStoryEmpty: Bool = false // 내 스토리 추가한 것 없음
+    var isStoryRead: Bool = false {
+        didSet {
+            storyReadCheck()
+        }
+    }
+    
     var newStoryView: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -29,24 +37,33 @@ class StoryCell: UICollectionViewCell {
         return label
     }()
     
-    var storyPadding = CGFloat(2)
+    var addIcon: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: "addButton")
+        image.contentMode = .scaleAspectFit
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
+    }()
     
-    override func prepareForReuse() {
-        configure()
-    }
+    var storyPadding = CGFloat(3)
     
     func setupUI() {
         
         self.contentView.addSubview(newStoryView)
         self.contentView.addSubview(nameLabel)
         newStoryView.addSubview(profileImageView)
-        
+
         setupConstraints()
+        if isMyStory == true && isMyStoryEmpty == true {
+            self.contentView.addSubview(addIcon)
+            self.setupAddIconConstraints()
+        }
         configure()
         imageToRound()
+        storyReadCheck()
     }
     
-    func setupConstraints() {
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
             newStoryView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             newStoryView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
@@ -60,17 +77,62 @@ class StoryCell: UICollectionViewCell {
             
             nameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             nameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            nameLabel.topAnchor.constraint(equalTo: newStoryView.bottomAnchor, constant: 1),
+            nameLabel.topAnchor.constraint(equalTo: newStoryView.bottomAnchor, constant: 5),
         ])
     }
     
-    func configure() {
-        newStoryView.image = UIImage(named: "storyBackground")
-        profileImageView.image = UIImage(named: "dummyProfile")
-        nameLabel.text = "jason_kim"
+    private func setupAddIconConstraints() {
+        NSLayoutConstraint.activate([
+            addIcon.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            addIcon.bottomAnchor.constraint(equalTo: newStoryView.bottomAnchor),
+            addIcon.widthAnchor.constraint(equalToConstant: self.frame.width * 0.4),
+//            addIcon.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.4),
+            addIcon.heightAnchor.constraint(equalToConstant: self.frame.width * 0.4)
+        ])
     }
     
-    func imageToRound() {
+    private func configure() {
+        
+        profileImageView.image = UIImage(named: "dummyProfile")
+        if isMyStory == true {
+            nameLabel.text = "내 스토리"
+        } else {
+            nameLabel.text = "jason_kim"
+        }
+    }
+    
+    private func storyReadCheck() {
+        
+        if isMyStory == true {
+            // 스토리 업로드한게 없으면
+            if isMyStoryEmpty == true {
+                emptyStory()
+            }
+        } else {
+            // 스토리를 읽지 않았다면
+            if isStoryRead == false {
+                newStory()
+            } else {
+                emptyStory()
+            }
+        }
+    }
+    
+    private func emptyStory() {
+        newStoryView.image = nil
+        if isMyStory == true {
+            newStoryView.backgroundColor = .clear
+        } else {
+            newStoryView.backgroundColor = .gray
+        }
+    }
+    
+    private func newStory() {
+        newStoryView.image = UIImage(named: "storyBackground")
+        newStoryView.backgroundColor = .clear
+    }
+    
+    private func imageToRound() {
         profileImageView.layer.cornerRadius = (self.frame.width - storyPadding * 2) / 2
         newStoryView.layer.cornerRadius = self.frame.width / 2
         
@@ -79,5 +141,12 @@ class StoryCell: UICollectionViewCell {
         
         profileImageView.clipsToBounds = true
         newStoryView.clipsToBounds = true
+        
+        if isMyStory == true && isMyStoryEmpty == true {
+            addIcon.layer.cornerRadius = (self.frame.width * 0.4) / 2
+            addIcon.clipsToBounds = true
+            addIcon.layer.borderWidth = 2
+            addIcon.layer.borderColor = UIColor.systemBackground.cgColor
+        }
     }
 }

@@ -17,23 +17,26 @@ class StoryTableCell: UITableViewCell {
         
         setupCollectionView()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
     }
     
     private func setupCollectionView() {
         storyCollectionView.register(StoryCell.self, forCellWithReuseIdentifier: "StoryCell")
         
-        flowLayout.minimumLineSpacing = 10
         flowLayout.minimumInteritemSpacing = 10
         
         storyCollectionView.delegate = self
         storyCollectionView.dataSource = self
         
         storyCollectionView.showsHorizontalScrollIndicator = false
+    }
+    
+    private func getStoryCell(index: IndexPath) -> StoryCell {
+        guard let cell = storyCollectionView.cellForItem(at: index) as? StoryCell else { return StoryCell() }
+        return cell
     }
 }
 
@@ -45,16 +48,27 @@ extension StoryTableCell: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StoryCell", for: indexPath) as? StoryCell else { return UICollectionViewCell() }
+        if indexPath.row == 0 {
+            cell.isMyStory = true
+            cell.isMyStoryEmpty = true
+        }
         cell.setupUI()
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        getStoryCell(index: indexPath).isStoryRead = true
     }
 }
 
 extension StoryTableCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let height = self.frame.height
+        guard let flow = collectionViewLayout as? UICollectionViewFlowLayout else { return CGSize() }
         
-        return CGSize(width: height - 20, height: height)
+        let height = self.frame.height
+        let width = (self.frame.width - (flow.minimumInteritemSpacing * 4)) / 4.5
+        
+        return CGSize(width: width, height: height)
     }
 }
