@@ -60,7 +60,7 @@
                     </stackView>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="oud-VS-HME">
                         <rect key="frame" x="0.0" y="60" width="320" height="320"/>
-                        <color key="backgroundColor" red="0.44705885649999999" green="0.47843140360000003" blue="0.94117647410000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="oud-VS-HME" secondAttribute="height" multiplier="1:1" id="ndM-UY-h5O"/>
                         </constraints>
@@ -148,7 +148,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕 2022 ! 안녕 2023 ! 🙌" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEV-cT-ms8">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕 2022 ! 안녕 2023 ! 🙌" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEV-cT-ms8">
                                         <rect key="frame" x="78.666666666666671" y="0.0" width="211.33333333333331" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
@@ -196,12 +196,20 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="bodyIdLabel" destination="3AR-lI-lpR" id="Gud-f3-tUM"/>
+                <outlet property="bodyLabel" destination="tEV-cT-ms8" id="NM0-Uk-qR4"/>
                 <outlet property="bookmarkButton" destination="Z7V-qi-L3r" id="bRO-Rd-84l"/>
+                <outlet property="commentCountLabel" destination="wLY-0u-47t" id="C2C-Lj-cjk"/>
+                <outlet property="flowLayout" destination="kDQ-ix-Qyw" id="gOT-dZ-7YR"/>
+                <outlet property="idLabel" destination="cCw-gv-1X3" id="h5p-SZ-u56"/>
                 <outlet property="likeButton" destination="fEP-qU-XQh" id="2QQ-nj-taw"/>
+                <outlet property="likeCountLabel" destination="iD5-Pg-Ig5" id="K7r-0g-aKd"/>
+                <outlet property="mediaCollectionView" destination="oud-VS-HME" id="ZWJ-se-WGu"/>
                 <outlet property="messageButton" destination="KbQ-cj-rWW" id="ovF-ud-KeV"/>
                 <outlet property="pageControl" destination="JSq-SF-A25" id="c8i-l4-bQg"/>
                 <outlet property="profileImageView" destination="1bz-qa-K3J" id="DtN-XM-hMA"/>
                 <outlet property="sendButton" destination="52k-EA-cWB" id="mHd-aA-t6l"/>
+                <outlet property="timeLabel" destination="Op6-lq-IcF" id="Hvy-q0-itr"/>
             </connections>
             <point key="canvasLocation" x="1.5267175572519083" y="244.36619718309859"/>
         </tableViewCell>

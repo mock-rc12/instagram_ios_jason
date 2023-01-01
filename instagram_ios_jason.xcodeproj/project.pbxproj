@@ -17,6 +17,8 @@
 		CD17B9C22961964F0069B8A1 /* StoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD17B9C12961964F0069B8A1 /* StoryCell.swift */; };
 		CD57D7472961BAFE00138449 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD57D7462961BAFE00138449 /* Models.swift */; };
 		CD57D7492961BF5600138449 /* HomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD57D7482961BF5600138449 /* HomeDataManager.swift */; };
+		CD57D74B2961C41200138449 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD57D74A2961C41200138449 /* UserModel.swift */; };
+		CD57D74D2961D2F600138449 /* FeedMediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD57D74C2961D2F600138449 /* FeedMediaCell.swift */; };
 		CDEC326C296085D50030E035 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC326B296085D50030E035 /* BaseViewController.swift */; };
 		CDEC3278296086030030E035 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC326E296086030030E035 /* IndicatorView.swift */; };
 		CDEC3279296086030030E035 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC3270296086030030E035 /* Date.swift */; };
@@ -48,6 +50,8 @@
 		CD17B9C12961964F0069B8A1 /* StoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCell.swift; sourceTree = "<group>"; };
 		CD57D7462961BAFE00138449 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		CD57D7482961BF5600138449 /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
+		CD57D74A2961C41200138449 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		CD57D74C2961D2F600138449 /* FeedMediaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMediaCell.swift; sourceTree = "<group>"; };
 		CDEC326B296085D50030E035 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CDEC326E296086030030E035 /* IndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		CDEC3270296086030030E035 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 			children = (
 				CDEC3293296121750030E035 /* FeedCell.swift */,
 				CDEC3294296121750030E035 /* FeedCell.xib */,
+				CD57D74C2961D2F600138449 /* FeedMediaCell.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -233,6 +238,7 @@
 		CDEC328E2960A25B0030E035 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CD57D74A2961C41200138449 /* UserModel.swift */,
 				CD57D7462961BAFE00138449 /* Models.swift */,
 				CD57D7482961BF5600138449 /* HomeDataManager.swift */,
 			);
@@ -324,6 +330,8 @@
 				CD57D7472961BAFE00138449 /* Models.swift in Sources */,
 				CDEC328629608FCF0030E035 /* CustomNavigationController.swift in Sources */,
 				CD026EDE296058C300C6C359 /* AppDelegate.swift in Sources */,
+				CD57D74B2961C41200138449 /* UserModel.swift in Sources */,
+				CD57D74D2961D2F600138449 /* FeedMediaCell.swift in Sources */,
 				CD57D7492961BF5600138449 /* HomeDataManager.swift in Sources */,
 				CD026EE0296058C300C6C359 /* SceneDelegate.swift in Sources */,
 				CDEC328929609AEC0030E035 /* CustomNaviBarItem.swift in Sources */,

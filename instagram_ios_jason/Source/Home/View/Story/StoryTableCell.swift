@@ -8,6 +8,10 @@
 import UIKit
 
 class StoryTableCell: UITableViewCell {
+    
+    let dataManager = HomeDataManager.shared
+    
+    var storyData: [Profile] = []
 
     @IBOutlet weak var storyCollectionView: UICollectionView!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
@@ -15,12 +19,17 @@ class StoryTableCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        setupData()
         setupCollectionView()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
+    }
+    
+    private func setupData() {
+        storyData = dataManager.getStoryDummyData()
     }
     
     private func setupCollectionView() {
@@ -42,7 +51,8 @@ class StoryTableCell: UITableViewCell {
 
 extension StoryTableCell: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        // 스토리 데이터 + 나
+        return storyData.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -51,6 +61,9 @@ extension StoryTableCell: UICollectionViewDataSource, UICollectionViewDelegate {
         if indexPath.row == 0 {
             cell.isMyStory = true
             cell.isMyStoryEmpty = true
+            cell.item = UserModel.myProfile
+        } else {
+            cell.item = storyData[indexPath.row - 1]
         }
         cell.setupUI()
         return cell

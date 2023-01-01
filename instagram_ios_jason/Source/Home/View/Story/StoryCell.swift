@@ -8,6 +8,7 @@
 import UIKit
 
 class StoryCell: UICollectionViewCell {
+    var item: Profile?
     
     var isMyStory: Bool = false // 내 스토리
     var isMyStoryEmpty: Bool = false // 내 스토리 추가한 것 없음
@@ -25,6 +26,7 @@ class StoryCell: UICollectionViewCell {
     
     var profileImageView: UIImageView = {
         let view = UIImageView()
+        view.contentMode = .scaleAspectFill
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -33,6 +35,7 @@ class StoryCell: UICollectionViewCell {
         let label = UILabel()
         label.font = .systemFont(ofSize: 11, weight: .regular)
         label.textAlignment = .center
+        label.adjustsFontSizeToFitWidth = true
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -93,11 +96,13 @@ class StoryCell: UICollectionViewCell {
     
     private func configure() {
         
-        profileImageView.image = UIImage(named: "dummyProfile")
-        if isMyStory == true {
-            nameLabel.text = "내 스토리"
-        } else {
-            nameLabel.text = "jason_kim"
+        if let safeItem = item {
+            profileImageView.image = safeItem.profileImage
+            if isMyStory == true {
+                nameLabel.text = "내 스토리"
+            } else {
+                nameLabel.text = safeItem.id
+            }
         }
     }
     

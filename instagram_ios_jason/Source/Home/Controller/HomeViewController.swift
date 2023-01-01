@@ -9,17 +9,22 @@ import UIKit
 
 class HomeViewController: BaseViewController {
     
-    
     @IBOutlet weak var homeFeedTableView: UITableView!
+    
+    var feedDatas: [Feed] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupData()
         setupTableView()
         setupNavigationController()
     }
     
-    
+    private func setupData() {
+        HomeDataManager.shared.fetchDummyData()
+        feedDatas = HomeDataManager.shared.getFeedData()
+    }
     
     private func setupTableView() {
         self.homeFeedTableView.register(UINib(nibName: "StoryTableCell", bundle: nil), forCellReuseIdentifier: "StoryTableCell")
@@ -69,7 +74,7 @@ class HomeViewController: BaseViewController {
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return feedDatas.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -80,6 +85,8 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         default:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as? FeedCell else { return UITableViewCell() }
+            cell.feedItem = feedDatas[indexPath.row - 1]
+            cell.configure()
             return cell
         }
     }
