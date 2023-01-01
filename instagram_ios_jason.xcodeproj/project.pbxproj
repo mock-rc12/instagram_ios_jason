@@ -19,6 +19,11 @@
 		CD57D7492961BF5600138449 /* HomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD57D7482961BF5600138449 /* HomeDataManager.swift */; };
 		CD57D74B2961C41200138449 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD57D74A2961C41200138449 /* UserModel.swift */; };
 		CD57D74D2961D2F600138449 /* FeedMediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD57D74C2961D2F600138449 /* FeedMediaCell.swift */; };
+		CD57D7522961E32000138449 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD57D7512961E32000138449 /* Profile.storyboard */; };
+		CD57D7542961E35B00138449 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD57D7532961E35B00138449 /* ProfileViewController.swift */; };
+		CD57D7572961E42100138449 /* HomeVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD57D7562961E42100138449 /* HomeVCDelegate.swift */; };
+		CD57D75A2961E7A700138449 /* LikeList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD57D7592961E7A700138449 /* LikeList.storyboard */; };
+		CD57D75C2961E7B200138449 /* LikeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD57D75B2961E7B200138449 /* LikeListViewController.swift */; };
 		CDEC326C296085D50030E035 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC326B296085D50030E035 /* BaseViewController.swift */; };
 		CDEC3278296086030030E035 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC326E296086030030E035 /* IndicatorView.swift */; };
 		CDEC3279296086030030E035 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC3270296086030030E035 /* Date.swift */; };
@@ -52,6 +57,11 @@
 		CD57D7482961BF5600138449 /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
 		CD57D74A2961C41200138449 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		CD57D74C2961D2F600138449 /* FeedMediaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMediaCell.swift; sourceTree = "<group>"; };
+		CD57D7512961E32000138449 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		CD57D7532961E35B00138449 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		CD57D7562961E42100138449 /* HomeVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCDelegate.swift; sourceTree = "<group>"; };
+		CD57D7592961E7A700138449 /* LikeList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LikeList.storyboard; sourceTree = "<group>"; };
+		CD57D75B2961E7B200138449 /* LikeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeListViewController.swift; sourceTree = "<group>"; };
 		CDEC326B296085D50030E035 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CDEC326E296086030030E035 /* IndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		CDEC3270296086030030E035 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -131,6 +141,32 @@
 			path = Story;
 			sourceTree = "<group>";
 		};
+		CD57D74E2961E29700138449 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				CD57D7512961E32000138449 /* Profile.storyboard */,
+				CD57D7532961E35B00138449 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		CD57D7552961E3FC00138449 /* CustomDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				CD57D7562961E42100138449 /* HomeVCDelegate.swift */,
+			);
+			path = CustomDelegate;
+			sourceTree = "<group>";
+		};
+		CD57D7582961E77B00138449 /* LikeList */ = {
+			isa = PBXGroup;
+			children = (
+				CD57D7592961E7A700138449 /* LikeList.storyboard */,
+				CD57D75B2961E7B200138449 /* LikeListViewController.swift */,
+			);
+			path = LikeList;
+			sourceTree = "<group>";
+		};
 		CDEC3267296085A30030E035 /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +174,8 @@
 				CDEC328529608FCF0030E035 /* CustomNavigationController.swift */,
 				CDEC3281296086640030E035 /* Splash */,
 				CDEC32822960867C0030E035 /* Home */,
+				CD57D74E2961E29700138449 /* Profile */,
+				CD57D7582961E77B00138449 /* LikeList */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -203,6 +241,7 @@
 		CDEC32822960867C0030E035 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				CD57D7552961E3FC00138449 /* CustomDelegate */,
 				CDEC328E2960A25B0030E035 /* Model */,
 				CDEC328D2960A2580030E035 /* View */,
 				CDEC328C2960A2550030E035 /* Controller */,
@@ -305,6 +344,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD57D7522961E32000138449 /* Profile.storyboard in Resources */,
+				CD57D75A2961E7A700138449 /* LikeList.storyboard in Resources */,
 				CD17B9C02961956F0069B8A1 /* StoryTableCell.xib in Resources */,
 				CD026EEA296058C400C6C359 /* LaunchScreen.storyboard in Resources */,
 				CD026EE7296058C400C6C359 /* Assets.xcassets in Resources */,
@@ -326,15 +367,18 @@
 				CDEC3279296086030030E035 /* Date.swift in Sources */,
 				CDEC326C296085D50030E035 /* BaseViewController.swift in Sources */,
 				CDEC3284296087650030E035 /* HomeViewController.swift in Sources */,
+				CD57D7542961E35B00138449 /* ProfileViewController.swift in Sources */,
 				CDEC327D296086030030E035 /* UIViewController.swift in Sources */,
 				CD57D7472961BAFE00138449 /* Models.swift in Sources */,
 				CDEC328629608FCF0030E035 /* CustomNavigationController.swift in Sources */,
 				CD026EDE296058C300C6C359 /* AppDelegate.swift in Sources */,
+				CD57D7572961E42100138449 /* HomeVCDelegate.swift in Sources */,
 				CD57D74B2961C41200138449 /* UserModel.swift in Sources */,
 				CD57D74D2961D2F600138449 /* FeedMediaCell.swift in Sources */,
 				CD57D7492961BF5600138449 /* HomeDataManager.swift in Sources */,
 				CD026EE0296058C300C6C359 /* SceneDelegate.swift in Sources */,
 				CDEC328929609AEC0030E035 /* CustomNaviBarItem.swift in Sources */,
+				CD57D75C2961E7B200138449 /* LikeListViewController.swift in Sources */,
 				CDEC327B296086030030E035 /* String.swift in Sources */,
 				CD17B9C22961964F0069B8A1 /* StoryCell.swift in Sources */,
 				CDEC327F296086030030E035 /* UIFont.swift in Sources */,

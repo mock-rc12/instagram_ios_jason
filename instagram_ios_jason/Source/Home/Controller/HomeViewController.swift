@@ -67,8 +67,6 @@ class HomeViewController: BaseViewController {
         
         navigationItem.leftBarButtonItem = titleItem
         navigationItem.rightBarButtonItems = [messageItem, spacingItem, notiItem, spacingItem, postItem]
-        
-        navigationController?.navigationBar.isTranslucent = false
     }
 }
 
@@ -87,6 +85,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as? FeedCell else { return UITableViewCell() }
             cell.feedItem = feedDatas[indexPath.row - 1]
             cell.configure()
+            cell.delegate = self
             cell.mediaCollectionView.reloadData()
             return cell
         }
@@ -100,5 +99,26 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         default:
             return Device.width + 185
         }
+    }
+}
+
+extension HomeViewController: HomeVCDelegate {
+    func likeCountLabelTapped() {
+        guard let vc = UIStoryboard(name: "LikeList", bundle: .none).instantiateViewController(withIdentifier: "LikeListViewController") as? LikeListViewController else { return }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func commentCountLabelTapped() {
+        
+    }
+    
+    func userIdLabelTapped(user: Profile) {
+        guard let vc = UIStoryboard(name: "Profile", bundle: .none).instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController else { return }
+        vc.user = user
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func moreImageTapped() {
+        
     }
 }

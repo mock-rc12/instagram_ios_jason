@@ -10,6 +10,7 @@ import UIKit
 class FeedCell: UITableViewCell {
     
     var feedItem: Feed?
+    var delegate: HomeVCDelegate?
     
     // User
     @IBOutlet weak var profileImageView: UIImageView!
@@ -83,7 +84,7 @@ class FeedCell: UITableViewCell {
             setupPageControl()
             
             // 제스쳐 셋업
-            setupGesture(view: [idLabel, likeCountLabel, commentCountLabel, bodyLabel, profileImageView, moreImageView])
+            setupGesture(view: [idLabel, likeCountLabel, commentCountLabel, bodyLabel, profileImageView, moreImageView, bodyIdLabel])
         }
     }
     
@@ -109,12 +110,14 @@ class FeedCell: UITableViewCell {
     
     // MARK: - 유저 인터랙션 정의 ⭐️
     @objc private func buttonTapped(_ sender: UITapGestureRecognizer) {
-        
+        guard let item = feedItem else { return }
         switch sender.view {
-        case idLabel:
+        case idLabel, bodyIdLabel:
             print("유저 아이디 눌림")
+            delegate?.userIdLabelTapped(user: item.user)
         case likeCountLabel:
             print("좋아요 카운트 눌림")
+            delegate?.likeCountLabelTapped()
         case commentCountLabel:
             print("댓글 보기 버튼 눌림")
         case profileImageView:

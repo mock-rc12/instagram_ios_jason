@@ -19,5 +19,9 @@ class BaseViewController: UIViewController {
         // Background Color
 //        self.view.backgroundColor = .white
         
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        backBarButtonItem.tintColor = .label
+        self.navigationItem.backBarButtonItem = backBarButtonItem
+        navigationController?.navigationBar.isTranslucent = false
     }
 }
