@@ -14,6 +14,7 @@ class FeedCell: UITableViewCell {
     // User
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var idLabel: UILabel!
+    @IBOutlet weak var moreImageView: UIImageView!
     
     // 버튼
     @IBOutlet weak var likeButton: UIButton!
@@ -80,6 +81,9 @@ class FeedCell: UITableViewCell {
             commentCountLabel.text = "댓글 \(item.commentCount)개 모두 보기"
             setupCollectionView()
             setupPageControl()
+            
+            // 제스쳐 셋업
+            setupGesture(view: [idLabel, likeCountLabel, commentCountLabel, bodyLabel, profileImageView, moreImageView])
         }
     }
     
@@ -93,6 +97,33 @@ class FeedCell: UITableViewCell {
         
         mediaCollectionView.isPagingEnabled = true
         mediaCollectionView.showsHorizontalScrollIndicator = false
+    }
+    
+    func setupGesture(view: [UIView]) {
+        view.forEach { view in
+            view.isUserInteractionEnabled = true
+            let gesture = UITapGestureRecognizer(target: self, action: #selector(buttonTapped(_:)))
+            view.addGestureRecognizer(gesture)
+        }
+    }
+    
+    // MARK: - 유저 인터랙션 정의 ⭐️
+    @objc private func buttonTapped(_ sender: UITapGestureRecognizer) {
+        
+        switch sender.view {
+        case idLabel:
+            print("유저 아이디 눌림")
+        case likeCountLabel:
+            print("좋아요 카운트 눌림")
+        case commentCountLabel:
+            print("댓글 보기 버튼 눌림")
+        case profileImageView:
+            print("프로필 이미지 눌림")
+        case moreImageView:
+            print("더보기 이미지 눌림")
+        default:
+            print("할당되지 않음")
+        }
     }
 }
 
