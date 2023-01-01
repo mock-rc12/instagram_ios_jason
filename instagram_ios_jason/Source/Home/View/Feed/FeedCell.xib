@@ -170,7 +170,7 @@
                             </label>
                         </subviews>
                     </stackView>
-                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="JSq-SF-A25">
+                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" hidesForSinglePage="YES" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="JSq-SF-A25">
                         <rect key="frame" x="110" y="390" width="100" height="26"/>
                         <color key="tintColor" systemColor="linkColor"/>
                         <constraints>

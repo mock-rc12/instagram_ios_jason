@@ -87,6 +87,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as? FeedCell else { return UITableViewCell() }
             cell.feedItem = feedDatas[indexPath.row - 1]
             cell.configure()
+            cell.mediaCollectionView.reloadData()
             return cell
         }
     }

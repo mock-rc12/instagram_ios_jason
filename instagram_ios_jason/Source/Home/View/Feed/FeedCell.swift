@@ -107,6 +107,7 @@ extension FeedCell: UICollectionViewDataSource, UICollectionViewDelegate {
             cell.imageName = safeItems.media[indexPath.row]
             cell.setupUI()
         }
+        
         return cell
     }
     
