@@ -14,35 +14,38 @@
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="BYZ-38-t0r" customClass="HomeViewController" customModule="instagram_ios_jason" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1C-aB-zdq">
-                                <rect key="frame" x="172" y="425.66666666666669" width="49" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vwV-WC-Naz">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="L1C-aB-zdq" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="0Z0-CJ-Zsh"/>
-                            <constraint firstItem="L1C-aB-zdq" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="7hR-KO-vmB"/>
+                            <constraint firstItem="vwV-WC-Naz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="A5V-rI-d6l"/>
+                            <constraint firstItem="vwV-WC-Naz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="eaI-fh-JbP"/>
+                            <constraint firstItem="vwV-WC-Naz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gc1-FI-DKe"/>
+                            <constraint firstItem="vwV-WC-Naz" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="jcy-WA-A2v"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vbf-SN-mYD"/>
+                    <connections>
+                        <outlet property="homeFeedTableView" destination="vwV-WC-Naz" id="vuT-ym-kgp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-644" y="396"/>
+            <point key="canvasLocation" x="-645.03816793893122" y="395.77464788732397"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="siF-Ca-D2X">
             <objects>
                 <viewController id="cAC-Rm-PKz" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Qq-1N-wOv">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEARCH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YL2-Yt-IVI">
@@ -70,7 +73,7 @@
             <objects>
                 <viewController id="tVR-0l-RDw" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AeY-zn-X75">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REELS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Sy-Wh-zdR">
@@ -98,7 +101,7 @@
             <objects>
                 <viewController id="2NL-Us-MP2" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R7h-jz-JUf">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHOP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k9A-tt-y2R">
@@ -126,7 +129,7 @@
             <objects>
                 <viewController id="Ymq-Gk-X0B" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ry1-r1-hAm">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TX8-tH-ube">
@@ -158,6 +161,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="B3W-EX-QeH">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -173,9 +177,10 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="kvo-bW-lmi" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZwR-v0-ERb">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="ZwR-v0-ERb">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="selectedImageTintColor" systemColor="labelColor"/>
                     </tabBar>
                     <connections>

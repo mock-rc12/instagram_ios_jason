@@ -12,6 +12,9 @@
 		CD026EE5296058C300C6C359 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD026EE3296058C300C6C359 /* Main.storyboard */; };
 		CD026EE7296058C400C6C359 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD026EE6296058C400C6C359 /* Assets.xcassets */; };
 		CD026EEA296058C400C6C359 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD026EE8296058C400C6C359 /* LaunchScreen.storyboard */; };
+		CD17B9BF2961956F0069B8A1 /* StoryTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD17B9BD2961956F0069B8A1 /* StoryTableCell.swift */; };
+		CD17B9C02961956F0069B8A1 /* StoryTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD17B9BE2961956F0069B8A1 /* StoryTableCell.xib */; };
+		CD17B9C22961964F0069B8A1 /* StoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD17B9C12961964F0069B8A1 /* StoryCell.swift */; };
 		CDEC326C296085D50030E035 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC326B296085D50030E035 /* BaseViewController.swift */; };
 		CDEC3278296086030030E035 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC326E296086030030E035 /* IndicatorView.swift */; };
 		CDEC3279296086030030E035 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC3270296086030030E035 /* Date.swift */; };
@@ -26,6 +29,8 @@
 		CDEC328629608FCF0030E035 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC328529608FCF0030E035 /* CustomNavigationController.swift */; };
 		CDEC328929609AEC0030E035 /* CustomNaviBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC328829609AEC0030E035 /* CustomNaviBarItem.swift */; };
 		CDEC328B29609B3E0030E035 /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC328A29609B3E0030E035 /* UIBarButtonItem.swift */; };
+		CDEC3295296121750030E035 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC3293296121750030E035 /* FeedCell.swift */; };
+		CDEC3296296121750030E035 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDEC3294296121750030E035 /* FeedCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +41,9 @@
 		CD026EE6296058C400C6C359 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD026EE9296058C400C6C359 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD026EEB296058C400C6C359 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD17B9BD2961956F0069B8A1 /* StoryTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTableCell.swift; sourceTree = "<group>"; };
+		CD17B9BE2961956F0069B8A1 /* StoryTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryTableCell.xib; sourceTree = "<group>"; };
+		CD17B9C12961964F0069B8A1 /* StoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCell.swift; sourceTree = "<group>"; };
 		CDEC326B296085D50030E035 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CDEC326E296086030030E035 /* IndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		CDEC3270296086030030E035 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -50,6 +58,8 @@
 		CDEC328529608FCF0030E035 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		CDEC328829609AEC0030E035 /* CustomNaviBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNaviBarItem.swift; sourceTree = "<group>"; };
 		CDEC328A29609B3E0030E035 /* UIBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButtonItem.swift; sourceTree = "<group>"; };
+		CDEC3293296121750030E035 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		CDEC3294296121750030E035 /* FeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,10 +98,28 @@
 				CD026EDD296058C300C6C359 /* AppDelegate.swift */,
 				CD026EDF296058C300C6C359 /* SceneDelegate.swift */,
 				CD026EE6296058C400C6C359 /* Assets.xcassets */,
-				CD026EE8296058C400C6C359 /* LaunchScreen.storyboard */,
 				CD026EEB296058C400C6C359 /* Info.plist */,
 			);
 			path = instagram_ios_jason;
+			sourceTree = "<group>";
+		};
+		CD0E4F23296194F400599FFD /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				CDEC3293296121750030E035 /* FeedCell.swift */,
+				CDEC3294296121750030E035 /* FeedCell.xib */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		CD17B9BC2961952C0069B8A1 /* Story */ = {
+			isa = PBXGroup;
+			children = (
+				CD17B9BD2961956F0069B8A1 /* StoryTableCell.swift */,
+				CD17B9BE2961956F0069B8A1 /* StoryTableCell.xib */,
+				CD17B9C12961964F0069B8A1 /* StoryCell.swift */,
+			);
+			path = Story;
 			sourceTree = "<group>";
 		};
 		CDEC3267296085A30030E035 /* Source */ = {
@@ -158,6 +186,7 @@
 		CDEC3281296086640030E035 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				CD026EE8296058C400C6C359 /* LaunchScreen.storyboard */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -165,7 +194,9 @@
 		CDEC32822960867C0030E035 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				CDEC3283296087650030E035 /* HomeViewController.swift */,
+				CDEC328E2960A25B0030E035 /* Model */,
+				CDEC328D2960A2580030E035 /* View */,
+				CDEC328C2960A2550030E035 /* Controller */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -176,6 +207,30 @@
 				CDEC328829609AEC0030E035 /* CustomNaviBarItem.swift */,
 			);
 			path = Custom;
+			sourceTree = "<group>";
+		};
+		CDEC328C2960A2550030E035 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CDEC3283296087650030E035 /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CDEC328D2960A2580030E035 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD17B9BC2961952C0069B8A1 /* Story */,
+				CD0E4F23296194F400599FFD /* Feed */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CDEC328E2960A25B0030E035 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +277,8 @@
 				Base,
 			);
 			mainGroup = CD026ED1296058C300C6C359;
+			packageReferences = (
+			);
 			productRefGroup = CD026EDB296058C300C6C359 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -236,9 +293,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD17B9C02961956F0069B8A1 /* StoryTableCell.xib in Resources */,
 				CD026EEA296058C400C6C359 /* LaunchScreen.storyboard in Resources */,
 				CD026EE7296058C400C6C359 /* Assets.xcassets in Resources */,
 				CD026EE5296058C300C6C359 /* Main.storyboard in Resources */,
+				CDEC3296296121750030E035 /* FeedCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD17B9BF2961956F0069B8A1 /* StoryTableCell.swift in Sources */,
 				CDEC3280296086030030E035 /* Device.swift in Sources */,
 				CDEC327A296086030030E035 /* UIColor.swift in Sources */,
 				CDEC3279296086030030E035 /* Date.swift in Sources */,
@@ -260,11 +320,13 @@
 				CD026EE0296058C300C6C359 /* SceneDelegate.swift in Sources */,
 				CDEC328929609AEC0030E035 /* CustomNaviBarItem.swift in Sources */,
 				CDEC327B296086030030E035 /* String.swift in Sources */,
+				CD17B9C22961964F0069B8A1 /* StoryCell.swift in Sources */,
 				CDEC327F296086030030E035 /* UIFont.swift in Sources */,
 				CDEC3278296086030030E035 /* IndicatorView.swift in Sources */,
 				CDEC327E296086030030E035 /* UINavigationBar.swift in Sources */,
 				CDEC328B29609B3E0030E035 /* UIBarButtonItem.swift in Sources */,
 				CDEC327C296086030030E035 /* UIButton.swift in Sources */,
+				CDEC3295296121750030E035 /* FeedCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
