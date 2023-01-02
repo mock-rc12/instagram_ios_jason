@@ -30,11 +30,12 @@ class HomeViewController: BaseViewController {
             print(token.tokenString)
             print(token.userID)
         } else {
-            let vc = UIStoryboard(name: "Login", bundle: .none).instantiateViewController(withIdentifier: "LoginViewController")
+            let vc = UIStoryboard(name: "Login", bundle: .none).instantiateViewController(withIdentifier: "LoginNavigation")
             present(vc, animated: true)
         }
         // 임시
-        let vc = UIStoryboard(name: "Login", bundle: .none).instantiateViewController(withIdentifier: "LoginViewController")
+        let vc = UIStoryboard(name: "Login", bundle: .none).instantiateViewController(withIdentifier: "LoginNavigation")
+        vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
     

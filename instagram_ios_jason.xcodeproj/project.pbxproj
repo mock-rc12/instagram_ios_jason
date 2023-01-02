@@ -30,6 +30,8 @@
 		CD57D7652962729500138449 /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = CD57D7642962729500138449 /* FacebookShare */; };
 		CD57D7692962764500138449 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD57D7682962764500138449 /* LoginViewController.swift */; };
 		CD57D76B2962764B00138449 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD57D76A2962764B00138449 /* Login.storyboard */; };
+		CD58A46E2962BF1C003C29F0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD58A46D2962BF1C003C29F0 /* SignUpViewController.swift */; };
+		CD58A4702962CAC3003C29F0 /* CustomSkyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD58A46F2962CAC3003C29F0 /* CustomSkyTextField.swift */; };
 		CDEC326C296085D50030E035 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC326B296085D50030E035 /* BaseViewController.swift */; };
 		CDEC3278296086030030E035 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC326E296086030030E035 /* IndicatorView.swift */; };
 		CDEC3279296086030030E035 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC3270296086030030E035 /* Date.swift */; };
@@ -47,6 +49,7 @@
 		CDEC3295296121750030E035 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC3293296121750030E035 /* FeedCell.swift */; };
 		CDEC3296296121750030E035 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDEC3294296121750030E035 /* FeedCell.xib */; };
 		CDFFCE6D296295340063A53B /* SkyFloatingLabelTextField in Frameworks */ = {isa = PBXBuildFile; productRef = CDFFCE6C296295340063A53B /* SkyFloatingLabelTextField */; };
+		CDFFCE6F2962B8B90063A53B /* LoginBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFFCE6E2962B8B90063A53B /* LoginBaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +75,8 @@
 		CD57D7662962742000138449 /* instagram_ios_jason.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = instagram_ios_jason.entitlements; sourceTree = "<group>"; };
 		CD57D7682962764500138449 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CD57D76A2962764B00138449 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		CD58A46D2962BF1C003C29F0 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		CD58A46F2962CAC3003C29F0 /* CustomSkyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSkyTextField.swift; sourceTree = "<group>"; };
 		CDEC326B296085D50030E035 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CDEC326E296086030030E035 /* IndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		CDEC3270296086030030E035 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -88,6 +93,7 @@
 		CDEC328A29609B3E0030E035 /* UIBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButtonItem.swift; sourceTree = "<group>"; };
 		CDEC3293296121750030E035 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		CDEC3294296121750030E035 /* FeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
+		CDFFCE6E2962B8B90063A53B /* LoginBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +192,7 @@
 		CD57D7672962762600138449 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				CDFFCE6E2962B8B90063A53B /* LoginBaseViewController.swift */,
 				CD57D7682962764500138449 /* LoginViewController.swift */,
 				CD57D76A2962764B00138449 /* Login.storyboard */,
 			);
@@ -314,6 +321,8 @@
 		CDFFCE6A296292D20063A53B /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
+				CD58A46D2962BF1C003C29F0 /* SignUpViewController.swift */,
+				CD58A46F2962CAC3003C29F0 /* CustomSkyTextField.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -421,14 +430,17 @@
 				CD57D74D2961D2F600138449 /* FeedMediaCell.swift in Sources */,
 				CD57D7692962764500138449 /* LoginViewController.swift in Sources */,
 				CD57D7492961BF5600138449 /* HomeDataManager.swift in Sources */,
+				CD58A46E2962BF1C003C29F0 /* SignUpViewController.swift in Sources */,
 				CD026EE0296058C300C6C359 /* SceneDelegate.swift in Sources */,
 				CDEC328929609AEC0030E035 /* CustomNaviBarItem.swift in Sources */,
 				CD57D75C2961E7B200138449 /* LikeListViewController.swift in Sources */,
+				CDFFCE6F2962B8B90063A53B /* LoginBaseViewController.swift in Sources */,
 				CDEC327B296086030030E035 /* String.swift in Sources */,
 				CD17B9C22961964F0069B8A1 /* StoryCell.swift in Sources */,
 				CDEC327F296086030030E035 /* UIFont.swift in Sources */,
 				CDEC3278296086030030E035 /* IndicatorView.swift in Sources */,
 				CDEC327E296086030030E035 /* UINavigationBar.swift in Sources */,
+				CD58A4702962CAC3003C29F0 /* CustomSkyTextField.swift in Sources */,
 				CDEC328B29609B3E0030E035 /* UIBarButtonItem.swift in Sources */,
 				CDEC327C296086030030E035 /* UIButton.swift in Sources */,
 				CDEC3295296121750030E035 /* FeedCell.swift in Sources */,

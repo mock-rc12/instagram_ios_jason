@@ -10,11 +10,11 @@ import SkyFloatingLabelTextField
 import FacebookLogin
 import FBSDKLoginKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: BaseViewController {
     
     // 텍스트 필드
-    @IBOutlet weak var emailTextField: SkyFloatingLabelTextField!
-    @IBOutlet weak var passwordTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var emailTextField: CustomSkyTextField!
+    @IBOutlet weak var passwordTextField: CustomSkyTextField!
     
     // 버튼
     @IBOutlet weak var loginButton: UIButton!
@@ -31,11 +31,12 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUI()
+        setupLoginUI()
         buttonSetupUI()
     }
     
-    private func setupUI() {
+    private func setupLoginUI() {
+        self.navigationController?.navigationBar.isHidden = true
         
         emailTextField.placeholder = emailPlaceholder
         emailTextField.title = emailPlaceholder
@@ -44,7 +45,7 @@ class LoginViewController: UIViewController {
         passwordTextField.title = passwordPlaceholder
         passwordTextField.isSecureTextEntry = true
         
-        textFieldSetupUI(field: [emailTextField, passwordTextField])
+//        textFieldSetupUI(field: [emailTextField, passwordTextField])
     }
     
     private func textFieldSetupUI(field: [SkyFloatingLabelTextField]) {
@@ -52,6 +53,7 @@ class LoginViewController: UIViewController {
             field.textColor = .white
             field.selectedTitleColor = .lightGray
             field.selectedLineColor = .white
+            field.tintColor = .lightGray
         }
     }
     
@@ -115,5 +117,12 @@ class LoginViewController: UIViewController {
         let loginManager = LoginManager()
         loginManager.logOut()
         print("facebook logout")
+    }
+    
+    @IBAction func signUpButtonTapped(_ sender: UIButton) {
+
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") as? SignUpViewController else { print("가드문"); return }
+        vc.infoType = .email
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

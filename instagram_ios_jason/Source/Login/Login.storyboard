@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -27,7 +27,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="1of-fT-i0C">
                                 <rect key="frame" x="15" y="348" width="363" height="450"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="33i-0M-r6W" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="33i-0M-r6W" customClass="CustomSkyTextField" customModule="instagram_ios_jason" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="363" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="dzM-KN-dCs"/>
@@ -35,7 +35,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dg8-gw-4kn" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dg8-gw-4kn" customClass="CustomSkyTextField" customModule="instagram_ios_jason" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="74" width="363" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="86m-pd-cXd"/>
@@ -93,6 +93,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="새 계정 만들기">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="15"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="signUpButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="tB1-W7-pIb"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -100,7 +103,7 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash00" translatesAutoresizingMaskIntoConstraints="NO" id="iar-IA-GGI">
-                                <rect key="frame" x="161.66666666666666" y="129" width="70" height="70"/>
+                                <rect key="frame" x="161.66666666666666" y="173" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="a1H-2c-0d2"/>
                                     <constraint firstAttribute="width" secondItem="iar-IA-GGI" secondAttribute="height" multiplier="1:1" id="xWu-6t-AyL"/>
@@ -125,6 +128,7 @@
                             <constraint firstItem="iar-IA-GGI" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="70" id="tMy-hY-ahf"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="gH1-Hk-v54"/>
                     <connections>
                         <outlet property="emailTextField" destination="33i-0M-r6W" id="Tsa-AN-Kgg"/>
                         <outlet property="facebookLoginButton" destination="S2z-NA-mFF" id="BPI-c6-08K"/>
@@ -137,6 +141,113 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="930.53435114503816" y="3.5211267605633805"/>
+        </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="zMJ-dy-ObV">
+            <objects>
+                <viewController storyboardIdentifier="SignUpViewController" id="V2Z-3F-lph" customClass="SignUpViewController" customModule="instagram_ios_jason" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D0o-vT-VKu">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="6th-2K-aKs">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hfM-ph-ZEq">
+                                <rect key="frame" x="15" y="68.999999999999986" width="363" height="239.66666666666663"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일 주소 입력" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUj-hT-ANn">
+                                        <rect key="frame" x="0.0" y="0.0" width="363" height="33.666666666666664"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원님에게 연락할 수 있는 이메일 주소를 입력하세요. 이 이메일 주소는 프로필에서 다른 사람에게 공개되지 않습니다." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zM7-k1-RfU">
+                                        <rect key="frame" x="0.0" y="53.666666666666671" width="363" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n9h-GZ-5b3" customClass="CustomSkyTextField" customModule="instagram_ios_jason" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="109.66666666666666" width="363" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="hHb-qB-xZT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="es9-GY-oM4">
+                                        <rect key="frame" x="0.0" y="189.66666666666669" width="363" height="50"/>
+                                        <color key="backgroundColor" red="0.1607843041" green="0.38431376220000002" blue="0.84705877299999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="dWB-UC-NHZ"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="다음">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="nextButtonTapped:" destination="V2Z-3F-lph" eventType="touchUpInside" id="sD7-HP-OLf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rsb-iF-PT1">
+                                <rect key="frame" x="15" y="783" width="363" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="OIr-89-Z0g"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="이미 계정이 있으신가요?">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="v5W-rZ-xD3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hfM-ph-ZEq" firstAttribute="trailing" secondItem="v5W-rZ-xD3" secondAttribute="trailing" constant="-15" id="1Kp-LC-LXi"/>
+                            <constraint firstAttribute="bottom" secondItem="6th-2K-aKs" secondAttribute="bottom" id="4WA-eL-ZmQ"/>
+                            <constraint firstItem="6th-2K-aKs" firstAttribute="top" secondItem="D0o-vT-VKu" secondAttribute="top" id="Vaw-wM-pFZ"/>
+                            <constraint firstItem="v5W-rZ-xD3" firstAttribute="trailing" secondItem="Rsb-iF-PT1" secondAttribute="trailing" constant="15" id="WGc-be-5SX"/>
+                            <constraint firstItem="6th-2K-aKs" firstAttribute="trailing" secondItem="v5W-rZ-xD3" secondAttribute="trailing" id="dGe-QB-doK"/>
+                            <constraint firstItem="6th-2K-aKs" firstAttribute="leading" secondItem="v5W-rZ-xD3" secondAttribute="leading" id="iU7-m7-3X9"/>
+                            <constraint firstItem="v5W-rZ-xD3" firstAttribute="leading" secondItem="hfM-ph-ZEq" secondAttribute="leading" constant="-15" id="jvf-3e-zuJ"/>
+                            <constraint firstItem="hfM-ph-ZEq" firstAttribute="top" secondItem="v5W-rZ-xD3" secondAttribute="top" constant="10" id="nKc-hX-KxV"/>
+                            <constraint firstItem="Rsb-iF-PT1" firstAttribute="leading" secondItem="v5W-rZ-xD3" secondAttribute="leading" constant="15" id="urx-1c-iuT"/>
+                            <constraint firstItem="v5W-rZ-xD3" firstAttribute="bottom" secondItem="Rsb-iF-PT1" secondAttribute="bottom" id="y8F-Ab-VN7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bodyLabel" destination="zM7-k1-RfU" id="VmZ-be-CCU"/>
+                        <outlet property="nextButton" destination="es9-GY-oM4" id="70U-1B-fz2"/>
+                        <outlet property="titleLabel" destination="QUj-hT-ANn" id="Wah-cm-emh"/>
+                        <outlet property="userInfoTextField" destination="n9h-GZ-5b3" id="kHh-VS-sSX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WN9-W8-GbN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="930.53435114503816" y="721.83098591549299"/>
+        </scene>
+        <!--Custom Navigation Controller-->
+        <scene sceneID="eK9-h7-hEI">
+            <objects>
+                <navigationController storyboardIdentifier="LoginNavigation" automaticallyAdjustsScrollViewInsets="NO" id="1FZ-Uc-4LP" customClass="CustomNavigationController" customModule="instagram_ios_jason" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mQI-d4-3mm">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="JYZ-S4-Ibq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zu2-CB-2Lz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="3.8167938931297707" y="3.5211267605633805"/>
         </scene>
     </scenes>
@@ -145,6 +256,9 @@
             <size key="intrinsicContentSize" width="32" height="34"/>
         </designable>
         <designable name="Dg8-gw-4kn">
+            <size key="intrinsicContentSize" width="32" height="34"/>
+        </designable>
+        <designable name="n9h-GZ-5b3">
             <size key="intrinsicContentSize" width="32" height="34"/>
         </designable>
     </designables>
