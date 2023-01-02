@@ -19,6 +19,13 @@ class HomeViewController: BaseViewController {
         setupData()
         setupTableView()
         setupNavigationController()
+        
+        loadLoginView()
+    }
+    
+    private func loadLoginView() {
+        let vc = UIStoryboard(name: "Login", bundle: .none).instantiateViewController(withIdentifier: "LoginViewController")
+        present(vc, animated: true)
     }
     
     private func setupData() {

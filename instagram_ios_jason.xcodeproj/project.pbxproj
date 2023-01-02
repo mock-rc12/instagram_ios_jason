@@ -24,6 +24,12 @@
 		CD57D7572961E42100138449 /* HomeVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD57D7562961E42100138449 /* HomeVCDelegate.swift */; };
 		CD57D75A2961E7A700138449 /* LikeList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD57D7592961E7A700138449 /* LikeList.storyboard */; };
 		CD57D75C2961E7B200138449 /* LikeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD57D75B2961E7B200138449 /* LikeListViewController.swift */; };
+		CD57D75F2962729500138449 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = CD57D75E2962729500138449 /* FacebookCore */; };
+		CD57D7612962729500138449 /* FacebookGamingServices in Frameworks */ = {isa = PBXBuildFile; productRef = CD57D7602962729500138449 /* FacebookGamingServices */; };
+		CD57D7632962729500138449 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = CD57D7622962729500138449 /* FacebookLogin */; };
+		CD57D7652962729500138449 /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = CD57D7642962729500138449 /* FacebookShare */; };
+		CD57D7692962764500138449 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD57D7682962764500138449 /* LoginViewController.swift */; };
+		CD57D76B2962764B00138449 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD57D76A2962764B00138449 /* Login.storyboard */; };
 		CDEC326C296085D50030E035 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC326B296085D50030E035 /* BaseViewController.swift */; };
 		CDEC3278296086030030E035 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC326E296086030030E035 /* IndicatorView.swift */; };
 		CDEC3279296086030030E035 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC3270296086030030E035 /* Date.swift */; };
@@ -62,6 +68,9 @@
 		CD57D7562961E42100138449 /* HomeVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCDelegate.swift; sourceTree = "<group>"; };
 		CD57D7592961E7A700138449 /* LikeList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LikeList.storyboard; sourceTree = "<group>"; };
 		CD57D75B2961E7B200138449 /* LikeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeListViewController.swift; sourceTree = "<group>"; };
+		CD57D7662962742000138449 /* instagram_ios_jason.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = instagram_ios_jason.entitlements; sourceTree = "<group>"; };
+		CD57D7682962764500138449 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CD57D76A2962764B00138449 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		CDEC326B296085D50030E035 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CDEC326E296086030030E035 /* IndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		CDEC3270296086030030E035 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -85,6 +94,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD57D75F2962729500138449 /* FacebookCore in Frameworks */,
+				CD57D7612962729500138449 /* FacebookGamingServices in Frameworks */,
+				CD57D7652962729500138449 /* FacebookShare in Frameworks */,
+				CD57D7632962729500138449 /* FacebookLogin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +123,7 @@
 		CD026EDC296058C300C6C359 /* instagram_ios_jason */ = {
 			isa = PBXGroup;
 			children = (
+				CD57D7662962742000138449 /* instagram_ios_jason.entitlements */,
 				CDEC326D296086030030E035 /* Util */,
 				CDEC3268296085A60030E035 /* Configuration */,
 				CDEC3267296085A30030E035 /* Source */,
@@ -167,6 +181,15 @@
 			path = LikeList;
 			sourceTree = "<group>";
 		};
+		CD57D7672962762600138449 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CD57D7682962764500138449 /* LoginViewController.swift */,
+				CD57D76A2962764B00138449 /* Login.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		CDEC3267296085A30030E035 /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +199,7 @@
 				CDEC32822960867C0030E035 /* Home */,
 				CD57D74E2961E29700138449 /* Profile */,
 				CD57D7582961E77B00138449 /* LikeList */,
+				CD57D7672962762600138449 /* Login */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -300,6 +324,12 @@
 			dependencies = (
 			);
 			name = instagram_ios_jason;
+			packageProductDependencies = (
+				CD57D75E2962729500138449 /* FacebookCore */,
+				CD57D7602962729500138449 /* FacebookGamingServices */,
+				CD57D7622962729500138449 /* FacebookLogin */,
+				CD57D7642962729500138449 /* FacebookShare */,
+			);
 			productName = instagram_ios_jason;
 			productReference = CD026EDA296058C300C6C359 /* instagram_ios_jason.app */;
 			productType = "com.apple.product-type.application";
@@ -329,6 +359,7 @@
 			);
 			mainGroup = CD026ED1296058C300C6C359;
 			packageReferences = (
+				CD57D75D2962729500138449 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 			);
 			productRefGroup = CD026EDB296058C300C6C359 /* Products */;
 			projectDirPath = "";
@@ -344,6 +375,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD57D76B2962764B00138449 /* Login.storyboard in Resources */,
 				CD57D7522961E32000138449 /* Profile.storyboard in Resources */,
 				CD57D75A2961E7A700138449 /* LikeList.storyboard in Resources */,
 				CD17B9C02961956F0069B8A1 /* StoryTableCell.xib in Resources */,
@@ -375,6 +407,7 @@
 				CD57D7572961E42100138449 /* HomeVCDelegate.swift in Sources */,
 				CD57D74B2961C41200138449 /* UserModel.swift in Sources */,
 				CD57D74D2961D2F600138449 /* FeedMediaCell.swift in Sources */,
+				CD57D7692962764500138449 /* LoginViewController.swift in Sources */,
 				CD57D7492961BF5600138449 /* HomeDataManager.swift in Sources */,
 				CD026EE0296058C300C6C359 /* SceneDelegate.swift in Sources */,
 				CDEC328929609AEC0030E035 /* CustomNaviBarItem.swift in Sources */,
@@ -531,6 +564,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = instagram_ios_jason/instagram_ios_jason.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 846TMZL7WC;
@@ -560,6 +594,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = instagram_ios_jason/instagram_ios_jason.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 846TMZL7WC;
@@ -606,6 +641,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CD57D75D2962729500138449 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CD57D75E2962729500138449 /* FacebookCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD57D75D2962729500138449 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookCore;
+		};
+		CD57D7602962729500138449 /* FacebookGamingServices */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD57D75D2962729500138449 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookGamingServices;
+		};
+		CD57D7622962729500138449 /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD57D75D2962729500138449 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
+		};
+		CD57D7642962729500138449 /* FacebookShare */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD57D75D2962729500138449 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookShare;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CD026ED2296058C300C6C359 /* Project object */;
 }
