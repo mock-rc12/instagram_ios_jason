@@ -46,6 +46,7 @@
 		CDEC328B29609B3E0030E035 /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC328A29609B3E0030E035 /* UIBarButtonItem.swift */; };
 		CDEC3295296121750030E035 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC3293296121750030E035 /* FeedCell.swift */; };
 		CDEC3296296121750030E035 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDEC3294296121750030E035 /* FeedCell.xib */; };
+		CDFFCE6D296295340063A53B /* SkyFloatingLabelTextField in Frameworks */ = {isa = PBXBuildFile; productRef = CDFFCE6C296295340063A53B /* SkyFloatingLabelTextField */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +96,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD57D75F2962729500138449 /* FacebookCore in Frameworks */,
+				CDFFCE6D296295340063A53B /* SkyFloatingLabelTextField in Frameworks */,
 				CD57D7612962729500138449 /* FacebookGamingServices in Frameworks */,
 				CD57D7652962729500138449 /* FacebookShare in Frameworks */,
 				CD57D7632962729500138449 /* FacebookLogin in Frameworks */,
@@ -200,6 +202,7 @@
 				CD57D74E2961E29700138449 /* Profile */,
 				CD57D7582961E77B00138449 /* LikeList */,
 				CD57D7672962762600138449 /* Login */,
+				CDFFCE6A296292D20063A53B /* SignUp */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -308,6 +311,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		CDFFCE6A296292D20063A53B /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -329,6 +339,7 @@
 				CD57D7602962729500138449 /* FacebookGamingServices */,
 				CD57D7622962729500138449 /* FacebookLogin */,
 				CD57D7642962729500138449 /* FacebookShare */,
+				CDFFCE6C296295340063A53B /* SkyFloatingLabelTextField */,
 			);
 			productName = instagram_ios_jason;
 			productReference = CD026EDA296058C300C6C359 /* instagram_ios_jason.app */;
@@ -360,6 +371,7 @@
 			mainGroup = CD026ED1296058C300C6C359;
 			packageReferences = (
 				CD57D75D2962729500138449 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				CDFFCE6B296295340063A53B /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */,
 			);
 			productRefGroup = CD026EDB296058C300C6C359 /* Products */;
 			projectDirPath = "";
@@ -651,6 +663,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		CDFFCE6B296295340063A53B /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Skyscanner/SkyFloatingLabelTextField.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -673,6 +693,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CD57D75D2962729500138449 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
 			productName = FacebookShare;
+		};
+		CDFFCE6C296295340063A53B /* SkyFloatingLabelTextField */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CDFFCE6B296295340063A53B /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */;
+			productName = SkyFloatingLabelTextField;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

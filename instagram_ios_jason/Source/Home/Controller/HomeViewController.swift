@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FacebookLogin
 
 class HomeViewController: BaseViewController {
     
@@ -15,15 +16,24 @@ class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        checkLogin()
         setupData()
         setupTableView()
         setupNavigationController()
-        
-        loadLoginView()
     }
     
-    private func loadLoginView() {
+    private func checkLogin() {
+        
+        if let token = AccessToken.current, !token.isExpired {
+            print("====== 토큰 ======")
+//            showToast("로그인 성공", withDuration: 3, delay: 1.5)
+            print(token.tokenString)
+            print(token.userID)
+        } else {
+            let vc = UIStoryboard(name: "Login", bundle: .none).instantiateViewController(withIdentifier: "LoginViewController")
+            present(vc, animated: true)
+        }
+        // 임시
         let vc = UIStoryboard(name: "Login", bundle: .none).instantiateViewController(withIdentifier: "LoginViewController")
         present(vc, animated: true)
     }
@@ -42,6 +52,31 @@ class HomeViewController: BaseViewController {
         self.homeFeedTableView.showsVerticalScrollIndicator = false
         self.homeFeedTableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
     }
+    
+//    func showToast(_ message : String, withDuration: Double, delay: Double) {
+//        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-100, width: 150, height: 35))
+//        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.7)
+//        toastLabel.textColor = UIColor.white
+//        toastLabel.font = UIFont.systemFont(ofSize: 14.0)
+//        toastLabel.textAlignment = .center
+//        toastLabel.text = message
+//        toastLabel.alpha = 1.0
+//        toastLabel.layer.cornerRadius = 16
+//        toastLabel.clipsToBounds  =  true
+//
+//        self.view.addSubview(toastLabel)
+//        NSLayoutConstraint.activate([
+//            toastLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+//            toastLabel.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 100)
+//        ])
+//        toastLabel.layer.zPosition = 999
+//
+//        UIView.animate(withDuration: withDuration, delay: delay, options: .curveEaseOut, animations: {
+//            toastLabel.alpha = 0.0
+//        }, completion: {(isCompleted) in
+//            toastLabel.removeFromSuperview()
+//        })
+//    }
     
     //MARK: - 네비게이션 컨트롤러 설정
     private func setupNavigationController() {
