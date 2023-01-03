@@ -17,6 +17,10 @@
 		CD17B9C22961964F0069B8A1 /* StoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD17B9C12961964F0069B8A1 /* StoryCell.swift */; };
 		CD2C992D2964680D006088D8 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C992C2964680D006088D8 /* Constant.swift */; };
 		CD2C992F29646A5F006088D8 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C992E29646A5F006088D8 /* Secret.swift */; };
+		CD2C9931296472CB006088D8 /* SignUpNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C9930296472CB006088D8 /* SignUpNavigationController.swift */; };
+		CD2C9933296473F4006088D8 /* SignUpDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C9932296473F4006088D8 /* SignUpDataManager.swift */; };
+		CD2C993529647942006088D8 /* SignUpNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C993429647942006088D8 /* SignUpNetworkManager.swift */; };
+		CD2C993729647AB7006088D8 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C993629647AB7006088D8 /* UserDataModel.swift */; };
 		CD57D7472961BAFE00138449 /* FeedsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD57D7462961BAFE00138449 /* FeedsModel.swift */; };
 		CD57D7492961BF5600138449 /* HomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD57D7482961BF5600138449 /* HomeDataManager.swift */; };
 		CD57D74B2961C41200138449 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD57D74A2961C41200138449 /* UserModel.swift */; };
@@ -69,6 +73,10 @@
 		CD17B9C12961964F0069B8A1 /* StoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCell.swift; sourceTree = "<group>"; };
 		CD2C992C2964680D006088D8 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		CD2C992E29646A5F006088D8 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
+		CD2C9930296472CB006088D8 /* SignUpNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNavigationController.swift; sourceTree = "<group>"; };
+		CD2C9932296473F4006088D8 /* SignUpDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDataManager.swift; sourceTree = "<group>"; };
+		CD2C993429647942006088D8 /* SignUpNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNetworkManager.swift; sourceTree = "<group>"; };
+		CD2C993629647AB7006088D8 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		CD57D7462961BAFE00138449 /* FeedsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsModel.swift; sourceTree = "<group>"; };
 		CD57D7482961BF5600138449 /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
 		CD57D74A2961C41200138449 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -282,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				CD58A46D2962BF1C003C29F0 /* SignUpViewController.swift */,
+				CD2C9930296472CB006088D8 /* SignUpNavigationController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -296,6 +305,9 @@
 		CD58A47C296325DA003C29F0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CD2C9932296473F4006088D8 /* SignUpDataManager.swift */,
+				CD2C993429647942006088D8 /* SignUpNetworkManager.swift */,
+				CD2C993629647AB7006088D8 /* UserDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -534,6 +546,7 @@
 			files = (
 				CD17B9BF2961956F0069B8A1 /* StoryTableCell.swift in Sources */,
 				CDEC3280296086030030E035 /* Device.swift in Sources */,
+				CD2C9931296472CB006088D8 /* SignUpNavigationController.swift in Sources */,
 				CDEC327A296086030030E035 /* UIColor.swift in Sources */,
 				CDEC3279296086030030E035 /* Date.swift in Sources */,
 				CDEC326C296085D50030E035 /* BaseViewController.swift in Sources */,
@@ -548,6 +561,7 @@
 				CD2C992F29646A5F006088D8 /* Secret.swift in Sources */,
 				CD57D74B2961C41200138449 /* UserModel.swift in Sources */,
 				CD2C992D2964680D006088D8 /* Constant.swift in Sources */,
+				CD2C9933296473F4006088D8 /* SignUpDataManager.swift in Sources */,
 				CD57D74D2961D2F600138449 /* FeedMediaCell.swift in Sources */,
 				CD57D7692962764500138449 /* LoginViewController.swift in Sources */,
 				CD57D7492961BF5600138449 /* HomeDataManager.swift in Sources */,
@@ -561,8 +575,10 @@
 				CDEC3278296086030030E035 /* IndicatorView.swift in Sources */,
 				CDEC327E296086030030E035 /* UINavigationBar.swift in Sources */,
 				CD58A4702962CAC3003C29F0 /* CustomSkyTextField.swift in Sources */,
+				CD2C993529647942006088D8 /* SignUpNetworkManager.swift in Sources */,
 				CDEC328B29609B3E0030E035 /* UIBarButtonItem.swift in Sources */,
 				CDEC327C296086030030E035 /* UIButton.swift in Sources */,
+				CD2C993729647AB7006088D8 /* UserDataModel.swift in Sources */,
 				CDEC3295296121750030E035 /* FeedCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

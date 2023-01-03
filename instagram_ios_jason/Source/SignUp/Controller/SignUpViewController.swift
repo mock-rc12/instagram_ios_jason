@@ -7,31 +7,6 @@
 
 import UIKit
 
-enum SignUpUserInfo: CaseIterable {
-    case email
-    case password
-    case name
-    case id
-    case birthday
-    case finish
-}
-
-struct SignUpGuideModel {
-    var type: SignUpUserInfo
-    var title: String
-    var body: String
-    var placeholder: String
-}
-
-struct SignUpGuideData {
-    var email = SignUpGuideModel(type: .email, title: "이메일 주소 입력", body: "회원님에게 연락할 수 있는 이메일 주소를 입력하세요. 이 이메일 주소는 프로필에서 다른 사람에게 공개되지 않습니다.", placeholder: "이메일")
-    var name = SignUpGuideModel(type: .name, title: "이름 입력", body: "친구들이 회원님을 찾을 수 있도록 이름을 추가하세요.", placeholder: "성명")
-    var password = SignUpGuideModel(type: .password, title: "비밀번호 만들기", body: "다른 사람이 추측할 수 없는 6자 이상의 문자와 숫자 조합으로 비밀번호를 만드세요.", placeholder: "비밀번호")
-    var birthday = SignUpGuideModel(type: .birthday, title: "생년월일 입력", body: "비즈니스, 반려동물 또는 기타 목적으로 이 계정을 만드는 경우에도 회원님의 실제 생년월일을 사용하세요. 이 생년월일 정보는 프로필에서 다른 사람들에게 공개되지 않습니다.", placeholder: "생년월일")
-    var id = SignUpGuideModel(type: .id, title: "사용자 이름 만들기", body: "사용자 이름을 추가하거나 추천 이름을 사용하세요. 언제든지 변경할 수 있습니다.", placeholder: "아이디")
-    var finish = SignUpGuideModel(type: .finish, title: "회원가입 완료", body: "이제 인스타그램을 즐기세요 !", placeholder: "")
-}
-
 class SignUpViewController: BaseViewController {
        
     @IBOutlet weak var titleLabel: UILabel!
@@ -66,10 +41,11 @@ class SignUpViewController: BaseViewController {
                 configure(data: guideDatas.id)
             case .birthday:
                 configure(data: guideDatas.birthday)
-            case .finish:
-                configure(data: guideDatas.finish)
-                userInfoTextField.removeFromSuperview()
-                nextButton.setTitle("완료", for: .normal)
+            case .sucess:
+                // 회원가입 완료 여부 체크
+                sendSignUpData()
+            case .failure:
+                configure(data: guideDatas.fail)
             }
         }
     }
@@ -81,21 +57,46 @@ class SignUpViewController: BaseViewController {
         userInfoTextField.placeholder = data.placeholder
     }
     
+    private func getTextFieldData(completion: @escaping (String) -> Void) {
+        if let userText = userInfoTextField.text {
+            completion(userText)
+        } else {
+            print("값이 없습니다")
+        }
+    }
+    
     @IBAction func nextButtonTapped(_ sender: UIButton) {
         if let inputType = infoType {
             switch inputType {
             case .email:
-                pushVC(type: .password)
+                getTextFieldData { [weak self] text in
+                    SignUpDataManager.email = text
+                    self?.pushVC(type: .password)
+                }
             case .password:
-                pushVC(type: .name)
+                getTextFieldData { [weak self] text in
+                    SignUpDataManager.password = text
+                    self?.pushVC(type: .name)
+                }
             case .name:
-                pushVC(type: .id)
+                getTextFieldData { [weak self] text in
+                    SignUpDataManager.name = text
+                    self?.pushVC(type: .id)
+                }
             case .id:
-                pushVC(type: .birthday)
+                getTextFieldData { [weak self] text in
+                    SignUpDataManager.userId = text
+                    self?.pushVC(type: .birthday)
+                }
             case .birthday:
-                pushVC(type: .finish)
-            case .finish:
+                getTextFieldData { [weak self] text in
+                    SignUpDataManager.birth = text
+                    self?.pushVC(type: .sucess)
+                }
+            case .sucess:
                 self.navigationController?.dismiss(animated: true)
+            case .failure:
+                self.navigationController?.popToRootViewController(animated: true)
             }
         }
     }
@@ -104,5 +105,28 @@ class SignUpViewController: BaseViewController {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") as? SignUpViewController else { return }
         vc.infoType = type
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func sendSignUpData() {
+        IndicatorView.shared.show()
+        IndicatorView.shared.showIndicator()
+        
+        let manager = SignUpNetworkManager()
+        let userInfo = UserDataModel(userId: SignUpDataManager.userId, password: SignUpDataManager.password, name: SignUpDataManager.name, email: SignUpDataManager.email, birth: SignUpDataManager.birth)
+        
+        // 네트워크 post
+        manager.postSignUpNetworkData(param: userInfo) { [weak self] isSuccess in
+            if isSuccess == true {
+                // 성공한 경우, UI 변경
+                IndicatorView.shared.dismiss()
+                self?.configure(data: (self?.guideDatas.finish)!)
+                self?.userInfoTextField.removeFromSuperview()
+                self?.nextButton.setTitle("완료", for: .normal)
+            } else {
+                print("🚨🚨🚨🚨🚨🚨🚨🚨🚨 가입 실패")
+                self?.infoType = .failure
+                self?.setupUI()
+            }
+        }
     }
 }
