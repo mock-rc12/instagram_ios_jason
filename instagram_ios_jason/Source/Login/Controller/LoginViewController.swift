@@ -87,7 +87,7 @@ class LoginViewController: BaseViewController {
                 }
             }
         } else {
-            print("칸이 비어있어요")
+            showToast("영역을 모두 채워주세요", withDuration: 2, delay: 1.5)
         }
     }
     
@@ -144,5 +144,30 @@ class LoginViewController: BaseViewController {
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") as? SignUpViewController else { print("가드문"); return }
         vc.infoType = .email
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func showToast(_ message : String, withDuration: Double, delay: Double) {
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-100, width: 150, height: 35))
+        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.7)
+        toastLabel.textColor = UIColor.white
+        toastLabel.font = UIFont.systemFont(ofSize: 14.0)
+        toastLabel.textAlignment = .center
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 16
+        toastLabel.clipsToBounds  =  true
+        
+        self.view.addSubview(toastLabel)
+        NSLayoutConstraint.activate([
+            toastLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            toastLabel.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 100)
+        ])
+        toastLabel.layer.zPosition = 999
+        
+        UIView.animate(withDuration: withDuration, delay: delay, options: .curveEaseOut, animations: {
+            toastLabel.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
     }
 }

@@ -157,8 +157,12 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="6th-2K-aKs">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
+                            <view alpha="0.25" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wUT-EO-vkh">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hfM-ph-ZEq">
-                                <rect key="frame" x="15" y="68.999999999999986" width="363" height="239.66666666666663"/>
+                                <rect key="frame" x="15" y="139" width="363" height="239.66666666666663"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일 주소 입력" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUj-hT-ANn">
                                         <rect key="frame" x="0.0" y="0.0" width="363" height="33.666666666666664"/>
@@ -167,7 +171,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원님에게 연락할 수 있는 이메일 주소를 입력하세요. 이 이메일 주소는 프로필에서 다른 사람에게 공개되지 않습니다." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zM7-k1-RfU">
-                                        <rect key="frame" x="0.0" y="53.666666666666671" width="363" height="36"/>
+                                        <rect key="frame" x="0.0" y="53.666666666666657" width="363" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -208,22 +212,44 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
                                 </buttonConfiguration>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8aJ-zk-p6u">
+                                <rect key="frame" x="10" y="69" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="a35-Ac-aII"/>
+                                    <constraint firstAttribute="width" secondItem="8aJ-zk-p6u" secondAttribute="height" multiplier="1:1" id="r4d-4Q-vpX"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="chevron.left" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="V2Z-3F-lph" eventType="touchUpInside" id="r2W-bb-jCm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="v5W-rZ-xD3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="hfM-ph-ZEq" firstAttribute="trailing" secondItem="v5W-rZ-xD3" secondAttribute="trailing" constant="-15" id="1Kp-LC-LXi"/>
                             <constraint firstAttribute="bottom" secondItem="6th-2K-aKs" secondAttribute="bottom" id="4WA-eL-ZmQ"/>
+                            <constraint firstItem="wUT-EO-vkh" firstAttribute="leading" secondItem="v5W-rZ-xD3" secondAttribute="leading" id="5az-ss-K4a"/>
+                            <constraint firstItem="hfM-ph-ZEq" firstAttribute="top" secondItem="8aJ-zk-p6u" secondAttribute="bottom" constant="30" id="GwI-Ov-Ef4"/>
                             <constraint firstItem="6th-2K-aKs" firstAttribute="top" secondItem="D0o-vT-VKu" secondAttribute="top" id="Vaw-wM-pFZ"/>
                             <constraint firstItem="v5W-rZ-xD3" firstAttribute="trailing" secondItem="Rsb-iF-PT1" secondAttribute="trailing" constant="15" id="WGc-be-5SX"/>
+                            <constraint firstItem="v5W-rZ-xD3" firstAttribute="top" secondItem="8aJ-zk-p6u" secondAttribute="top" constant="-10" id="XD5-KU-IRF"/>
                             <constraint firstItem="6th-2K-aKs" firstAttribute="trailing" secondItem="v5W-rZ-xD3" secondAttribute="trailing" id="dGe-QB-doK"/>
                             <constraint firstItem="6th-2K-aKs" firstAttribute="leading" secondItem="v5W-rZ-xD3" secondAttribute="leading" id="iU7-m7-3X9"/>
                             <constraint firstItem="v5W-rZ-xD3" firstAttribute="leading" secondItem="hfM-ph-ZEq" secondAttribute="leading" constant="-15" id="jvf-3e-zuJ"/>
-                            <constraint firstItem="hfM-ph-ZEq" firstAttribute="top" secondItem="v5W-rZ-xD3" secondAttribute="top" constant="10" id="nKc-hX-KxV"/>
+                            <constraint firstItem="8aJ-zk-p6u" firstAttribute="leading" secondItem="v5W-rZ-xD3" secondAttribute="leading" constant="10" id="kJs-OT-DHo"/>
+                            <constraint firstAttribute="bottom" secondItem="wUT-EO-vkh" secondAttribute="bottom" id="mVj-7n-Pke"/>
+                            <constraint firstItem="wUT-EO-vkh" firstAttribute="trailing" secondItem="v5W-rZ-xD3" secondAttribute="trailing" id="mpc-rY-VRO"/>
+                            <constraint firstItem="wUT-EO-vkh" firstAttribute="top" secondItem="D0o-vT-VKu" secondAttribute="top" id="oYJ-IS-XVc"/>
                             <constraint firstItem="Rsb-iF-PT1" firstAttribute="leading" secondItem="v5W-rZ-xD3" secondAttribute="leading" constant="15" id="urx-1c-iuT"/>
                             <constraint firstItem="v5W-rZ-xD3" firstAttribute="bottom" secondItem="Rsb-iF-PT1" secondAttribute="bottom" id="y8F-Ab-VN7"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
                         <outlet property="bodyLabel" destination="zM7-k1-RfU" id="VmZ-be-CCU"/>
                         <outlet property="nextButton" destination="es9-GY-oM4" id="70U-1B-fz2"/>
@@ -267,6 +293,7 @@
     </designables>
     <resources>
         <image name="background" width="368" height="654"/>
+        <image name="chevron.left" catalog="system" width="97" height="128"/>
         <image name="splash00" width="256" height="256"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

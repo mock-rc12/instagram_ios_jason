@@ -129,4 +129,8 @@ class SignUpViewController: BaseViewController {
             }
         }
     }
+    
+    @IBAction func backButtonTapped(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
 }

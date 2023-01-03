@@ -26,7 +26,7 @@ class CustomNavigationController: UINavigationController, UINavigationController
         if ((viewController as? LoginViewController) != nil) {
             self.navigationBar.isHidden = true
         } else {
-            self.navigationBar.isHidden = false
+            self.navigationBar.isHidden = true
             clearBar()
         }
     }
