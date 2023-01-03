@@ -9,7 +9,7 @@ import UIKit
 
 class ProfileViewController: BaseViewController {
     
-    var user: Profile?
+    var user: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +18,7 @@ class ProfileViewController: BaseViewController {
     
     func configure() {
         if let user = user {
-            self.navigationItem.title = user.id
+            self.navigationItem.title = user
         }
     }
 }

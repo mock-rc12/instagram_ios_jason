@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class FeedMediaCell: UICollectionViewCell {
     
@@ -26,10 +27,20 @@ class FeedMediaCell: UICollectionViewCell {
             feedImage.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             feedImage.topAnchor.constraint(equalTo: self.topAnchor),
         ])
-        
-        if let name = imageName {
-            feedImage.image = UIImage(named: name)
+        print("🔥🔥🔥🔥imageName: \(imageName ?? "")")
+        if imageName != nil {
+            print("🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥")
+            kingfisher()
         }
         feedImage.clipsToBounds = true
+    }
+    
+    func kingfisher() {
+        let defaultImage = "https://instastatistics.com/images/default_avatar.jpg"
+        
+        let url = URL(string: imageName ?? defaultImage)
+        
+        feedImage.kf.setImage(with: url)
+        
     }
 }

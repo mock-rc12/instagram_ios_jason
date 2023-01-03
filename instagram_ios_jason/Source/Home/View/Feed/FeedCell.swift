@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import Kingfisher
 
 class FeedCell: UITableViewCell {
     
-    var feedItem: Feed?
+    var feedsItem: FeedsResult?
     var delegate: HomeVCDelegate?
     
     // User
@@ -66,25 +67,57 @@ class FeedCell: UITableViewCell {
     func setupPageControl() {
         pageControl.backgroundStyle = .minimal
         pageControl.allowsContinuousInteraction = false
-        pageControl.numberOfPages = feedItem?.media.count ?? 1
+        pageControl.numberOfPages = feedsItem?.postImgRes.count ?? 1
     }
     
     func configure() {
-        if let item = feedItem {
+        if let item = feedsItem {
             // User
-            profileImageView.image = item.user.profileImage
-            idLabel.text = item.user.id
+            kingfisher()
+            idLabel.text = item.userId
             
             // 내용
-            likeCountLabel.text = "좋아요 \(item.likeCount)개"
-            bodyIdLabel.text = item.user.id
-            bodyLabel.text = item.body
-            commentCountLabel.text = "댓글 \(item.commentCount)개 모두 보기"
+            likeCountLabel.text = "좋아요 \(item.postLikeCount)개"
+            bodyLabel.text = "\(item.content)"
+            bodyIdLabel.text = item.userId
+            // 댓글 갯수 추가 필요
+            timeLabel.text = item.updateAt
+            
             setupCollectionView()
             setupPageControl()
             
             // 제스쳐 셋업
             setupGesture(view: [idLabel, likeCountLabel, commentCountLabel, bodyLabel, profileImageView, moreImageView, bodyIdLabel])
+        }
+    }
+    
+    func kingfisher() {
+
+        if let item = feedsItem {
+            
+            let url = URL(string: item.profileImgURL ?? "")
+            let processor = DownsamplingImageProcessor(size: profileImageView.bounds.size)
+                         |> RoundCornerImageProcessor(cornerRadius: 20)
+            profileImageView.kf.indicatorType = .activity
+            profileImageView.kf.setImage(
+                with: url,
+                placeholder: UIImage(named: "default_profile"),
+                options: [
+                    .processor(processor),
+                    .scaleFactor(UIScreen.main.scale),
+                    .transition(.fade(1)),
+                    .cacheOriginalImage
+                ])
+            {
+                result in
+                switch result {
+                case .success(let value):
+                    print("Task done for: \(value.source.url?.absoluteString ?? "")")
+                case .failure(let error):
+                    print("Job failed: \(error.localizedDescription)")
+                    self.profileImageView.image = UIImage(named: "default_profile")
+                }
+            }
         }
     }
     
@@ -110,11 +143,11 @@ class FeedCell: UITableViewCell {
     
     // MARK: - 유저 인터랙션 정의 ⭐️
     @objc private func buttonTapped(_ sender: UITapGestureRecognizer) {
-        guard let item = feedItem else { return }
+        guard let item = feedsItem else { return }
         switch sender.view {
         case idLabel, bodyIdLabel:
             print("유저 아이디 눌림")
-            delegate?.userIdLabelTapped(user: item.user)
+            delegate?.userIdLabelTapped(user: item.userId)
         case likeCountLabel:
             print("좋아요 카운트 눌림")
             delegate?.likeCountLabelTapped()
@@ -132,16 +165,19 @@ class FeedCell: UITableViewCell {
 
 extension FeedCell: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return feedItem?.media.count ?? 0
+        if let item = feedsItem {
+            return item.postImgRes.count
+        } else {
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedMediaCell", for: indexPath) as? FeedMediaCell else { return UICollectionViewCell() }
-        if let safeItems = feedItem {
-            cell.imageName = safeItems.media[indexPath.row]
+        if let safeItems = feedsItem {
+            cell.imageName = safeItems.postImgRes[indexPath.row].postImgUrl
             cell.setupUI()
         }
-        
         return cell
     }
     

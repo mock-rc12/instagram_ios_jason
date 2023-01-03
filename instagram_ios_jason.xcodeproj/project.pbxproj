@@ -15,7 +15,9 @@
 		CD17B9BF2961956F0069B8A1 /* StoryTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD17B9BD2961956F0069B8A1 /* StoryTableCell.swift */; };
 		CD17B9C02961956F0069B8A1 /* StoryTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD17B9BE2961956F0069B8A1 /* StoryTableCell.xib */; };
 		CD17B9C22961964F0069B8A1 /* StoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD17B9C12961964F0069B8A1 /* StoryCell.swift */; };
-		CD57D7472961BAFE00138449 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD57D7462961BAFE00138449 /* Models.swift */; };
+		CD2C992D2964680D006088D8 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C992C2964680D006088D8 /* Constant.swift */; };
+		CD2C992F29646A5F006088D8 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C992E29646A5F006088D8 /* Secret.swift */; };
+		CD57D7472961BAFE00138449 /* FeedsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD57D7462961BAFE00138449 /* FeedsModel.swift */; };
 		CD57D7492961BF5600138449 /* HomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD57D7482961BF5600138449 /* HomeDataManager.swift */; };
 		CD57D74B2961C41200138449 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD57D74A2961C41200138449 /* UserModel.swift */; };
 		CD57D74D2961D2F600138449 /* FeedMediaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD57D74C2961D2F600138449 /* FeedMediaCell.swift */; };
@@ -32,6 +34,9 @@
 		CD57D76B2962764B00138449 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD57D76A2962764B00138449 /* Login.storyboard */; };
 		CD58A46E2962BF1C003C29F0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD58A46D2962BF1C003C29F0 /* SignUpViewController.swift */; };
 		CD58A4702962CAC3003C29F0 /* CustomSkyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD58A46F2962CAC3003C29F0 /* CustomSkyTextField.swift */; };
+		CD58A48029644F6C003C29F0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CD58A47F29644F6C003C29F0 /* Alamofire */; };
+		CD58A48329644F77003C29F0 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CD58A48229644F77003C29F0 /* Kingfisher */; };
+		CD58A496296450F4003C29F0 /* FeedsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD58A495296450F4003C29F0 /* FeedsDataManager.swift */; };
 		CDEC326C296085D50030E035 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC326B296085D50030E035 /* BaseViewController.swift */; };
 		CDEC3278296086030030E035 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC326E296086030030E035 /* IndicatorView.swift */; };
 		CDEC3279296086030030E035 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC3270296086030030E035 /* Date.swift */; };
@@ -49,7 +54,6 @@
 		CDEC3295296121750030E035 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC3293296121750030E035 /* FeedCell.swift */; };
 		CDEC3296296121750030E035 /* FeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDEC3294296121750030E035 /* FeedCell.xib */; };
 		CDFFCE6D296295340063A53B /* SkyFloatingLabelTextField in Frameworks */ = {isa = PBXBuildFile; productRef = CDFFCE6C296295340063A53B /* SkyFloatingLabelTextField */; };
-		CDFFCE6F2962B8B90063A53B /* LoginBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFFCE6E2962B8B90063A53B /* LoginBaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +67,9 @@
 		CD17B9BD2961956F0069B8A1 /* StoryTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTableCell.swift; sourceTree = "<group>"; };
 		CD17B9BE2961956F0069B8A1 /* StoryTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryTableCell.xib; sourceTree = "<group>"; };
 		CD17B9C12961964F0069B8A1 /* StoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCell.swift; sourceTree = "<group>"; };
-		CD57D7462961BAFE00138449 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		CD2C992C2964680D006088D8 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		CD2C992E29646A5F006088D8 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
+		CD57D7462961BAFE00138449 /* FeedsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsModel.swift; sourceTree = "<group>"; };
 		CD57D7482961BF5600138449 /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
 		CD57D74A2961C41200138449 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		CD57D74C2961D2F600138449 /* FeedMediaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMediaCell.swift; sourceTree = "<group>"; };
@@ -77,6 +83,7 @@
 		CD57D76A2962764B00138449 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		CD58A46D2962BF1C003C29F0 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CD58A46F2962CAC3003C29F0 /* CustomSkyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSkyTextField.swift; sourceTree = "<group>"; };
+		CD58A495296450F4003C29F0 /* FeedsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsDataManager.swift; sourceTree = "<group>"; };
 		CDEC326B296085D50030E035 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CDEC326E296086030030E035 /* IndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		CDEC3270296086030030E035 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -93,7 +100,6 @@
 		CDEC328A29609B3E0030E035 /* UIBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButtonItem.swift; sourceTree = "<group>"; };
 		CDEC3293296121750030E035 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		CDEC3294296121750030E035 /* FeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedCell.xib; sourceTree = "<group>"; };
-		CDFFCE6E2962B8B90063A53B /* LoginBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +109,9 @@
 			files = (
 				CD57D75F2962729500138449 /* FacebookCore in Frameworks */,
 				CDFFCE6D296295340063A53B /* SkyFloatingLabelTextField in Frameworks */,
+				CD58A48329644F77003C29F0 /* Kingfisher in Frameworks */,
 				CD57D7612962729500138449 /* FacebookGamingServices in Frameworks */,
+				CD58A48029644F6C003C29F0 /* Alamofire in Frameworks */,
 				CD57D7652962729500138449 /* FacebookShare in Frameworks */,
 				CD57D7632962729500138449 /* FacebookLogin in Frameworks */,
 			);
@@ -166,8 +174,9 @@
 		CD57D74E2961E29700138449 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				CD57D7512961E32000138449 /* Profile.storyboard */,
-				CD57D7532961E35B00138449 /* ProfileViewController.swift */,
+				CD58A47129632560003C29F0 /* Model */,
+				CD58A47229632566003C29F0 /* View */,
+				CD58A4732963256B003C29F0 /* Controller */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -183,8 +192,9 @@
 		CD57D7582961E77B00138449 /* LikeList */ = {
 			isa = PBXGroup;
 			children = (
-				CD57D7592961E7A700138449 /* LikeList.storyboard */,
-				CD57D75B2961E7B200138449 /* LikeListViewController.swift */,
+				CD58A47629632597003C29F0 /* Model */,
+				CD58A47529632595003C29F0 /* View */,
+				CD58A47429632592003C29F0 /* Controller */,
 			);
 			path = LikeList;
 			sourceTree = "<group>";
@@ -192,18 +202,116 @@
 		CD57D7672962762600138449 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				CDFFCE6E2962B8B90063A53B /* LoginBaseViewController.swift */,
-				CD57D7682962764500138449 /* LoginViewController.swift */,
-				CD57D76A2962764B00138449 /* Login.storyboard */,
+				CD58A479296325B2003C29F0 /* Model */,
+				CD58A478296325AF003C29F0 /* View */,
+				CD58A477296325AD003C29F0 /* Controller */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		CD58A47129632560003C29F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CD58A47229632566003C29F0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD57D7512961E32000138449 /* Profile.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CD58A4732963256B003C29F0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CD57D7532961E35B00138449 /* ProfileViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CD58A47429632592003C29F0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CD57D75B2961E7B200138449 /* LikeListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CD58A47529632595003C29F0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD57D7592961E7A700138449 /* LikeList.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CD58A47629632597003C29F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CD58A477296325AD003C29F0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CD57D7682962764500138449 /* LoginViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CD58A478296325AF003C29F0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD57D76A2962764B00138449 /* Login.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CD58A479296325B2003C29F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CD58A47A296325D2003C29F0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CD58A46D2962BF1C003C29F0 /* SignUpViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CD58A47B296325D7003C29F0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CD58A47C296325DA003C29F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CD58A47D2963265F003C29F0 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		CDEC3267296085A30030E035 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				CD58A47D2963265F003C29F0 /* New Group */,
 				CD026EE3296058C300C6C359 /* Main.storyboard */,
-				CDEC328529608FCF0030E035 /* CustomNavigationController.swift */,
 				CDEC3281296086640030E035 /* Splash */,
 				CDEC32822960867C0030E035 /* Home */,
 				CD57D74E2961E29700138449 /* Profile */,
@@ -219,6 +327,7 @@
 			children = (
 				CDEC3269296085B10030E035 /* Secret */,
 				CDEC326A296085BB0030E035 /* Base */,
+				CD2C992C2964680D006088D8 /* Constant.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -226,6 +335,7 @@
 		CDEC3269296085B10030E035 /* Secret */ = {
 			isa = PBXGroup;
 			children = (
+				CD2C992E29646A5F006088D8 /* Secret.swift */,
 			);
 			path = Secret;
 			sourceTree = "<group>";
@@ -287,6 +397,8 @@
 			isa = PBXGroup;
 			children = (
 				CDEC328829609AEC0030E035 /* CustomNaviBarItem.swift */,
+				CDEC328529608FCF0030E035 /* CustomNavigationController.swift */,
+				CD58A46F2962CAC3003C29F0 /* CustomSkyTextField.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -312,8 +424,9 @@
 			isa = PBXGroup;
 			children = (
 				CD57D74A2961C41200138449 /* UserModel.swift */,
-				CD57D7462961BAFE00138449 /* Models.swift */,
 				CD57D7482961BF5600138449 /* HomeDataManager.swift */,
+				CD57D7462961BAFE00138449 /* FeedsModel.swift */,
+				CD58A495296450F4003C29F0 /* FeedsDataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -321,8 +434,9 @@
 		CDFFCE6A296292D20063A53B /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				CD58A46D2962BF1C003C29F0 /* SignUpViewController.swift */,
-				CD58A46F2962CAC3003C29F0 /* CustomSkyTextField.swift */,
+				CD58A47C296325DA003C29F0 /* Model */,
+				CD58A47B296325D7003C29F0 /* View */,
+				CD58A47A296325D2003C29F0 /* Controller */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -349,6 +463,8 @@
 				CD57D7622962729500138449 /* FacebookLogin */,
 				CD57D7642962729500138449 /* FacebookShare */,
 				CDFFCE6C296295340063A53B /* SkyFloatingLabelTextField */,
+				CD58A47F29644F6C003C29F0 /* Alamofire */,
+				CD58A48229644F77003C29F0 /* Kingfisher */,
 			);
 			productName = instagram_ios_jason;
 			productReference = CD026EDA296058C300C6C359 /* instagram_ios_jason.app */;
@@ -381,6 +497,8 @@
 			packageReferences = (
 				CD57D75D2962729500138449 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 				CDFFCE6B296295340063A53B /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */,
+				CD58A47E29644F6C003C29F0 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				CD58A48129644F77003C29F0 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = CD026EDB296058C300C6C359 /* Products */;
 			projectDirPath = "";
@@ -422,11 +540,14 @@
 				CDEC3284296087650030E035 /* HomeViewController.swift in Sources */,
 				CD57D7542961E35B00138449 /* ProfileViewController.swift in Sources */,
 				CDEC327D296086030030E035 /* UIViewController.swift in Sources */,
-				CD57D7472961BAFE00138449 /* Models.swift in Sources */,
+				CD57D7472961BAFE00138449 /* FeedsModel.swift in Sources */,
+				CD58A496296450F4003C29F0 /* FeedsDataManager.swift in Sources */,
 				CDEC328629608FCF0030E035 /* CustomNavigationController.swift in Sources */,
 				CD026EDE296058C300C6C359 /* AppDelegate.swift in Sources */,
 				CD57D7572961E42100138449 /* HomeVCDelegate.swift in Sources */,
+				CD2C992F29646A5F006088D8 /* Secret.swift in Sources */,
 				CD57D74B2961C41200138449 /* UserModel.swift in Sources */,
+				CD2C992D2964680D006088D8 /* Constant.swift in Sources */,
 				CD57D74D2961D2F600138449 /* FeedMediaCell.swift in Sources */,
 				CD57D7692962764500138449 /* LoginViewController.swift in Sources */,
 				CD57D7492961BF5600138449 /* HomeDataManager.swift in Sources */,
@@ -434,7 +555,6 @@
 				CD026EE0296058C300C6C359 /* SceneDelegate.swift in Sources */,
 				CDEC328929609AEC0030E035 /* CustomNaviBarItem.swift in Sources */,
 				CD57D75C2961E7B200138449 /* LikeListViewController.swift in Sources */,
-				CDFFCE6F2962B8B90063A53B /* LoginBaseViewController.swift in Sources */,
 				CDEC327B296086030030E035 /* String.swift in Sources */,
 				CD17B9C22961964F0069B8A1 /* StoryCell.swift in Sources */,
 				CDEC327F296086030030E035 /* UIFont.swift in Sources */,
@@ -675,6 +795,22 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		CD58A47E29644F6C003C29F0 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		CD58A48129644F77003C29F0 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		CDFFCE6B296295340063A53B /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Skyscanner/SkyFloatingLabelTextField.git";
@@ -705,6 +841,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CD57D75D2962729500138449 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
 			productName = FacebookShare;
+		};
+		CD58A47F29644F6C003C29F0 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD58A47E29644F6C003C29F0 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		CD58A48229644F77003C29F0 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD58A48129644F77003C29F0 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 		CDFFCE6C296295340063A53B /* SkyFloatingLabelTextField */ = {
 			isa = XCSwiftPackageProductDependency;

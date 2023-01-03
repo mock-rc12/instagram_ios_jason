@@ -14,6 +14,10 @@ class HomeViewController: BaseViewController {
     
     var feedDatas: [Feed] = []
     
+    var feedsData: [FeedsResult] = []
+    
+    let feedsDataManager = FeedsDataManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         checkLogin()
@@ -34,14 +38,28 @@ class HomeViewController: BaseViewController {
             present(vc, animated: true)
         }
         // 임시
-        let vc = UIStoryboard(name: "Login", bundle: .none).instantiateViewController(withIdentifier: "LoginNavigation")
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+//        let vc = UIStoryboard(name: "Login", bundle: .none).instantiateViewController(withIdentifier: "LoginNavigation")
+//        vc.modalPresentationStyle = .fullScreen
+//        present(vc, animated: true)
     }
     
     private func setupData() {
         HomeDataManager.shared.fetchDummyData()
-        feedDatas = HomeDataManager.shared.getFeedData()
+        IndicatorView.shared.show()
+        IndicatorView.shared.showIndicator()
+        feedsDataManager.getFeedsNetworkData { result in
+            result.forEach { [weak self] item in
+                self?.feedsData.append(item)
+                self?.reloadTableView()
+                IndicatorView.shared.dismiss()
+            }
+        }
+    }
+    
+    private func reloadTableView() {
+        self.homeFeedTableView.dataSource = self
+        self.homeFeedTableView.delegate = self
+        self.homeFeedTableView.reloadData()
     }
     
     private func setupTableView() {
@@ -115,7 +133,7 @@ class HomeViewController: BaseViewController {
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return feedDatas.count + 1
+        return feedsData.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -126,7 +144,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         default:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as? FeedCell else { return UITableViewCell() }
-            cell.feedItem = feedDatas[indexPath.row - 1]
+            cell.feedsItem = feedsData[indexPath.row - 1]
             cell.configure()
             cell.delegate = self
             cell.mediaCollectionView.reloadData()
@@ -155,7 +173,7 @@ extension HomeViewController: HomeVCDelegate {
         
     }
     
-    func userIdLabelTapped(user: Profile) {
+    func userIdLabelTapped(user: String) {
         guard let vc = UIStoryboard(name: "Profile", bundle: .none).instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController else { return }
         vc.user = user
         self.navigationController?.pushViewController(vc, animated: true)
