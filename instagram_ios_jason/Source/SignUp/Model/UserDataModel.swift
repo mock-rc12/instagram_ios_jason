@@ -20,15 +20,15 @@ struct UserDataModel: Codable {
 }
 
 
-struct SignUpResponse: Codable {
+struct UserSecretResponse: Codable {
     let isSuccess: Bool
     let code: Int
     let message: String
-    let result: SignUpResult
+    let result: UserSecretResult
 }
 
 // MARK: - Result
-struct SignUpResult: Codable {
+struct UserSecretResult: Codable {
     let jwt: String
     let userIdx: Int
 }

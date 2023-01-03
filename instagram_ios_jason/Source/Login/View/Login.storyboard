@@ -54,6 +54,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="로그인">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="loginButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="TA5-kI-jlg"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vt-q0-lKO">
                                         <rect key="frame" x="0.0" y="212" width="363" height="23"/>

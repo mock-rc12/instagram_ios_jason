@@ -71,6 +71,26 @@ class LoginViewController: BaseViewController {
         facebookLoginButton.clipsToBounds = true
     }
     
+    @IBAction func loginButtonTapped(_ sender: UIButton) {
+        if emailTextField.text != "" && passwordTextField.text != "" {
+            let email = emailTextField.text!
+            let password = passwordTextField.text!
+            let userInfo = UserLoginData(email: email, phone: "", password: password)
+            
+            print(userInfo)
+            let manager = LoginNetworkManager()
+            manager.postLoginNetworkData(param: userInfo) { isSuccess in
+                if isSuccess == true {
+                    self.navigationController?.dismiss(animated: true)
+                } else {
+                    print("로그인 실패")
+                }
+            }
+        } else {
+            print("칸이 비어있어요")
+        }
+    }
+    
     // MARK: - 페이스북 로그인
     @IBAction func facebookLoginButtonTapped(_ sender: UIButton) {
         facebookLogin(sender)

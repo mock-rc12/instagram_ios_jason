@@ -1,18 +1,17 @@
 //
-//  SignUpNetworkManager.swift
+//  LoginNetworkManager.swift
 //  instagram_ios_jason
 //
-//  Created by 김지수 on 2023/01/03.
+//  Created by 김지수 on 2023/01/04.
 //
 
 import Foundation
 import Alamofire
 
-class SignUpNetworkManager {
-    
-    func postSignUpNetworkData(param: UserDataModel, completion: @escaping (Bool) -> Void) {
+class LoginNetworkManager {
+    func postLoginNetworkData(param: UserLoginData, completion: @escaping (Bool) -> Void) {
         
-        let url = "\(Constant.BASE_URL)\(Constant.pathSignUp)"
+        let url = "\(Constant.BASE_URL)\(Constant.pathLogin)"
         
         AF.request(url, method: .post, parameters: param, encoder: JSONParameterEncoder.default)
             .responseDecodable(of: UserSecretResponse.self) { response in
