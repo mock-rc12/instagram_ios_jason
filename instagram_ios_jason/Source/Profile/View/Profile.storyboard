@@ -17,21 +17,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ProfileView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNw-u7-JTV">
-                                <rect key="frame" x="175" y="416" width="85" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="klc-vq-dFA">
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewLayout key="collectionViewLayout" id="mNH-sX-z2g"/>
+                                <cells/>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4Pl-1o-dTU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="klc-vq-dFA" firstAttribute="leading" secondItem="4Pl-1o-dTU" secondAttribute="leading" id="AYC-Ff-q8r"/>
+                            <constraint firstItem="klc-vq-dFA" firstAttribute="trailing" secondItem="4Pl-1o-dTU" secondAttribute="trailing" id="Osb-Vl-aqW"/>
+                            <constraint firstAttribute="bottom" secondItem="klc-vq-dFA" secondAttribute="bottom" id="Xof-qz-AG4"/>
+                            <constraint firstItem="klc-vq-dFA" firstAttribute="top" secondItem="4Pl-1o-dTU" secondAttribute="top" id="jGP-AN-6BH"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="profileCollectionView" destination="klc-vq-dFA" id="X28-gZ-TS6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="on8-lJ-hAi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-627" y="1073"/>
+            <point key="canvasLocation" x="-628.24427480916029" y="1072.5352112676057"/>
         </scene>
     </scenes>
     <resources>

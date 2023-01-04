@@ -38,9 +38,9 @@ class HomeViewController: BaseViewController {
             present(vc, animated: true)
         }
 //         임시
-        let vc = UIStoryboard(name: "Login", bundle: .none).instantiateViewController(withIdentifier: "LoginNavigation")
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+//        let vc = UIStoryboard(name: "Login", bundle: .none).instantiateViewController(withIdentifier: "LoginNavigation")
+//        vc.modalPresentationStyle = .fullScreen
+//        present(vc, animated: true)
     }
     
     private func setupData() {
@@ -173,9 +173,9 @@ extension HomeViewController: HomeVCDelegate {
         
     }
     
-    func userIdLabelTapped(user: String) {
+    func userIdLabelTapped(user: FeedsResult) {
         guard let vc = UIStoryboard(name: "Profile", bundle: .none).instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController else { return }
-        vc.user = user
+        vc.userIdx = user.userIdx
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

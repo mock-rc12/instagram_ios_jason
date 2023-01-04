@@ -80,8 +80,14 @@ class FeedCell: UITableViewCell {
             likeCountLabel.text = "좋아요 \(item.postLikeCount)개"
             bodyLabel.text = "\(item.content)"
             bodyIdLabel.text = item.userId
-            // 댓글 갯수 추가 필요
             timeLabel.text = item.updateAt
+            
+            // 댓글 개수
+            if item.commentCount != 0 {
+                commentCountLabel.text = "댓글 \(item.commentCount)개 모두보기"
+            } else {
+                commentCountLabel.removeFromSuperview()
+            }
             
             setupCollectionView()
             setupPageControl()
@@ -147,7 +153,7 @@ class FeedCell: UITableViewCell {
         switch sender.view {
         case idLabel, bodyIdLabel:
             print("유저 아이디 눌림")
-            delegate?.userIdLabelTapped(user: item.userId)
+            delegate?.userIdLabelTapped(user: item)
         case likeCountLabel:
             print("좋아요 카운트 눌림")
             delegate?.likeCountLabelTapped()

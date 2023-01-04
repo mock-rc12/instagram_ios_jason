@@ -37,9 +37,9 @@ struct FeedsResult: Codable {
     let userId: String
     let profileImgURL: String?
     let postLikeCount: Int
+    let commentCount: Int
     let updateAt: String
     let postImgRes: [FeedsPostImgRe]
-
 }
 
 // MARK: - PostImgRe

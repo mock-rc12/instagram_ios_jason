@@ -43,6 +43,15 @@
 		CD58A48029644F6C003C29F0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CD58A47F29644F6C003C29F0 /* Alamofire */; };
 		CD58A48329644F77003C29F0 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CD58A48229644F77003C29F0 /* Kingfisher */; };
 		CD58A496296450F4003C29F0 /* FeedsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD58A495296450F4003C29F0 /* FeedsDataManager.swift */; };
+		CDCB239E2964AACE00C37717 /* ProfileInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB239C2964AACE00C37717 /* ProfileInfoCell.swift */; };
+		CDCB239F2964AACE00C37717 /* ProfileInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDCB239D2964AACE00C37717 /* ProfileInfoCell.xib */; };
+		CDCB23A229651E5B00C37717 /* ContentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB23A029651E5B00C37717 /* ContentsCell.swift */; };
+		CDCB23A329651E5B00C37717 /* ContentsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDCB23A129651E5B00C37717 /* ContentsCell.xib */; };
+		CDCB23A62965D2AF00C37717 /* ProfileTabHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB23A42965D2AF00C37717 /* ProfileTabHeaderView.swift */; };
+		CDCB23A72965D2AF00C37717 /* ProfileTabHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDCB23A52965D2AF00C37717 /* ProfileTabHeaderView.xib */; };
+		CDCB23A92965DC0F00C37717 /* UserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB23A82965DC0F00C37717 /* UserProfileModel.swift */; };
+		CDCB23AB2965DD6B00C37717 /* ProfileDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB23AA2965DD6B00C37717 /* ProfileDataManager.swift */; };
+		CDCB23AD2965EA1A00C37717 /* Extension ProfileVC + collectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB23AC2965EA1A00C37717 /* Extension ProfileVC + collectionView.swift */; };
 		CDEC326C296085D50030E035 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC326B296085D50030E035 /* BaseViewController.swift */; };
 		CDEC3278296086030030E035 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC326E296086030030E035 /* IndicatorView.swift */; };
 		CDEC3279296086030030E035 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC3270296086030030E035 /* Date.swift */; };
@@ -96,6 +105,15 @@
 		CD58A46D2962BF1C003C29F0 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CD58A46F2962CAC3003C29F0 /* CustomSkyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSkyTextField.swift; sourceTree = "<group>"; };
 		CD58A495296450F4003C29F0 /* FeedsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsDataManager.swift; sourceTree = "<group>"; };
+		CDCB239C2964AACE00C37717 /* ProfileInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoCell.swift; sourceTree = "<group>"; };
+		CDCB239D2964AACE00C37717 /* ProfileInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileInfoCell.xib; sourceTree = "<group>"; };
+		CDCB23A029651E5B00C37717 /* ContentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsCell.swift; sourceTree = "<group>"; };
+		CDCB23A129651E5B00C37717 /* ContentsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentsCell.xib; sourceTree = "<group>"; };
+		CDCB23A42965D2AF00C37717 /* ProfileTabHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabHeaderView.swift; sourceTree = "<group>"; };
+		CDCB23A52965D2AF00C37717 /* ProfileTabHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTabHeaderView.xib; sourceTree = "<group>"; };
+		CDCB23A82965DC0F00C37717 /* UserProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileModel.swift; sourceTree = "<group>"; };
+		CDCB23AA2965DD6B00C37717 /* ProfileDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataManager.swift; sourceTree = "<group>"; };
+		CDCB23AC2965EA1A00C37717 /* Extension ProfileVC + collectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension ProfileVC + collectionView.swift"; sourceTree = "<group>"; };
 		CDEC326B296085D50030E035 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CDEC326E296086030030E035 /* IndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		CDEC3270296086030030E035 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -224,6 +242,8 @@
 		CD58A47129632560003C29F0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CDCB23A82965DC0F00C37717 /* UserProfileModel.swift */,
+				CDCB23AA2965DD6B00C37717 /* ProfileDataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -232,6 +252,12 @@
 			isa = PBXGroup;
 			children = (
 				CD57D7512961E32000138449 /* Profile.storyboard */,
+				CDCB239C2964AACE00C37717 /* ProfileInfoCell.swift */,
+				CDCB239D2964AACE00C37717 /* ProfileInfoCell.xib */,
+				CDCB23A029651E5B00C37717 /* ContentsCell.swift */,
+				CDCB23A129651E5B00C37717 /* ContentsCell.xib */,
+				CDCB23A42965D2AF00C37717 /* ProfileTabHeaderView.swift */,
+				CDCB23A52965D2AF00C37717 /* ProfileTabHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -240,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				CD57D7532961E35B00138449 /* ProfileViewController.swift */,
+				CDCB23AC2965EA1A00C37717 /* Extension ProfileVC + collectionView.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -533,7 +560,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD57D76B2962764B00138449 /* Login.storyboard in Resources */,
+				CDCB23A329651E5B00C37717 /* ContentsCell.xib in Resources */,
 				CD57D7522961E32000138449 /* Profile.storyboard in Resources */,
+				CDCB239F2964AACE00C37717 /* ProfileInfoCell.xib in Resources */,
+				CDCB23A72965D2AF00C37717 /* ProfileTabHeaderView.xib in Resources */,
 				CD57D75A2961E7A700138449 /* LikeList.storyboard in Resources */,
 				CD17B9C02961956F0069B8A1 /* StoryTableCell.xib in Resources */,
 				CD026EEA296058C400C6C359 /* LaunchScreen.storyboard in Resources */,
@@ -561,13 +591,17 @@
 				CD57D7542961E35B00138449 /* ProfileViewController.swift in Sources */,
 				CDEC327D296086030030E035 /* UIViewController.swift in Sources */,
 				CD57D7472961BAFE00138449 /* FeedsModel.swift in Sources */,
+				CDCB23A229651E5B00C37717 /* ContentsCell.swift in Sources */,
 				CD58A496296450F4003C29F0 /* FeedsDataManager.swift in Sources */,
 				CDEC328629608FCF0030E035 /* CustomNavigationController.swift in Sources */,
 				CD026EDE296058C300C6C359 /* AppDelegate.swift in Sources */,
 				CD57D7572961E42100138449 /* HomeVCDelegate.swift in Sources */,
+				CDCB23A92965DC0F00C37717 /* UserProfileModel.swift in Sources */,
 				CD2C992F29646A5F006088D8 /* Secret.swift in Sources */,
+				CDCB23AD2965EA1A00C37717 /* Extension ProfileVC + collectionView.swift in Sources */,
 				CD57D74B2961C41200138449 /* UserModel.swift in Sources */,
 				CD2C992D2964680D006088D8 /* Constant.swift in Sources */,
+				CDCB23AB2965DD6B00C37717 /* ProfileDataManager.swift in Sources */,
 				CD2C993B29648F63006088D8 /* LoginNetworkManager.swift in Sources */,
 				CD2C9933296473F4006088D8 /* SignUpDataManager.swift in Sources */,
 				CD57D74D2961D2F600138449 /* FeedMediaCell.swift in Sources */,
@@ -578,7 +612,9 @@
 				CDEC328929609AEC0030E035 /* CustomNaviBarItem.swift in Sources */,
 				CD57D75C2961E7B200138449 /* LikeListViewController.swift in Sources */,
 				CDEC327B296086030030E035 /* String.swift in Sources */,
+				CDCB23A62965D2AF00C37717 /* ProfileTabHeaderView.swift in Sources */,
 				CD17B9C22961964F0069B8A1 /* StoryCell.swift in Sources */,
+				CDCB239E2964AACE00C37717 /* ProfileInfoCell.swift in Sources */,
 				CDEC327F296086030030E035 /* UIFont.swift in Sources */,
 				CDEC3278296086030030E035 /* IndicatorView.swift in Sources */,
 				CDEC327E296086030030E035 /* UINavigationBar.swift in Sources */,

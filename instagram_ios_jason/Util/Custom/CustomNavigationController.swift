@@ -22,12 +22,13 @@ class CustomNavigationController: UINavigationController, UINavigationController
     }
     
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
-        print("\(viewController)")
+        
         if ((viewController as? LoginViewController) != nil) {
             self.navigationBar.isHidden = true
-        } else {
+        } else if ((viewController as? SignUpViewController) != nil) {
             self.navigationBar.isHidden = true
-            clearBar()
+        } else {
+            self.navigationBar.isHidden = false
         }
     }
 }

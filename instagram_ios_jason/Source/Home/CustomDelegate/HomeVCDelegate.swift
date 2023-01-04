@@ -10,6 +10,6 @@ import Foundation
 protocol HomeVCDelegate {
     func likeCountLabelTapped()
     func commentCountLabelTapped()
-    func userIdLabelTapped(user: String)
+    func userIdLabelTapped(user: FeedsResult)
     func moreImageTapped()
 }

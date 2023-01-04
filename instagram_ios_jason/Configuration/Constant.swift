@@ -25,7 +25,7 @@ struct Constant {
     static let pathFeedsGet = "/posts/feeds"             //  피드 조회 API
     static let pathProfilesEditGet = "/profiles/edit/{userIdx}"               //프로필 편집 조회 API
     static let pathProfilesEdit = "/profiles/edit/{userIdx}"               //프로필 편집 수정 API
-    static let pathProfilesGet = "/profiles/{userIdx}"              // 프로필 조회 API
+    static let pathProfilesGet = "/profiles/"              // 프로필 조회 API
     static let pathPostFollow = "/:userIdx/follows"           //    팔로우 API
     static let pathGetFollower = "/:userIdx/followers"              // 팔로워 조회 API
     static let pathGetFollowing = "/:userIdx/followings"              // 팔로잉 조회 API
