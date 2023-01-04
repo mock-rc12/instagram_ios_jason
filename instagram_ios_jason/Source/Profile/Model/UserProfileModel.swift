@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum ProfileType {
+    case otherUserProfile
+    case myProfile
+}
+
 struct UserProfileModel: Codable {
     let isSuccess: Bool
     let code: Int

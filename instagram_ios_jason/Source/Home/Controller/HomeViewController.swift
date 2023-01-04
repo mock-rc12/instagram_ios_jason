@@ -175,7 +175,9 @@ extension HomeViewController: HomeVCDelegate {
     
     func userIdLabelTapped(user: FeedsResult) {
         guard let vc = UIStoryboard(name: "Profile", bundle: .none).instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController else { return }
+        vc.profileType = .otherUserProfile
         vc.userIdx = user.userIdx
+        vc.userId = user.userId
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -14,14 +14,14 @@ class ProfileViewController: BaseViewController {
 //        case lower
 //    }
 //    var dataSource: UICollectionViewDiffableDataSource<Section, Int>! = nil
+    var profileType: ProfileType = .myProfile
 
     var userIdx: Int?
+    var userId: String?
     let dataManager = ProfileDataManager()
-    
     var profileItem: ProfileResult?
     
     @IBOutlet weak var profileCollectionView: UICollectionView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,13 +37,23 @@ class ProfileViewController: BaseViewController {
     
     private func setupData() {
         
-        if let id = userIdx {
-            dataManager.getProfileNetworkData(userIdx: id) { [weak self] result in
+        switch profileType {
+        case .otherUserProfile:
+            navigationItem.title = userId
+            if let id = userIdx {
+                dataManager.getProfileNetworkData(userIdx: id) { [weak self] result in
+                    self?.profileItem = result
+                    self?.profileCollectionView.reloadData()
+                }
+            }
+        case .myProfile: // 임시
+            dataManager.getProfileNetworkData(userIdx:3) { [weak self] result in
                 self?.profileItem = result
                 self?.setupUI(id: result.userId)
                 self?.profileCollectionView.reloadData()
             }
         }
+
     }
     
     private func setupUI(id: String) {
@@ -95,9 +105,7 @@ class ProfileViewController: BaseViewController {
     func upperSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let itemInset = CGFloat(10)
-        item.contentInsets = NSDirectionalEdgeInsets(top: itemInset, leading: itemInset, bottom: itemInset, trailing: itemInset)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.5))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(270))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
         return section

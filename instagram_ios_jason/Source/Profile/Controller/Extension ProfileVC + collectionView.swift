@@ -28,6 +28,7 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
         case 0:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfileInfoCell", for: indexPath) as? ProfileInfoCell else { fatalError("Cannot create new cell") }
             cell.item = profileItem
+            cell.profileType = self.profileType
             cell.configure()
             return cell
         default:

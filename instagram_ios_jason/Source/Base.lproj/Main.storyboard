@@ -124,33 +124,15 @@
             </objects>
             <point key="canvasLocation" x="2161" y="396"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Ffu-eK-nBO">
+        <!--ProfileViewController-->
+        <scene sceneID="xyT-cQ-K07">
             <objects>
-                <viewController id="Ymq-Gk-X0B" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ry1-r1-hAm">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TX8-tH-ube">
-                                <rect key="frame" x="183.66666666666666" y="425.66666666666669" width="26" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="OS8-Yz-P6O"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="TX8-tH-ube" firstAttribute="centerX" secondItem="OS8-Yz-P6O" secondAttribute="centerX" id="3K2-eD-NHS"/>
-                            <constraint firstItem="TX8-tH-ube" firstAttribute="centerY" secondItem="OS8-Yz-P6O" secondAttribute="centerY" id="PNw-1l-kw7"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="yNy-8W-gOV"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="grD-FO-egS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="ProfileViewController" id="w4A-cI-eZn" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="1bJ-kS-yr6"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U0L-fR-AQL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3042" y="396"/>
+            <point key="canvasLocation" x="3042" y="105"/>
         </scene>
         <!--Custom Navigation Controller-->
         <scene sceneID="Pf3-yN-46o">
@@ -264,7 +246,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Ymq-Gk-X0B" kind="relationship" relationship="rootViewController" id="F90-hE-CcJ"/>
+                        <segue destination="w4A-cI-eZn" kind="relationship" relationship="rootViewController" id="5aA-sQ-3Pk"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWU-Xi-EYN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
