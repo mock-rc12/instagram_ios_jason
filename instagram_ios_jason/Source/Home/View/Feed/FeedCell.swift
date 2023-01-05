@@ -71,7 +71,7 @@ class FeedCell: UITableViewCell {
     func setupPageControl() {
         pageControl.backgroundStyle = .minimal
         pageControl.allowsContinuousInteraction = false
-        pageControl.numberOfPages = feedsItem?.postImgRes.count ?? 1
+        pageControl.numberOfPages = feedsItem?.postImgRes?.count ?? 1
     }
     
     func configure() {
@@ -176,7 +176,7 @@ class FeedCell: UITableViewCell {
 extension FeedCell: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let item = feedsItem {
-            return item.postImgRes.count
+            return item.postImgRes?.count ?? 0
         } else {
             return 0
         }
@@ -185,7 +185,7 @@ extension FeedCell: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedMediaCell", for: indexPath) as? FeedMediaCell else { return UICollectionViewCell() }
         if let safeItems = feedsItem {
-            cell.imageName = safeItems.postImgRes[indexPath.row].postImgUrl
+            cell.imageName = safeItems.postImgRes?[indexPath.row].postImgUrl
             cell.setupUI()
         }
         return cell

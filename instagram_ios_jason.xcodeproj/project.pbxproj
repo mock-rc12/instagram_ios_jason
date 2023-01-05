@@ -49,6 +49,10 @@
 		CD58A48029644F6C003C29F0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CD58A47F29644F6C003C29F0 /* Alamofire */; };
 		CD58A48329644F77003C29F0 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CD58A48229644F77003C29F0 /* Kingfisher */; };
 		CD58A496296450F4003C29F0 /* FeedsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD58A495296450F4003C29F0 /* FeedsDataManager.swift */; };
+		CDBAA0D329672E560019C7A5 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBAA0D229672E560019C7A5 /* PostViewController.swift */; };
+		CDBAA0D529672E5B0019C7A5 /* Post.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDBAA0D429672E5B0019C7A5 /* Post.storyboard */; };
+		CDBAA0D729672E740019C7A5 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBAA0D629672E740019C7A5 /* PostModel.swift */; };
+		CDBAA0D92967308B0019C7A5 /* PostDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBAA0D82967308B0019C7A5 /* PostDataManager.swift */; };
 		CDCB239E2964AACE00C37717 /* ProfileInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB239C2964AACE00C37717 /* ProfileInfoCell.swift */; };
 		CDCB239F2964AACE00C37717 /* ProfileInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDCB239D2964AACE00C37717 /* ProfileInfoCell.xib */; };
 		CDCB23A229651E5B00C37717 /* ContentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB23A029651E5B00C37717 /* ContentsCell.swift */; };
@@ -123,6 +127,10 @@
 		CD58A46D2962BF1C003C29F0 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CD58A46F2962CAC3003C29F0 /* CustomSkyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSkyTextField.swift; sourceTree = "<group>"; };
 		CD58A495296450F4003C29F0 /* FeedsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsDataManager.swift; sourceTree = "<group>"; };
+		CDBAA0D229672E560019C7A5 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		CDBAA0D429672E5B0019C7A5 /* Post.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Post.storyboard; sourceTree = "<group>"; };
+		CDBAA0D629672E740019C7A5 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		CDBAA0D82967308B0019C7A5 /* PostDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDataManager.swift; sourceTree = "<group>"; };
 		CDCB239C2964AACE00C37717 /* ProfileInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoCell.swift; sourceTree = "<group>"; };
 		CDCB239D2964AACE00C37717 /* ProfileInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileInfoCell.xib; sourceTree = "<group>"; };
 		CDCB23A029651E5B00C37717 /* ContentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsCell.swift; sourceTree = "<group>"; };
@@ -382,6 +390,41 @@
 			path = NewPost;
 			sourceTree = "<group>";
 		};
+		CDBAA0CE29672DF60019C7A5 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				CDBAA0D129672E0A0019C7A5 /* Model */,
+				CDBAA0D029672E070019C7A5 /* View */,
+				CDBAA0CF29672E050019C7A5 /* Controller */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		CDBAA0CF29672E050019C7A5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CDBAA0D229672E560019C7A5 /* PostViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CDBAA0D029672E070019C7A5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CDBAA0D429672E5B0019C7A5 /* Post.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CDBAA0D129672E0A0019C7A5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CDBAA0D629672E740019C7A5 /* PostModel.swift */,
+				CDBAA0D82967308B0019C7A5 /* PostDataManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CDCB23B02965FCE400C37717 /* CustomDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -440,6 +483,7 @@
 			isa = PBXGroup;
 			children = (
 				CD026EE3296058C300C6C359 /* Main.storyboard */,
+				CDBAA0CE29672DF60019C7A5 /* Post */,
 				CDEC3281296086640030E035 /* Splash */,
 				CDEC32822960867C0030E035 /* Home */,
 				CD57D74E2961E29700138449 /* Profile */,
@@ -661,6 +705,7 @@
 				CD026EE5296058C300C6C359 /* Main.storyboard in Resources */,
 				CD237C812966C6B2000BD0AD /* PostEdit.storyboard in Resources */,
 				CDEC3296296121750030E035 /* FeedCell.xib in Resources */,
+				CDBAA0D529672E5B0019C7A5 /* Post.storyboard in Resources */,
 				CD237C8A2966E24E000BD0AD /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -691,9 +736,12 @@
 				CD026EDE296058C300C6C359 /* AppDelegate.swift in Sources */,
 				CD57D7572961E42100138449 /* HomeVCDelegate.swift in Sources */,
 				CDCB23A92965DC0F00C37717 /* UserProfileModel.swift in Sources */,
+				CDBAA0D92967308B0019C7A5 /* PostDataManager.swift in Sources */,
+				CDBAA0D729672E740019C7A5 /* PostModel.swift in Sources */,
 				CD2C992F29646A5F006088D8 /* Secret.swift in Sources */,
 				CDCB23AD2965EA1A00C37717 /* Extension ProfileVC + collectionView.swift in Sources */,
 				CD57D74B2961C41200138449 /* UserModel.swift in Sources */,
+				CDBAA0D329672E560019C7A5 /* PostViewController.swift in Sources */,
 				CD2C992D2964680D006088D8 /* Constant.swift in Sources */,
 				CDCB23B82966030D00C37717 /* EditProfileInfoCell.swift in Sources */,
 				CDCB23AB2965DD6B00C37717 /* ProfileDataManager.swift in Sources */,

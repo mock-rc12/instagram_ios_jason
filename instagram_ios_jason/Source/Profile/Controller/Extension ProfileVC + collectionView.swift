@@ -52,6 +52,23 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
             return UICollectionReusableView()
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 1 {
+            guard let vc = UIStoryboard(name: "Post", bundle: nil).instantiateViewController(withIdentifier: "PostViewController") as? PostViewController else { return }
+            
+            var values: [Int] = []
+            
+            self.profileItem?.profilePostImgs.forEach({ post in
+                values.append(post.postIdx)
+            })
+            
+            vc.postValues = values
+            vc.selectedIndex = indexPath
+            vc.selectedPostIdx = self.profileItem?.profilePostImgs[indexPath.row].postIdx
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }
 
 extension ProfileViewController: ProfileVCDelegate {

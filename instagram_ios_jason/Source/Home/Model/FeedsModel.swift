@@ -37,13 +37,13 @@ struct FeedsResult: Codable {
     let userId: String
     let profileImgUrl: String?
     let postLikeCount: Int
-    let commentCount: Int
+    let commentCount: Int?
     let updateAt: String
-    let postImgRes: [FeedsPostImgRe]
+    let postImgRes: [FeedsPostImgRe]?
 }
 
 // MARK: - PostImgRe
 struct FeedsPostImgRe: Codable {
-    let postImgIdx: Int
-    let postImgUrl: String
+    let postImgIdx: Int?
+    let postImgUrl: String?
 }
