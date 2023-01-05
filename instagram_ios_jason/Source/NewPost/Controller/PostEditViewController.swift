@@ -40,22 +40,44 @@ class PostEditViewController: UIViewController {
         }
     }
     
+    func uploadImage(completion: @escaping ([PostImg]) -> Void) {
+        var postImg: [PostImg] = []
+        selectedImage?.forEach({ image in
+            FirebaseManager.uploadImage(image: image) { [weak self] url in
+                if let imgUrl = url {
+                    postImg.append(PostImg(postImgUrl: "\(imgUrl)"))
+                    if self?.selectedImage?.count == postImg.count {
+                        completion(postImg)
+                    }
+                }
+            }
+        })
+    }
+    
     @objc private func doneButtonTapped() {
-        let tempImg = "https://korean.visitseoul.net/comm/getImage?srvcId=MEDIA&parentSn=51629&fileTy=MEDIA&fileNo=1"
         
-        if textView.text != nil && textView.text != "" {
+        // 텍스트가 비어있지 않다면
+        if self.textView.text != nil && self.textView.text != "" {
+            
             IndicatorView.shared.showIndicator()
             IndicatorView.shared.show()
-            let img = PostImg(postImgUrl: tempImg)
-            let param = NewPostModel(content: textView.text, postImgReqs: [img])
-            let dataManager = NewPostDataManager()
-            dataManager.newPostNetworkData(idx: Secret.userIdx, param: param) { [weak self] isSucessed in
-                if isSucessed == true {
-                    IndicatorView.shared.dismiss()
-                    self?.delegate?.feedUploadSuccessed()
-                    self?.navigationController?.dismiss(animated: true)
-                } else {
-                    print("업로드 실패~")
+            
+            // firebase 이미지 업로드 후 url 리턴, 비동기처리
+            uploadImage { [weak self] imgArray in
+                
+                let param = NewPostModel(content: (self?.textView.text)!, postImgReqs: imgArray)
+                print("POST !! 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥")
+                print(imgArray)
+                
+                let dataManager = NewPostDataManager()
+                dataManager.newPostNetworkData(idx: Secret.userIdx, param: param) { [weak self] isSucessed in
+                    if isSucessed == true {
+                        IndicatorView.shared.dismiss()
+                        self?.delegate?.feedUploadSuccessed()
+                        self?.navigationController?.dismiss(animated: true)
+                    } else {
+                        print("업로드 실패~")
+                    }
                 }
             }
         }

@@ -18,6 +18,9 @@
 		CD237C812966C6B2000BD0AD /* PostEdit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD237C802966C6B2000BD0AD /* PostEdit.storyboard */; };
 		CD237C832966C6C6000BD0AD /* NewPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD237C822966C6C6000BD0AD /* NewPostModel.swift */; };
 		CD237C852966C759000BD0AD /* NewPostDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD237C842966C759000BD0AD /* NewPostDataManager.swift */; };
+		CD237C882966E22B000BD0AD /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = CD237C872966E22B000BD0AD /* FirebaseStorage */; };
+		CD237C8A2966E24E000BD0AD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD237C892966E24E000BD0AD /* GoogleService-Info.plist */; };
+		CD237C8C2966E36E000BD0AD /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD237C8B2966E36E000BD0AD /* FirebaseManager.swift */; };
 		CD2C992D2964680D006088D8 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C992C2964680D006088D8 /* Constant.swift */; };
 		CD2C992F29646A5F006088D8 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C992E29646A5F006088D8 /* Secret.swift */; };
 		CD2C9931296472CB006088D8 /* SignUpNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C9930296472CB006088D8 /* SignUpNavigationController.swift */; };
@@ -95,6 +98,8 @@
 		CD237C802966C6B2000BD0AD /* PostEdit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PostEdit.storyboard; sourceTree = "<group>"; };
 		CD237C822966C6C6000BD0AD /* NewPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostModel.swift; sourceTree = "<group>"; };
 		CD237C842966C759000BD0AD /* NewPostDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostDataManager.swift; sourceTree = "<group>"; };
+		CD237C892966E24E000BD0AD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CD237C8B2966E36E000BD0AD /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		CD2C992C2964680D006088D8 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		CD2C992E29646A5F006088D8 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		CD2C9930296472CB006088D8 /* SignUpNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNavigationController.swift; sourceTree = "<group>"; };
@@ -158,6 +163,7 @@
 			files = (
 				CD57D75F2962729500138449 /* FacebookCore in Frameworks */,
 				CDFFCE6D296295340063A53B /* SkyFloatingLabelTextField in Frameworks */,
+				CD237C882966E22B000BD0AD /* FirebaseStorage in Frameworks */,
 				CD58A48329644F77003C29F0 /* Kingfisher in Frameworks */,
 				CD57D7612962729500138449 /* FacebookGamingServices in Frameworks */,
 				CD58A48029644F6C003C29F0 /* Alamofire in Frameworks */,
@@ -196,6 +202,7 @@
 				CD026EDD296058C300C6C359 /* AppDelegate.swift */,
 				CD026EDF296058C300C6C359 /* SceneDelegate.swift */,
 				CD026EE6296058C400C6C359 /* Assets.xcassets */,
+				CD237C892966E24E000BD0AD /* GoogleService-Info.plist */,
 				CD026EEB296058C400C6C359 /* Info.plist */,
 			);
 			path = instagram_ios_jason;
@@ -473,6 +480,7 @@
 		CDEC326D296086030030E035 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				CD237C8B2966E36E000BD0AD /* FirebaseManager.swift */,
 				CDEC326E296086030030E035 /* IndicatorView.swift */,
 				CDEC3277296086030030E035 /* Device.swift */,
 				CDEC326F296086030030E035 /* Extension */,
@@ -588,6 +596,7 @@
 				CD58A47F29644F6C003C29F0 /* Alamofire */,
 				CD58A48229644F77003C29F0 /* Kingfisher */,
 				CDCB23BC2966B9AF00C37717 /* YPImagePicker */,
+				CD237C872966E22B000BD0AD /* FirebaseStorage */,
 			);
 			productName = instagram_ios_jason;
 			productReference = CD026EDA296058C300C6C359 /* instagram_ios_jason.app */;
@@ -623,6 +632,7 @@
 				CD58A47E29644F6C003C29F0 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				CD58A48129644F77003C29F0 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				CDCB23BB2966B9AF00C37717 /* XCRemoteSwiftPackageReference "YPImagePicker" */,
+				CD237C862966E22B000BD0AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = CD026EDB296058C300C6C359 /* Products */;
 			projectDirPath = "";
@@ -651,6 +661,7 @@
 				CD026EE5296058C300C6C359 /* Main.storyboard in Resources */,
 				CD237C812966C6B2000BD0AD /* PostEdit.storyboard in Resources */,
 				CDEC3296296121750030E035 /* FeedCell.xib in Resources */,
+				CD237C8A2966E24E000BD0AD /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,6 +672,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD237C8C2966E36E000BD0AD /* FirebaseManager.swift in Sources */,
 				CD237C852966C759000BD0AD /* NewPostDataManager.swift in Sources */,
 				CD17B9BF2961956F0069B8A1 /* StoryTableCell.swift in Sources */,
 				CD2C993929648E4D006088D8 /* LoginDataModel.swift in Sources */,
@@ -935,6 +947,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CD237C862966E22B000BD0AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		CD57D75D2962729500138449 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
@@ -978,6 +998,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CD237C872966E22B000BD0AD /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD237C862966E22B000BD0AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
 		CD57D75E2962729500138449 /* FacebookCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CD57D75D2962729500138449 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;

@@ -21,7 +21,7 @@ class ContentsCell: UICollectionViewCell {
 
     func configure() {
         if let safeItem = item {
-            let url = URL(string: safeItem.postImgUrl)
+            let url = URL(string: safeItem.postImgUrl ?? "")
             contentsThumnailImageView.kf.setImage(with: url)
         }
     }

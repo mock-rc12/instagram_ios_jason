@@ -37,7 +37,7 @@ struct ProfileResult: Codable {
 // MARK: - ProfilePostImg
 struct ProfilePostImg: Codable {
     let postIdx: Int
-    let postImgUrl: String
+    let postImgUrl: String?
 //
 //    enum CodingKeys: String, CodingKey {
 //        case postIdx

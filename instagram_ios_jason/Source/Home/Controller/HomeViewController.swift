@@ -87,11 +87,6 @@ class HomeViewController: BaseViewController {
         
         let postConfig = CustomNaviBarItemConfig(image: UIImage(systemName: "plus.app")) {
             self.addNewPost()
-            //            guard let vc = UIStoryboard(name: "Picker", bundle: nil).instantiateViewController(withIdentifier: "PickerViewController") as? PickerViewController else { return }
-            //            let naviController = UINavigationController(rootViewController: vc)
-            //            naviController.modalPresentationStyle = .fullScreen
-            //            naviController.modalTransitionStyle = .crossDissolve
-            //            self.present(naviController, animated: true)
         }
         
         let titleItem = UIBarButtonItem.generate(config: titleConfig, width: 130)
@@ -106,7 +101,7 @@ class HomeViewController: BaseViewController {
         navigationItem.rightBarButtonItems = [messageItem, spacingItem, notiItem, spacingItem, postItem]
     }
     
-    // 게시글 올리기 뷰 불러오기
+    //MARK: - 게시글 올리기 뷰 불러오기
     func addNewPost() {
         var config = YPImagePickerConfiguration()
         config.startOnScreen = .library
