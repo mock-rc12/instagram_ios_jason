@@ -35,7 +35,7 @@ struct FeedsResult: Codable {
     let content: String
     let userIdx: Int
     let userId: String
-    let profileImgURL: String?
+    let profileImgUrl: String?
     let postLikeCount: Int
     let commentCount: Int
     let updateAt: String

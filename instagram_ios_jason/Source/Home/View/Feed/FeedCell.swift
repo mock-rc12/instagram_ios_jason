@@ -53,6 +53,10 @@ class FeedCell: UITableViewCell {
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 5, left: 0, bottom: 5, right: 0))
     }
     
+    override func prepareForReuse() {
+//        self.addSubview(commentCountLabel)
+    }
+    
     func setupButtons(button: [UIButton]) {
         button.forEach { button in
             button.setTitle("", for: .normal)
@@ -86,7 +90,7 @@ class FeedCell: UITableViewCell {
             if item.commentCount != 0 {
                 commentCountLabel.text = "댓글 \(item.commentCount)개 모두보기"
             } else {
-                commentCountLabel.removeFromSuperview()
+                commentCountLabel.text = ""
             }
             
             setupCollectionView()
@@ -101,7 +105,7 @@ class FeedCell: UITableViewCell {
 
         if let item = feedsItem {
             
-            let url = URL(string: item.profileImgURL ?? "")
+            let url = URL(string: item.profileImgUrl ?? "")
             let processor = DownsamplingImageProcessor(size: profileImageView.bounds.size)
                          |> RoundCornerImageProcessor(cornerRadius: 20)
             profileImageView.kf.indicatorType = .activity

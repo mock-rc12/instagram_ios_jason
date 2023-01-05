@@ -86,6 +86,7 @@ class ProfileInfoCell: UICollectionViewCell {
             if safeItem.profileImg != nil {
                 let imageUrl = URL(string: safeItem.profileImg ?? "")
                 profileImageView.kf.setImage(with: imageUrl)
+                imageViewRound()
             } else {
                 profileImageView.kf.setImage(with: URL(string: Constant.defaultImage))
                 imageViewRound()

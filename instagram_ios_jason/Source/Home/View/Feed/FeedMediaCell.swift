@@ -27,9 +27,7 @@ class FeedMediaCell: UICollectionViewCell {
             feedImage.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             feedImage.topAnchor.constraint(equalTo: self.topAnchor),
         ])
-        print("🔥🔥🔥🔥imageName: \(imageName ?? "")")
         if imageName != nil {
-            print("🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥")
             kingfisher()
         }
         feedImage.clipsToBounds = true
