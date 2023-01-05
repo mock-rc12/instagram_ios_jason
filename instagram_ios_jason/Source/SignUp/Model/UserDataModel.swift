@@ -32,3 +32,9 @@ struct UserSecretResult: Codable {
     let jwt: String
     let userIdx: Int
 }
+
+struct DefaultResponse: Codable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+}

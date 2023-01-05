@@ -29,6 +29,7 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfileInfoCell", for: indexPath) as? ProfileInfoCell else { fatalError("Cannot create new cell") }
             cell.item = profileItem
             cell.profileType = self.profileType
+            cell.delegate = self
             cell.configure()
             return cell
         default:
@@ -50,5 +51,30 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
         default:
             return UICollectionReusableView()
         }
+    }
+}
+
+extension ProfileViewController: ProfileVCDelegate {
+    func profileEditSuccess() {
+        setupData()
+    }
+    
+    func followButtonTapped() {
+        print(#function)
+    }
+    
+    func messageButtonTapped() {
+        print(#function)
+    }
+    
+    func editProfileButtonTapped() {
+        print(#function)
+        dump(self.profileItem)
+        guard let vc = UIStoryboard(name: "EditMyProfile", bundle: nil).instantiateViewController(withIdentifier: "EditMyProfileViewController") as? EditMyProfileViewController else { return }
+        let naviController = UINavigationController(rootViewController: vc)
+        vc.myProfile = self.profileItem
+        vc.delegate = self
+        naviController.modalPresentationStyle = .fullScreen
+        present(naviController, animated: true)
     }
 }

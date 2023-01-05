@@ -35,25 +35,27 @@ class ProfileViewController: BaseViewController {
         setupCollectionView()
     }
     
-    private func setupData() {
-        
+    func setupData() {
+        IndicatorView.shared.show()
+        IndicatorView.shared.showIndicator()
         switch profileType {
         case .otherUserProfile:
             navigationItem.title = userId
             if let id = userIdx {
                 dataManager.getProfileNetworkData(userIdx: id) { [weak self] result in
+                    IndicatorView.shared.dismiss()
                     self?.profileItem = result
                     self?.profileCollectionView.reloadData()
                 }
             }
         case .myProfile: // 임시
-            dataManager.getProfileNetworkData(userIdx:3) { [weak self] result in
+            dataManager.getProfileNetworkData(userIdx: Secret.userIdx) { [weak self] result in
+                IndicatorView.shared.dismiss()
                 self?.profileItem = result
                 self?.setupUI(id: result.userId)
                 self?.profileCollectionView.reloadData()
             }
         }
-
     }
     
     private func setupUI(id: String) {

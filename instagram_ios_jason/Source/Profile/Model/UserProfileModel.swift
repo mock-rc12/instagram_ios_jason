@@ -22,10 +22,10 @@ struct UserProfileModel: Codable {
 // MARK: - Result
 struct ProfileResult: Codable {
     let userIdx: Int
-    let userId, name: String
-    let introduction, profileImg, website: String?
-    let postCount, followerCount, followingCount: Int
-    let profilePostImgs: [ProfilePostImg]
+    var userId, name: String
+    var introduction, profileImg, website: String?
+    var postCount, followerCount, followingCount: Int
+    var profilePostImgs: [ProfilePostImg]
 //
 //    enum CodingKeys: String, CodingKey {
 //        case userIdx
@@ -43,4 +43,13 @@ struct ProfilePostImg: Codable {
 //        case postIdx
 //        case postImgURL
 //    }
+}
+
+struct EditProfileModle: Codable {
+    var userIdx: Int
+    var userId: String
+    var name: String
+    var profileImg: String?
+    var website: String?
+    var introduction: String?
 }

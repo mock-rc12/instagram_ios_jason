@@ -12,6 +12,7 @@ class ProfileInfoCell: UICollectionViewCell {
     
     var profileType: ProfileType = .myProfile
     var item: ProfileResult?
+    var delegate: ProfileVCDelegate?
 
     // 프로필
     @IBOutlet weak var profileImageView: UIImageView!
@@ -31,6 +32,7 @@ class ProfileInfoCell: UICollectionViewCell {
         button.setTitle("읽어들이는 중", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 15, weight: .bold)
         button.setTitleColor(.white, for: .normal)
+        button.addTarget(nil, action: #selector(followButtonTapped), for: .touchUpInside)
         button.backgroundColor = #colorLiteral(red: 0.149019599, green: 0.149019599, blue: 0.149019599, alpha: 1)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -41,6 +43,7 @@ class ProfileInfoCell: UICollectionViewCell {
         button.setTitle("메시지", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 15, weight: .bold)
         button.setTitleColor(.white, for: .normal)
+        button.addTarget(nil, action: #selector(messageButtonTapped), for: .touchUpInside)
         button.backgroundColor = #colorLiteral(red: 0.149019599, green: 0.149019599, blue: 0.149019599, alpha: 1)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -51,6 +54,7 @@ class ProfileInfoCell: UICollectionViewCell {
         button.setTitle("프로필 편집", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 15, weight: .bold)
         button.setTitleColor(.white, for: .normal)
+        button.addTarget(nil, action: #selector(editProfileButtonTapped), for: .touchUpInside)
         button.backgroundColor = #colorLiteral(red: 0.149019599, green: 0.149019599, blue: 0.149019599, alpha: 1)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -129,5 +133,17 @@ class ProfileInfoCell: UICollectionViewCell {
     func imageViewRound() {
         profileImageView.layer.cornerRadius = profileImageView.bounds.width / 2
         profileImageView.clipsToBounds = true
+    }
+    
+    @objc private func followButtonTapped() {
+        delegate?.followButtonTapped()
+    }
+    
+    @objc private func messageButtonTapped() {
+        delegate?.messageButtonTapped()
+    }
+    
+    @objc private func editProfileButtonTapped() {
+        delegate?.editProfileButtonTapped()
     }
 }
