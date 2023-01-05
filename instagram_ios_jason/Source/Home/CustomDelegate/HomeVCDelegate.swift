@@ -12,4 +12,5 @@ protocol HomeVCDelegate {
     func commentCountLabelTapped()
     func userIdLabelTapped(user: FeedsResult)
     func moreImageTapped()
+    func feedUploadSuccessed()
 }

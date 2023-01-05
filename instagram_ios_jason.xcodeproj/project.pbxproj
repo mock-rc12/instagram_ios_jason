@@ -15,6 +15,9 @@
 		CD17B9BF2961956F0069B8A1 /* StoryTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD17B9BD2961956F0069B8A1 /* StoryTableCell.swift */; };
 		CD17B9C02961956F0069B8A1 /* StoryTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD17B9BE2961956F0069B8A1 /* StoryTableCell.xib */; };
 		CD17B9C22961964F0069B8A1 /* StoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD17B9C12961964F0069B8A1 /* StoryCell.swift */; };
+		CD237C812966C6B2000BD0AD /* PostEdit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD237C802966C6B2000BD0AD /* PostEdit.storyboard */; };
+		CD237C832966C6C6000BD0AD /* NewPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD237C822966C6C6000BD0AD /* NewPostModel.swift */; };
+		CD237C852966C759000BD0AD /* NewPostDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD237C842966C759000BD0AD /* NewPostDataManager.swift */; };
 		CD2C992D2964680D006088D8 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C992C2964680D006088D8 /* Constant.swift */; };
 		CD2C992F29646A5F006088D8 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C992E29646A5F006088D8 /* Secret.swift */; };
 		CD2C9931296472CB006088D8 /* SignUpNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C9930296472CB006088D8 /* SignUpNavigationController.swift */; };
@@ -57,6 +60,8 @@
 		CDCB23B62965FF9D00C37717 /* EditMyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB23B52965FF9D00C37717 /* EditMyProfileViewController.swift */; };
 		CDCB23B82966030D00C37717 /* EditProfileInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB23B72966030D00C37717 /* EditProfileInfoCell.swift */; };
 		CDCB23BA29667FC000C37717 /* EditDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB23B929667FC000C37717 /* EditDetailViewController.swift */; };
+		CDCB23BD2966B9AF00C37717 /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = CDCB23BC2966B9AF00C37717 /* YPImagePicker */; };
+		CDCB23C32966BEA000C37717 /* PostEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB23C22966BEA000C37717 /* PostEditViewController.swift */; };
 		CDEC326C296085D50030E035 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC326B296085D50030E035 /* BaseViewController.swift */; };
 		CDEC3278296086030030E035 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC326E296086030030E035 /* IndicatorView.swift */; };
 		CDEC3279296086030030E035 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEC3270296086030030E035 /* Date.swift */; };
@@ -87,6 +92,9 @@
 		CD17B9BD2961956F0069B8A1 /* StoryTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryTableCell.swift; sourceTree = "<group>"; };
 		CD17B9BE2961956F0069B8A1 /* StoryTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryTableCell.xib; sourceTree = "<group>"; };
 		CD17B9C12961964F0069B8A1 /* StoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCell.swift; sourceTree = "<group>"; };
+		CD237C802966C6B2000BD0AD /* PostEdit.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PostEdit.storyboard; sourceTree = "<group>"; };
+		CD237C822966C6C6000BD0AD /* NewPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostModel.swift; sourceTree = "<group>"; };
+		CD237C842966C759000BD0AD /* NewPostDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostDataManager.swift; sourceTree = "<group>"; };
 		CD2C992C2964680D006088D8 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		CD2C992E29646A5F006088D8 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		CD2C9930296472CB006088D8 /* SignUpNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNavigationController.swift; sourceTree = "<group>"; };
@@ -124,6 +132,7 @@
 		CDCB23B52965FF9D00C37717 /* EditMyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMyProfileViewController.swift; sourceTree = "<group>"; };
 		CDCB23B72966030D00C37717 /* EditProfileInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileInfoCell.swift; sourceTree = "<group>"; };
 		CDCB23B929667FC000C37717 /* EditDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDetailViewController.swift; sourceTree = "<group>"; };
+		CDCB23C22966BEA000C37717 /* PostEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditViewController.swift; sourceTree = "<group>"; };
 		CDEC326B296085D50030E035 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CDEC326E296086030030E035 /* IndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		CDEC3270296086030030E035 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -154,6 +163,7 @@
 				CD58A48029644F6C003C29F0 /* Alamofire in Frameworks */,
 				CD57D7652962729500138449 /* FacebookShare in Frameworks */,
 				CD57D7632962729500138449 /* FacebookLogin in Frameworks */,
+				CDCB23BD2966B9AF00C37717 /* YPImagePicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,11 +365,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		CD58A47D2963265F003C29F0 /* New Group */ = {
+		CD58A47D2963265F003C29F0 /* NewPost */ = {
 			isa = PBXGroup;
 			children = (
+				CDCB23C82966C61000C37717 /* Model */,
+				CDCB23C72966C60E00C37717 /* View */,
+				CDCB23C62966C60C00C37717 /* Controller */,
 			);
-			path = "New Group";
+			path = NewPost;
 			sourceTree = "<group>";
 		};
 		CDCB23B02965FCE400C37717 /* CustomDelegate */ = {
@@ -391,10 +404,34 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		CDCB23C62966C60C00C37717 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CDCB23C22966BEA000C37717 /* PostEditViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CDCB23C72966C60E00C37717 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD237C802966C6B2000BD0AD /* PostEdit.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CDCB23C82966C61000C37717 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CD237C822966C6C6000BD0AD /* NewPostModel.swift */,
+				CD237C842966C759000BD0AD /* NewPostDataManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CDEC3267296085A30030E035 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				CD58A47D2963265F003C29F0 /* New Group */,
 				CD026EE3296058C300C6C359 /* Main.storyboard */,
 				CDEC3281296086640030E035 /* Splash */,
 				CDEC32822960867C0030E035 /* Home */,
@@ -402,6 +439,7 @@
 				CD57D7582961E77B00138449 /* LikeList */,
 				CD57D7672962762600138449 /* Login */,
 				CDFFCE6A296292D20063A53B /* SignUp */,
+				CD58A47D2963265F003C29F0 /* NewPost */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -549,6 +587,7 @@
 				CDFFCE6C296295340063A53B /* SkyFloatingLabelTextField */,
 				CD58A47F29644F6C003C29F0 /* Alamofire */,
 				CD58A48229644F77003C29F0 /* Kingfisher */,
+				CDCB23BC2966B9AF00C37717 /* YPImagePicker */,
 			);
 			productName = instagram_ios_jason;
 			productReference = CD026EDA296058C300C6C359 /* instagram_ios_jason.app */;
@@ -583,6 +622,7 @@
 				CDFFCE6B296295340063A53B /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */,
 				CD58A47E29644F6C003C29F0 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				CD58A48129644F77003C29F0 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				CDCB23BB2966B9AF00C37717 /* XCRemoteSwiftPackageReference "YPImagePicker" */,
 			);
 			productRefGroup = CD026EDB296058C300C6C359 /* Products */;
 			projectDirPath = "";
@@ -609,6 +649,7 @@
 				CD026EEA296058C400C6C359 /* LaunchScreen.storyboard in Resources */,
 				CD026EE7296058C400C6C359 /* Assets.xcassets in Resources */,
 				CD026EE5296058C300C6C359 /* Main.storyboard in Resources */,
+				CD237C812966C6B2000BD0AD /* PostEdit.storyboard in Resources */,
 				CDEC3296296121750030E035 /* FeedCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -620,6 +661,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD237C852966C759000BD0AD /* NewPostDataManager.swift in Sources */,
 				CD17B9BF2961956F0069B8A1 /* StoryTableCell.swift in Sources */,
 				CD2C993929648E4D006088D8 /* LoginDataModel.swift in Sources */,
 				CDEC3280296086030030E035 /* Device.swift in Sources */,
@@ -646,6 +688,7 @@
 				CD2C993B29648F63006088D8 /* LoginNetworkManager.swift in Sources */,
 				CD2C9933296473F4006088D8 /* SignUpDataManager.swift in Sources */,
 				CD57D74D2961D2F600138449 /* FeedMediaCell.swift in Sources */,
+				CDCB23C32966BEA000C37717 /* PostEditViewController.swift in Sources */,
 				CD57D7692962764500138449 /* LoginViewController.swift in Sources */,
 				CD57D7492961BF5600138449 /* HomeDataManager.swift in Sources */,
 				CD58A46E2962BF1C003C29F0 /* SignUpViewController.swift in Sources */,
@@ -653,6 +696,7 @@
 				CDEC328929609AEC0030E035 /* CustomNaviBarItem.swift in Sources */,
 				CD57D75C2961E7B200138449 /* LikeListViewController.swift in Sources */,
 				CDEC327B296086030030E035 /* String.swift in Sources */,
+				CD237C832966C6C6000BD0AD /* NewPostModel.swift in Sources */,
 				CDCB23BA29667FC000C37717 /* EditDetailViewController.swift in Sources */,
 				CDCB23AF2965FCDC00C37717 /* ProfileVCDelegate.swift in Sources */,
 				CDCB23A62965D2AF00C37717 /* ProfileTabHeaderView.swift in Sources */,
@@ -915,6 +959,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		CDCB23BB2966B9AF00C37717 /* XCRemoteSwiftPackageReference "YPImagePicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Yummypets/YPImagePicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		CDFFCE6B296295340063A53B /* XCRemoteSwiftPackageReference "SkyFloatingLabelTextField" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Skyscanner/SkyFloatingLabelTextField.git";
@@ -955,6 +1007,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CD58A48129644F77003C29F0 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		CDCB23BC2966B9AF00C37717 /* YPImagePicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CDCB23BB2966B9AF00C37717 /* XCRemoteSwiftPackageReference "YPImagePicker" */;
+			productName = YPImagePicker;
 		};
 		CDFFCE6C296295340063A53B /* SkyFloatingLabelTextField */ = {
 			isa = XCSwiftPackageProductDependency;

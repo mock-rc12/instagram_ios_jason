@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Instagram이 카메라를 사용하고자 합니다</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Instagram이 라이브러리를 사용하고자 합니다</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Instagram이 마이크를를 사용하고자 합니다</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>

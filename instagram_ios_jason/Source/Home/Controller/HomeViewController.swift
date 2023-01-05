@@ -7,6 +7,7 @@
 
 import UIKit
 import FacebookLogin
+import YPImagePicker
 
 class HomeViewController: BaseViewController {
     
@@ -29,30 +30,25 @@ class HomeViewController: BaseViewController {
     private func checkLogin() {
         
         if let token = AccessToken.current, !token.isExpired {
-            print("====== 토큰 ======")
-//            showToast("로그인 성공", withDuration: 3, delay: 1.5)
-            print(token.tokenString)
-            print(token.userID)
+            
         } else {
             let vc = UIStoryboard(name: "Login", bundle: .none).instantiateViewController(withIdentifier: "LoginNavigation")
             present(vc, animated: true)
         }
-//         임시
-//        let vc = UIStoryboard(name: "Login", bundle: .none).instantiateViewController(withIdentifier: "LoginNavigation")
-//        vc.modalPresentationStyle = .fullScreen
-//        present(vc, animated: true)
+        //         임시
+        //        let vc = UIStoryboard(name: "Login", bundle: .none).instantiateViewController(withIdentifier: "LoginNavigation")
+        //        vc.modalPresentationStyle = .fullScreen
+        //        present(vc, animated: true)
     }
     
     private func setupData() {
         HomeDataManager.shared.fetchDummyData()
         IndicatorView.shared.show()
         IndicatorView.shared.showIndicator()
-        feedsDataManager.getFeedsNetworkData { result in
-            result.forEach { [weak self] item in
-                self?.feedsData.append(item)
-                self?.reloadTableView()
-                IndicatorView.shared.dismiss()
-            }
+        feedsDataManager.getFeedsNetworkData { [weak self] result in
+            self?.feedsData = result
+            self?.reloadTableView()
+            IndicatorView.shared.dismiss()
         }
     }
     
@@ -72,31 +68,6 @@ class HomeViewController: BaseViewController {
         self.homeFeedTableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
     }
     
-//    func showToast(_ message : String, withDuration: Double, delay: Double) {
-//        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-100, width: 150, height: 35))
-//        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.7)
-//        toastLabel.textColor = UIColor.white
-//        toastLabel.font = UIFont.systemFont(ofSize: 14.0)
-//        toastLabel.textAlignment = .center
-//        toastLabel.text = message
-//        toastLabel.alpha = 1.0
-//        toastLabel.layer.cornerRadius = 16
-//        toastLabel.clipsToBounds  =  true
-//
-//        self.view.addSubview(toastLabel)
-//        NSLayoutConstraint.activate([
-//            toastLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-//            toastLabel.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 100)
-//        ])
-//        toastLabel.layer.zPosition = 999
-//
-//        UIView.animate(withDuration: withDuration, delay: delay, options: .curveEaseOut, animations: {
-//            toastLabel.alpha = 0.0
-//        }, completion: {(isCompleted) in
-//            toastLabel.removeFromSuperview()
-//        })
-//    }
-    
     //MARK: - 네비게이션 컨트롤러 설정
     private func setupNavigationController() {
         let itemSize = CGFloat(35)
@@ -115,7 +86,12 @@ class HomeViewController: BaseViewController {
         }
         
         let postConfig = CustomNaviBarItemConfig(image: UIImage(systemName: "plus.app")) {
-            print("포스트 버튼 눌림")
+            self.addNewPost()
+            //            guard let vc = UIStoryboard(name: "Picker", bundle: nil).instantiateViewController(withIdentifier: "PickerViewController") as? PickerViewController else { return }
+            //            let naviController = UINavigationController(rootViewController: vc)
+            //            naviController.modalPresentationStyle = .fullScreen
+            //            naviController.modalTransitionStyle = .crossDissolve
+            //            self.present(naviController, animated: true)
         }
         
         let titleItem = UIBarButtonItem.generate(config: titleConfig, width: 130)
@@ -128,6 +104,38 @@ class HomeViewController: BaseViewController {
         
         navigationItem.leftBarButtonItem = titleItem
         navigationItem.rightBarButtonItems = [messageItem, spacingItem, notiItem, spacingItem, postItem]
+    }
+    
+    // 게시글 올리기 뷰 불러오기
+    func addNewPost() {
+        var config = YPImagePickerConfiguration()
+        config.startOnScreen = .library
+        config.screens = [.photo, .library]
+        config.library.maxNumberOfItems = 10
+        let picker = YPImagePicker(configuration: config)
+        picker.didFinishPicking { [unowned picker] items, cancelled in
+            
+            var images: [UIImage] = []
+            for item in items {
+                switch item {
+                case .photo(let photo):
+                    images.append(photo.image)
+                default:
+                    print("흥")
+                }
+            }
+            guard let vc = UIStoryboard(name: "PostEdit", bundle: nil).instantiateViewController(withIdentifier: "PostEditViewController") as? PostEditViewController else { return }
+            vc.selectedImage = images
+            vc.delegate = self
+            picker.pushViewController(vc, animated: true)
+            
+            
+            if cancelled == true {
+                picker.dismiss(animated: true, completion: nil)
+            }
+        }
+        picker.modalTransitionStyle = .coverVertical
+        present(picker, animated: true, completion: nil)
     }
 }
 
@@ -164,6 +172,11 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension HomeViewController: HomeVCDelegate {
+    func feedUploadSuccessed() {
+        print(#function)
+        setupData()
+    }
+    
     func likeCountLabelTapped() {
         guard let vc = UIStoryboard(name: "LikeList", bundle: .none).instantiateViewController(withIdentifier: "LikeListViewController") as? LikeListViewController else { return }
         self.navigationController?.pushViewController(vc, animated: true)

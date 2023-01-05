@@ -47,21 +47,5 @@ class ProfileDataManager {
                     print("에러 발생 \(error)")
                 }
             }
-        
-//            .responseDecodable(of: UserSecretResponse.self) { response in
-//                switch response.result {
-//                case .success(let result):
-//                    print("============성공==========")
-//                    print(result.message)
-//                    print(result.result.jwt)
-//                    print(result.result.userIdx)
-//                    completion(true)
-//                case .failure(let error):
-//                    print("============실패==========")
-//                    print(error)
-//                    print(error.responseCode ?? "")
-//                    completion(false)
-//                }
-//            }
     }
 }

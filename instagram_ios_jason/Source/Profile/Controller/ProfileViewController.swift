@@ -62,31 +62,6 @@ class ProfileViewController: BaseViewController {
         self.navigationItem.title = id
     }
     
-//    private func configureDataSource() {
-//        dataSource = UICollectionViewDiffableDataSource<Section, Int>(collectionView: profileCollectionView) {
-//            (collectionView: UICollectionView, indexPath: IndexPath, identifier: Int) -> UICollectionViewCell? in
-//
-//            // Get a cell of the desired kind.
-//
-//            switch indexPath.section {
-//            case 0:
-//                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfileInfoCell",
-//                    for: indexPath) as? ProfileInfoCell else { fatalError("Cannot create new cell") }
-//                return cell
-//            default:
-//                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContentsCell",
-//                    for: indexPath) as? ContentsCell else { fatalError("ContentsCell") }
-//                return cell
-//            }
-//        }
-//        // initial data
-//        var snapshot = NSDiffableDataSourceSnapshot<Section, Int>()
-//        snapshot.appendSections([.upper, .lower])
-//        snapshot.appendItems(Array(0..<5), toSection: .upper)
-////        snapshot.appendItems(Array(0..<9), toSection: .lower)
-//        dataSource.apply(snapshot, animatingDifferences: false)
-//    }
-    
     func setupCollectionView() {
         profileCollectionView.collectionViewLayout = layoutSet()
         profileCollectionView.dataSource = self
