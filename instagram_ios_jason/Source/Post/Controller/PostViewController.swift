@@ -76,7 +76,7 @@ extension PostViewController: HomeVCDelegate {
         print(#function)
     }
     
-    func moreImageTapped() {
+    func moreImageTapped(userIdx: Int) {
         print(#function)
     }
     

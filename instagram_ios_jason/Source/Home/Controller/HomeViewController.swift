@@ -194,9 +194,15 @@ extension HomeViewController: HomeVCDelegate {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func moreImageTapped() {
+    func moreImageTapped(userIdx: Int) {
         let sheet = BottomSheetViewController()
+        sheet.bottomHeight = 500
         sheet.modalPresentationStyle = .overFullScreen
+        if userIdx == Secret.userIdx {
+            sheet.feedType = .myProfile
+        } else {
+            sheet.feedType = .otherUserProfile
+        }
         self.present(sheet, animated: false)
     }
 }

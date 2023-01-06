@@ -21,6 +21,9 @@
 		CD237C882966E22B000BD0AD /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = CD237C872966E22B000BD0AD /* FirebaseStorage */; };
 		CD237C8A2966E24E000BD0AD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD237C892966E24E000BD0AD /* GoogleService-Info.plist */; };
 		CD237C8C2966E36E000BD0AD /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD237C8B2966E36E000BD0AD /* FirebaseManager.swift */; };
+		CD29EB2229685766004CA667 /* CenterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD29EB2129685766004CA667 /* CenterButton.swift */; };
+		CD29EB2A29686108004CA667 /* FeedMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD29EB2929686108004CA667 /* FeedMenuModel.swift */; };
+		CD29EB2C29686B49004CA667 /* FeedMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD29EB2B29686B49004CA667 /* FeedMenuCell.swift */; };
 		CD2C992D2964680D006088D8 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C992C2964680D006088D8 /* Constant.swift */; };
 		CD2C992F29646A5F006088D8 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C992E29646A5F006088D8 /* Secret.swift */; };
 		CD2C9931296472CB006088D8 /* SignUpNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C9930296472CB006088D8 /* SignUpNavigationController.swift */; };
@@ -54,6 +57,7 @@
 		CDBAA0D729672E740019C7A5 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBAA0D629672E740019C7A5 /* PostModel.swift */; };
 		CDBAA0D92967308B0019C7A5 /* PostDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBAA0D82967308B0019C7A5 /* PostDataManager.swift */; };
 		CDBAA0DB2967D71A0019C7A5 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBAA0DA2967D71A0019C7A5 /* BottomSheetViewController.swift */; };
+		CDBAA0E5296849F10019C7A5 /* CustomMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBAA0E4296849F10019C7A5 /* CustomMenuButton.swift */; };
 		CDCB239E2964AACE00C37717 /* ProfileInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB239C2964AACE00C37717 /* ProfileInfoCell.swift */; };
 		CDCB239F2964AACE00C37717 /* ProfileInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDCB239D2964AACE00C37717 /* ProfileInfoCell.xib */; };
 		CDCB23A229651E5B00C37717 /* ContentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCB23A029651E5B00C37717 /* ContentsCell.swift */; };
@@ -105,6 +109,9 @@
 		CD237C842966C759000BD0AD /* NewPostDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostDataManager.swift; sourceTree = "<group>"; };
 		CD237C892966E24E000BD0AD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CD237C8B2966E36E000BD0AD /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		CD29EB2129685766004CA667 /* CenterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterButton.swift; sourceTree = "<group>"; };
+		CD29EB2929686108004CA667 /* FeedMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMenuModel.swift; sourceTree = "<group>"; };
+		CD29EB2B29686B49004CA667 /* FeedMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMenuCell.swift; sourceTree = "<group>"; };
 		CD2C992C2964680D006088D8 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		CD2C992E29646A5F006088D8 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		CD2C9930296472CB006088D8 /* SignUpNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNavigationController.swift; sourceTree = "<group>"; };
@@ -133,6 +140,7 @@
 		CDBAA0D629672E740019C7A5 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 		CDBAA0D82967308B0019C7A5 /* PostDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDataManager.swift; sourceTree = "<group>"; };
 		CDBAA0DA2967D71A0019C7A5 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
+		CDBAA0E4296849F10019C7A5 /* CustomMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMenuButton.swift; sourceTree = "<group>"; };
 		CDCB239C2964AACE00C37717 /* ProfileInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoCell.swift; sourceTree = "<group>"; };
 		CDCB239D2964AACE00C37717 /* ProfileInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileInfoCell.xib; sourceTree = "<group>"; };
 		CDCB23A029651E5B00C37717 /* ContentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsCell.swift; sourceTree = "<group>"; };
@@ -236,6 +244,50 @@
 				CD17B9C12961964F0069B8A1 /* StoryCell.swift */,
 			);
 			path = Story;
+			sourceTree = "<group>";
+		};
+		CD29EB232968609E004CA667 /* FeedMenuBottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				CD29EB28296860EF004CA667 /* Custom */,
+				CD29EB26296860C1004CA667 /* Model */,
+				CD29EB24296860BC004CA667 /* View */,
+				CD29EB27296860DD004CA667 /* Controller */,
+			);
+			path = FeedMenuBottomSheet;
+			sourceTree = "<group>";
+		};
+		CD29EB24296860BC004CA667 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD29EB2B29686B49004CA667 /* FeedMenuCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CD29EB26296860C1004CA667 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CD29EB2929686108004CA667 /* FeedMenuModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CD29EB27296860DD004CA667 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CDBAA0DA2967D71A0019C7A5 /* BottomSheetViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CD29EB28296860EF004CA667 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				CDBAA0E4296849F10019C7A5 /* CustomMenuButton.swift */,
+				CD29EB2129685766004CA667 /* CenterButton.swift */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 		CD57D74E2961E29700138449 /* Profile */ = {
@@ -484,6 +536,7 @@
 		CDEC3267296085A30030E035 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				CD29EB232968609E004CA667 /* FeedMenuBottomSheet */,
 				CD026EE3296058C300C6C359 /* Main.storyboard */,
 				CDBAA0CE29672DF60019C7A5 /* Post */,
 				CDEC3281296086640030E035 /* Splash */,
@@ -575,7 +628,6 @@
 				CDEC328829609AEC0030E035 /* CustomNaviBarItem.swift */,
 				CDEC328529608FCF0030E035 /* CustomNavigationController.swift */,
 				CD58A46F2962CAC3003C29F0 /* CustomSkyTextField.swift */,
-				CDBAA0DA2967D71A0019C7A5 /* BottomSheetViewController.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -726,6 +778,7 @@
 				CD2C993929648E4D006088D8 /* LoginDataModel.swift in Sources */,
 				CDEC3280296086030030E035 /* Device.swift in Sources */,
 				CD2C9931296472CB006088D8 /* SignUpNavigationController.swift in Sources */,
+				CD29EB2229685766004CA667 /* CenterButton.swift in Sources */,
 				CDEC327A296086030030E035 /* UIColor.swift in Sources */,
 				CDEC3279296086030030E035 /* Date.swift in Sources */,
 				CDEC326C296085D50030E035 /* BaseViewController.swift in Sources */,
@@ -765,11 +818,14 @@
 				CDCB23AF2965FCDC00C37717 /* ProfileVCDelegate.swift in Sources */,
 				CDCB23A62965D2AF00C37717 /* ProfileTabHeaderView.swift in Sources */,
 				CD17B9C22961964F0069B8A1 /* StoryCell.swift in Sources */,
+				CD29EB2C29686B49004CA667 /* FeedMenuCell.swift in Sources */,
 				CDCB239E2964AACE00C37717 /* ProfileInfoCell.swift in Sources */,
+				CD29EB2A29686108004CA667 /* FeedMenuModel.swift in Sources */,
 				CDEC327F296086030030E035 /* UIFont.swift in Sources */,
 				CDEC3278296086030030E035 /* IndicatorView.swift in Sources */,
 				CDEC327E296086030030E035 /* UINavigationBar.swift in Sources */,
 				CD58A4702962CAC3003C29F0 /* CustomSkyTextField.swift in Sources */,
+				CDBAA0E5296849F10019C7A5 /* CustomMenuButton.swift in Sources */,
 				CDCB23B62965FF9D00C37717 /* EditMyProfileViewController.swift in Sources */,
 				CD2C993529647942006088D8 /* SignUpNetworkManager.swift in Sources */,
 				CDEC328B29609B3E0030E035 /* UIBarButtonItem.swift in Sources */,
