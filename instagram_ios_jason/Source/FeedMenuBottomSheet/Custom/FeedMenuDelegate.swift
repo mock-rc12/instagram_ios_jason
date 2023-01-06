@@ -9,4 +9,5 @@ import Foundation
 
 protocol FeedMenuDelegate {
     func deleteDone()
+    func modifyTapped(feeds: FeedsResult)
 }

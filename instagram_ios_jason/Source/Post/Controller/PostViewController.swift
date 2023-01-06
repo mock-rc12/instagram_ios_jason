@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PostViewController: UIViewController {
 
@@ -65,6 +66,10 @@ extension PostViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension PostViewController: HomeVCDelegate {
+    func feedModifySuccessed() {
+        setupData()
+    }
+    
     func likeCountLabelTapped() {
         print(#function)
     }
@@ -98,6 +103,19 @@ extension PostViewController: HomeVCDelegate {
 }
 
 extension PostViewController: FeedMenuDelegate {
+    func modifyTapped(feeds: FeedsResult) {
+        print(#function)
+        guard let vc = UIStoryboard(name: "PostEdit", bundle: nil).instantiateViewController(withIdentifier: "PostEditViewController") as? PostEditViewController else { return }
+//        if postResults?.count != 0 {
+//            let data = postResults!.first
+//            vc.post = FeedsResult(postIdx: data!.postIdx, content: data!.content, userIdx: data!.userIdx, userId: data!.userId, profileImgUrl: data!.profileImgUrl, postLikeCount: data!.postLikeCount, commentCount: 0, updateAt: data!.updateAt, postImgRes: data!.postImgRes)
+//        }
+        vc.post = feeds
+        vc.editType = .modify
+        vc.delegate = self
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func deleteDone() {
         delegate?.deleteDone()
         self.navigationController?.popViewController(animated: true)

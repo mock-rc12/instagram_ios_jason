@@ -14,7 +14,9 @@ class PostDataManager {
         let url = "\(Constant.BASE_URL)\(Constant.pathPostGet)\(idx)"
         let header = HTTPHeader(name: "X-ACCESS-TOKEN", value: Secret.xAcessToken)
         let headers = HTTPHeaders([header])
-
+        
+        print(url)
+        
         AF.request(url, headers: headers)
             .responseDecodable(of: PostModel.self, completionHandler: { response in
                 switch response.result {

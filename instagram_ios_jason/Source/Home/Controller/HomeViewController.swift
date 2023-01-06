@@ -110,23 +110,22 @@ class HomeViewController: BaseViewController {
         let picker = YPImagePicker(configuration: config)
         picker.didFinishPicking { [unowned picker] items, cancelled in
             
-            var images: [UIImage] = []
-            for item in items {
-                switch item {
-                case .photo(let photo):
-                    images.append(photo.image)
-                default:
-                    print("흥")
-                }
-            }
-            guard let vc = UIStoryboard(name: "PostEdit", bundle: nil).instantiateViewController(withIdentifier: "PostEditViewController") as? PostEditViewController else { return }
-            vc.selectedImage = images
-            vc.delegate = self
-            picker.pushViewController(vc, animated: true)
-            
-            
             if cancelled == true {
                 picker.dismiss(animated: true, completion: nil)
+            } else {
+                var images: [UIImage] = []
+                for item in items {
+                    switch item {
+                    case .photo(let photo):
+                        images.append(photo.image)
+                    default:
+                        print("흥")
+                    }
+                }
+                guard let vc = UIStoryboard(name: "PostEdit", bundle: nil).instantiateViewController(withIdentifier: "PostEditViewController") as? PostEditViewController else { return }
+                vc.selectedImage = images
+                vc.delegate = self
+                picker.pushViewController(vc, animated: true)
             }
         }
         picker.modalTransitionStyle = .coverVertical
@@ -167,6 +166,11 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension HomeViewController: HomeVCDelegate {
+    func feedModifySuccessed() {
+        print(#function)
+        setupData()
+    }
+    
     func feedUploadSuccessed() {
         print(#function)
         setupData()
@@ -205,6 +209,23 @@ extension HomeViewController: HomeVCDelegate {
             sheet.feedType = .otherUserProfile
             sheet.bottomHeight = self.view.frame.height * 0.7
         }
+        sheet.delegate = self
+        sheet.feedInfo = item
         self.present(sheet, animated: false)
+    }
+}
+
+extension HomeViewController: FeedMenuDelegate {
+    func modifyTapped(feeds: FeedsResult) {
+        print(#function)
+        guard let vc = UIStoryboard(name: "PostEdit", bundle: nil).instantiateViewController(withIdentifier: "PostEditViewController") as? PostEditViewController else { return }
+        vc.post = feeds
+        vc.editType = .modify
+        vc.delegate = self
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func deleteDone() {
+        setupData()
     }
 }

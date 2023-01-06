@@ -274,7 +274,10 @@ class BottomSheetViewController: UIViewController {
     private func myFeedMenuTapped(type: MyFeedMenuType) {
         switch type {
         case .modifyFeed:
-            print("수정 버튼 눌림")
+            if let feeds = feedInfo {
+                delegate?.modifyTapped(feeds: feeds)
+                dismiss(animated: true)
+            }
         case .deleteFeed:
             deleteAlert()
         default:
@@ -311,7 +314,7 @@ class BottomSheetViewController: UIViewController {
     private func deleteFeed() {
         
         if let info = feedInfo {
-            dataManager.feedEditNetworkData(userIdx: info.userIdx, postIdx: info.postIdx) { [weak self] isSuccess in
+            dataManager.feedEditNetworkData(method: .delete, userIdx: info.userIdx, postIdx: info.postIdx) { [weak self] isSuccess in
                 if isSuccess == true {
                     self?.delegate?.deleteDone()
                     self?.hideBottomSheetAndGoBack()

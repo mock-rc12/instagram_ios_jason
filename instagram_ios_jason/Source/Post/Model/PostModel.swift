@@ -21,7 +21,7 @@ struct PostResult: Codable {
     let content: String
     let userIdx: Int
     let userId: String
-    let profileImgUrl: String
+    let profileImgUrl: String?
     let postLikeCount: Int
     let updateAt: String
     let postImgRes: [FeedsPostImgRe]?
