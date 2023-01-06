@@ -24,6 +24,10 @@
 		CD29EB2229685766004CA667 /* CenterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD29EB2129685766004CA667 /* CenterButton.swift */; };
 		CD29EB2A29686108004CA667 /* FeedMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD29EB2929686108004CA667 /* FeedMenuModel.swift */; };
 		CD29EB2C29686B49004CA667 /* FeedMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD29EB2B29686B49004CA667 /* FeedMenuCell.swift */; };
+		CD29EB2E29687A56004CA667 /* FeedMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD29EB2D29687A56004CA667 /* FeedMenuDelegate.swift */; };
+		CD29EB3029687F47004CA667 /* ToastNoti.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD29EB2F29687F47004CA667 /* ToastNoti.swift */; };
+		CD29EB32296880F3004CA667 /* FeedMenuDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD29EB31296880F3004CA667 /* FeedMenuDataManager.swift */; };
+		CD29EB34296887C1004CA667 /* PostViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD29EB33296887C1004CA667 /* PostViewDelegate.swift */; };
 		CD2C992D2964680D006088D8 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C992C2964680D006088D8 /* Constant.swift */; };
 		CD2C992F29646A5F006088D8 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C992E29646A5F006088D8 /* Secret.swift */; };
 		CD2C9931296472CB006088D8 /* SignUpNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C9930296472CB006088D8 /* SignUpNavigationController.swift */; };
@@ -112,6 +116,10 @@
 		CD29EB2129685766004CA667 /* CenterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterButton.swift; sourceTree = "<group>"; };
 		CD29EB2929686108004CA667 /* FeedMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMenuModel.swift; sourceTree = "<group>"; };
 		CD29EB2B29686B49004CA667 /* FeedMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMenuCell.swift; sourceTree = "<group>"; };
+		CD29EB2D29687A56004CA667 /* FeedMenuDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMenuDelegate.swift; sourceTree = "<group>"; };
+		CD29EB2F29687F47004CA667 /* ToastNoti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastNoti.swift; sourceTree = "<group>"; };
+		CD29EB31296880F3004CA667 /* FeedMenuDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMenuDataManager.swift; sourceTree = "<group>"; };
+		CD29EB33296887C1004CA667 /* PostViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewDelegate.swift; sourceTree = "<group>"; };
 		CD2C992C2964680D006088D8 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		CD2C992E29646A5F006088D8 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		CD2C9930296472CB006088D8 /* SignUpNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNavigationController.swift; sourceTree = "<group>"; };
@@ -269,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				CD29EB2929686108004CA667 /* FeedMenuModel.swift */,
+				CD29EB31296880F3004CA667 /* FeedMenuDataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -286,6 +295,7 @@
 			children = (
 				CDBAA0E4296849F10019C7A5 /* CustomMenuButton.swift */,
 				CD29EB2129685766004CA667 /* CenterButton.swift */,
+				CD29EB2D29687A56004CA667 /* FeedMenuDelegate.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -353,8 +363,8 @@
 			isa = PBXGroup;
 			children = (
 				CD57D7532961E35B00138449 /* ProfileViewController.swift */,
-				CDCB23B52965FF9D00C37717 /* EditMyProfileViewController.swift */,
 				CDCB23AC2965EA1A00C37717 /* Extension ProfileVC + collectionView.swift */,
+				CDCB23B52965FF9D00C37717 /* EditMyProfileViewController.swift */,
 				CDCB23B929667FC000C37717 /* EditDetailViewController.swift */,
 			);
 			path = Controller;
@@ -475,6 +485,7 @@
 			children = (
 				CDBAA0D629672E740019C7A5 /* PostModel.swift */,
 				CDBAA0D82967308B0019C7A5 /* PostDataManager.swift */,
+				CD29EB33296887C1004CA667 /* PostViewDelegate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -536,8 +547,8 @@
 		CDEC3267296085A30030E035 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				CD29EB232968609E004CA667 /* FeedMenuBottomSheet */,
 				CD026EE3296058C300C6C359 /* Main.storyboard */,
+				CD29EB232968609E004CA667 /* FeedMenuBottomSheet */,
 				CDBAA0CE29672DF60019C7A5 /* Post */,
 				CDEC3281296086640030E035 /* Splash */,
 				CDEC32822960867C0030E035 /* Home */,
@@ -584,6 +595,7 @@
 				CDEC3277296086030030E035 /* Device.swift */,
 				CDEC326F296086030030E035 /* Extension */,
 				CDEC328729609AC60030E035 /* Custom */,
+				CD29EB2F29687F47004CA667 /* ToastNoti.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -785,6 +797,7 @@
 				CDEC3284296087650030E035 /* HomeViewController.swift in Sources */,
 				CD57D7542961E35B00138449 /* ProfileViewController.swift in Sources */,
 				CDEC327D296086030030E035 /* UIViewController.swift in Sources */,
+				CD29EB34296887C1004CA667 /* PostViewDelegate.swift in Sources */,
 				CD57D7472961BAFE00138449 /* FeedsModel.swift in Sources */,
 				CDCB23A229651E5B00C37717 /* ContentsCell.swift in Sources */,
 				CD58A496296450F4003C29F0 /* FeedsDataManager.swift in Sources */,
@@ -797,6 +810,7 @@
 				CDBAA0D729672E740019C7A5 /* PostModel.swift in Sources */,
 				CD2C992F29646A5F006088D8 /* Secret.swift in Sources */,
 				CDCB23AD2965EA1A00C37717 /* Extension ProfileVC + collectionView.swift in Sources */,
+				CD29EB32296880F3004CA667 /* FeedMenuDataManager.swift in Sources */,
 				CD57D74B2961C41200138449 /* UserModel.swift in Sources */,
 				CDBAA0D329672E560019C7A5 /* PostViewController.swift in Sources */,
 				CD2C992D2964680D006088D8 /* Constant.swift in Sources */,
@@ -820,12 +834,14 @@
 				CD17B9C22961964F0069B8A1 /* StoryCell.swift in Sources */,
 				CD29EB2C29686B49004CA667 /* FeedMenuCell.swift in Sources */,
 				CDCB239E2964AACE00C37717 /* ProfileInfoCell.swift in Sources */,
+				CD29EB2E29687A56004CA667 /* FeedMenuDelegate.swift in Sources */,
 				CD29EB2A29686108004CA667 /* FeedMenuModel.swift in Sources */,
 				CDEC327F296086030030E035 /* UIFont.swift in Sources */,
 				CDEC3278296086030030E035 /* IndicatorView.swift in Sources */,
 				CDEC327E296086030030E035 /* UINavigationBar.swift in Sources */,
 				CD58A4702962CAC3003C29F0 /* CustomSkyTextField.swift in Sources */,
 				CDBAA0E5296849F10019C7A5 /* CustomMenuButton.swift in Sources */,
+				CD29EB3029687F47004CA667 /* ToastNoti.swift in Sources */,
 				CDCB23B62965FF9D00C37717 /* EditMyProfileViewController.swift in Sources */,
 				CD2C993529647942006088D8 /* SignUpNetworkManager.swift in Sources */,
 				CDEC328B29609B3E0030E035 /* UIBarButtonItem.swift in Sources */,

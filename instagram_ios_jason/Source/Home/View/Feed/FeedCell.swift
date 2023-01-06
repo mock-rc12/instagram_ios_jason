@@ -166,7 +166,7 @@ class FeedCell: UITableViewCell {
         case profileImageView:
             print("프로필 이미지 눌림")
         case moreImageView:
-            delegate?.moreImageTapped(userIdx: feedsItem!.userIdx)
+            delegate?.moreImageTapped(item: item)
         default:
             print("할당되지 않음")
         }

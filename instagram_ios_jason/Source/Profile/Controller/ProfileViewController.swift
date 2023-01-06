@@ -9,11 +9,6 @@ import UIKit
 
 class ProfileViewController: BaseViewController {
     
-//    enum Section {
-//        case upper
-//        case lower
-//    }
-//    var dataSource: UICollectionViewDiffableDataSource<Section, Int>! = nil
     var profileType: ProfileType = .myProfile
 
     var userIdx: Int?

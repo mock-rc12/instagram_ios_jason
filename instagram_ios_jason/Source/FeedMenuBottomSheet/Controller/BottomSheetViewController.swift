@@ -9,10 +9,14 @@ import UIKit
 
 class BottomSheetViewController: UIViewController {
     
+    var feedInfo: FeedsResult?
+    var postInfo: PostResult?
     var feedType: ProfileType!
     var menuData: [FeedMenuModel] = []
     var firstSectionData: [FeedMenuModel] = []
     var secondSectionData: [FeedMenuModel] = []
+    var delegate: FeedMenuDelegate?
+    let dataManager = FeedMenuDataManager()
     // MARK: - Properties
     // 바텀 시트 높이
     var bottomHeight: CGFloat = 359
@@ -114,20 +118,13 @@ class BottomSheetViewController: UIViewController {
         } else {
             menuData = FeedMenuData.getOtherMenuData()
         }
-        
-        let datas = FeedMenuData.getOtherMenuData()
-        
-        firstSectionData = datas.filter({ model in
+                
+        firstSectionData = menuData.filter({ model in
             model.section == 0
         })
-        secondSectionData = datas.filter({ model in
+        secondSectionData = menuData.filter({ model in
             model.section == 1
         })
-        print("🔥🔥🔥FIRSTSECTION")
-        dump(firstSectionData)
-        print("🔥🔥🔥SECONDSECTION")
-        dump(secondSectionData)
-        
     }
     
     // MARK: - @Functions
@@ -269,6 +266,61 @@ class BottomSheetViewController: UIViewController {
             }
         }
     }
+    
+    private func showTempToast() {
+        ToastNoti.showToast("준비중입니다.", withDuration: 1.5, delay: 1.0, vc: self)
+    }
+    
+    private func myFeedMenuTapped(type: MyFeedMenuType) {
+        switch type {
+        case .modifyFeed:
+            print("수정 버튼 눌림")
+        case .deleteFeed:
+            deleteAlert()
+        default:
+            showTempToast()
+        }
+    }
+    
+    private func otherFeedMenuTapped(type: OtherFeedMenuType) {
+        switch type {
+        case .cancelFollow:
+            print("팔로우 취소 버튼 눌림")
+        default:
+            showTempToast()
+        }
+    }
+    
+    private func deleteAlert() {
+        let alert = UIAlertController(title: "", message: "이 게시물을 삭제하고 싶지 않다면 게시물을 보관할 수 있습니다. 보관한 게시물은 회원님만 볼 수 있습니다.", preferredStyle: .actionSheet)
+        let delete = UIAlertAction(title: "삭제", style: .destructive) { [weak self] action in
+            self?.deleteFeed()
+        }
+        let save = UIAlertAction(title: "보관", style: .default) { [weak self] action in
+            self?.showTempToast()
+        }
+        let cancel = UIAlertAction(title: "취소", style: .cancel) { [weak self] action in
+            self?.showTempToast()
+        }
+        _ = [delete, save, cancel].map({
+            alert.addAction($0)
+        })
+        present(alert, animated: true)
+    }
+    
+    private func deleteFeed() {
+        
+        if let info = feedInfo {
+            dataManager.feedEditNetworkData(userIdx: info.userIdx, postIdx: info.postIdx) { [weak self] isSuccess in
+                if isSuccess == true {
+                    self?.delegate?.deleteDone()
+                    self?.hideBottomSheetAndGoBack()
+                } else {
+                    ToastNoti.showToast("데이터 요청에 실패했습니다.", withDuration: 1.5, delay: 1.0, vc: self!)
+                }
+            }
+        }
+    }
 }
 
 extension BottomSheetViewController: UITableViewDataSource, UITableViewDelegate {
@@ -308,5 +360,23 @@ extension BottomSheetViewController: UITableViewDataSource, UITableViewDelegate 
         }
         cell.configure()
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if feedType == .myProfile {
+            let type = firstSectionData[indexPath.row].myType!
+            myFeedMenuTapped(type: type)
+        } else {
+            switch indexPath.section {
+            case 0:
+                let type = firstSectionData[indexPath.row].otherType!
+                otherFeedMenuTapped(type: type)
+            case 1:
+                let type = secondSectionData[indexPath.row].otherType!
+                otherFeedMenuTapped(type: type)
+            default:
+                print("뭔가 잘못됐어")
+            }
+        }
     }
 }

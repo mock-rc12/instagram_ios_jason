@@ -11,6 +11,7 @@ class PostViewController: UIViewController {
 
     @IBOutlet weak var postTableView: UITableView!
     
+    var delegate: PostViewDelegate?
     var selectedIndex: IndexPath?
     var postResults: [PostResult]?
     var postValues: [Int] = []
@@ -76,11 +77,29 @@ extension PostViewController: HomeVCDelegate {
         print(#function)
     }
     
-    func moreImageTapped(userIdx: Int) {
-        print(#function)
+    func moreImageTapped(item: FeedsResult) {
+        let sheet = BottomSheetViewController()
+        sheet.modalPresentationStyle = .overFullScreen
+        sheet.delegate = self
+        sheet.feedInfo = item
+        if item.userIdx == Secret.userIdx {
+            sheet.feedType = .myProfile
+            sheet.bottomHeight = self.view.frame.height * 0.9
+        } else {
+            sheet.feedType = .otherUserProfile
+            sheet.bottomHeight = self.view.frame.height * 0.7
+        }
+        self.present(sheet, animated: false)
     }
     
     func feedUploadSuccessed() {
         print(#function)
+    }
+}
+
+extension PostViewController: FeedMenuDelegate {
+    func deleteDone() {
+        delegate?.deleteDone()
+        self.navigationController?.popViewController(animated: true)
     }
 }

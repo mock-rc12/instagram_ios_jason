@@ -62,7 +62,7 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
             self.profileItem?.profilePostImgs.forEach({ post in
                 values.append(post.postIdx)
             })
-            
+            vc.delegate = self
             vc.postValues = values
             vc.selectedIndex = indexPath
             vc.selectedPostIdx = self.profileItem?.profilePostImgs[indexPath.row].postIdx
@@ -93,5 +93,11 @@ extension ProfileViewController: ProfileVCDelegate {
         vc.delegate = self
         naviController.modalPresentationStyle = .fullScreen
         present(naviController, animated: true)
+    }
+}
+
+extension ProfileViewController: PostViewDelegate {
+    func deleteDone() {
+        setupData()
     }
 }

@@ -33,9 +33,7 @@ struct FeedMenuModel {
     var section: Int
 }
 
-struct FeedMenuData {
-    var datas: [FeedMenuModel] = []
-    
+struct FeedMenuData {    
     static func getOtherMenuData() -> [FeedMenuModel] {
         let datas = [
             FeedMenuModel(title: "즐겨찾기에 추가", icon: UIImage(systemName: "star"), otherType: .addFavorite, section: 0),
