@@ -54,10 +54,33 @@ extension PostViewController: UITableViewDelegate, UITableViewDataSource {
         if let result = postResults {
             let data = result[indexPath.row]
             let item = FeedsResult(postIdx: data.postIdx, content: data.content, userIdx: data.userIdx, userId: data.userId, profileImgUrl: data.profileImgUrl, postLikeCount: data.postLikeCount, commentCount: data.postContentRes?.count ?? 0, updateAt: data.updateAt, postImgRes: data.postImgRes)
+            cell.delegate = self
             cell.feedsItem = item
             cell.configure()
         }
         
         return cell
+    }
+}
+
+extension PostViewController: HomeVCDelegate {
+    func likeCountLabelTapped() {
+        print(#function)
+    }
+    
+    func commentCountLabelTapped() {
+        print(#function)
+    }
+    
+    func userIdLabelTapped(user: FeedsResult) {
+        print(#function)
+    }
+    
+    func moreImageTapped() {
+        print(#function)
+    }
+    
+    func feedUploadSuccessed() {
+        print(#function)
     }
 }

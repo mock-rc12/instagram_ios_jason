@@ -65,7 +65,7 @@ class EditMyProfileViewController: UIViewController {
     
     @IBAction func nvDoneButtonTapped(_ sender: UIBarButtonItem) {
         IndicatorView.shared.show()
-        let param = EditProfileModle(userIdx: myProfile.userIdx, userId: myProfile.userId, name: myProfile.name, profileImg: myProfile.profileImg, website: myProfile.website, introduction: myProfile.introduction)
+        let param = EditProfileModle(userIdx: myProfile.userIdx, userId: myProfile.userId, name: myProfile.name ?? "", profileImg: myProfile.profileImg, website: myProfile.website, introduction: myProfile.introduction)
         dataManager.editProfileNetworkData(param: param, idx: Secret.userIdx) { [weak self] isSuccess in
             if isSuccess == true {
                 IndicatorView.shared.dismiss()

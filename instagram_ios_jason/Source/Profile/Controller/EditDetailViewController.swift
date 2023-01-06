@@ -25,7 +25,7 @@ class EditDetailViewController: UIViewController {
         case .profileImage:
             print("")
         case .name:
-            setupTextField(text: userData.name, placeholder: "이름")
+            setupTextField(text: userData.name ?? "", placeholder: "이름")
             descriptionLabel.text = "사람들이 이름, 별명 또는 비즈니스 이름 등 회원님의 알려진 이름을 사용하여 회원님의 계정을 찾을 수 있도록 도와주세요. 이름은 14일 안에 두 번만 변경할 수 있습니다."
         case .id:
             setupTextField(text: userData.userId, placeholder: "사용자 이름")

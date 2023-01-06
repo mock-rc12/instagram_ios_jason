@@ -22,7 +22,8 @@ struct UserProfileModel: Codable {
 // MARK: - Result
 struct ProfileResult: Codable {
     let userIdx: Int
-    var userId, name: String
+    var userId: String
+    var name: String?
     var introduction, profileImg, website: String?
     var postCount, followerCount, followingCount: Int
     var profilePostImgs: [ProfilePostImg]
