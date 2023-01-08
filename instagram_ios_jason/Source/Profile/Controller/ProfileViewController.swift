@@ -9,6 +9,11 @@ import UIKit
 
 class ProfileViewController: BaseViewController {
     
+    enum followReqType {
+        case follow
+        case followCancel
+    }
+    
     var profileType: ProfileType = .myProfile
 
     var userIdx: Int?
@@ -37,14 +42,14 @@ class ProfileViewController: BaseViewController {
         case .otherUserProfile:
             navigationItem.title = userId
             if let id = userIdx {
-                dataManager.getProfileNetworkData(userIdx: id) { [weak self] result in
+                dataManager.getProfileNetworkData(profileIdx: id, userIdx: Secret.userIdx) { [weak self] result in
                     IndicatorView.shared.dismiss()
                     self?.profileItem = result
                     self?.profileCollectionView.reloadData()
                 }
             }
         case .myProfile: // 임시
-            dataManager.getProfileNetworkData(userIdx: Secret.userIdx) { [weak self] result in
+            dataManager.getProfileNetworkData(profileIdx: Secret.userIdx, userIdx: Secret.userIdx) { [weak self] result in
                 IndicatorView.shared.dismiss()
                 self?.profileItem = result
                 self?.setupUI(id: result.userId)
@@ -99,6 +104,34 @@ class ProfileViewController: BaseViewController {
         section.boundarySupplementaryItems = [header]
         return section
     }
+    
+    func followButtonAction(action: followReqType) {
+
+        if let profile = profileItem {
+            var status = ""
+            
+            switch action {
+            case .follow:
+                status = "ACTIVE"
+                print("REQUEST: 요청")
+            case .followCancel:
+                status = "INACTIVE"
+                print("REQUEST: 취소")
+            }
+            
+            let param = FollowReqModle(followIdx: profile.userIdx, status: status)
+            dataManager.followReqNetworkData(param: param, idx: Secret.userIdx) { [weak self] isSuccess in
+                self?.setupData()
+            }
+        }
+    }
+    
+    func presentFollowVC(type: FollowListViewController.followType) {
+        let vc = FollowViewController()
+        vc.profile = profileItem!
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 

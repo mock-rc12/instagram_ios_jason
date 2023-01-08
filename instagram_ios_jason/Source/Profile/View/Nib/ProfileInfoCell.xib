@@ -132,7 +132,9 @@
             <connections>
                 <outlet property="contentsCountLabel" destination="NIr-hb-egB" id="edJ-Ee-tGj"/>
                 <outlet property="followerCountLabel" destination="fd2-T1-3F2" id="fdp-Vk-Q18"/>
+                <outlet property="followerStackView" destination="c7F-GZ-dPS" id="C0c-dK-l2X"/>
                 <outlet property="followingCountLabel" destination="QAO-bY-SmO" id="84n-lB-Wdp"/>
+                <outlet property="followingStackView" destination="0jO-Is-aNh" id="ub9-wO-gAP"/>
                 <outlet property="introductionLabel" destination="QH8-9F-0mi" id="eDH-qe-vJV"/>
                 <outlet property="nameLabel" destination="1Sb-QI-UGi" id="sM6-nU-iE7"/>
                 <outlet property="profileImageView" destination="NaL-vT-7Jd" id="rVQ-ia-ZqQ"/>

@@ -13,12 +13,15 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return 1
-        default:
-            guard let item = profileItem else { return 0 }
-            return item.profilePostImgs.count
+        if let item = profileItem {
+            switch section {
+            case 0:
+                return 1
+            default:
+                return item.profilePostImgs.count
+            }
+        } else {
+            return 0
         }
     }
     
@@ -28,8 +31,8 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
         case 0:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfileInfoCell", for: indexPath) as? ProfileInfoCell else { fatalError("Cannot create new cell") }
             cell.item = profileItem
-            cell.profileType = self.profileType
             cell.delegate = self
+            cell.indexpath = indexPath
             cell.configure()
             return cell
         default:
@@ -72,12 +75,25 @@ extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDel
 }
 
 extension ProfileViewController: ProfileVCDelegate {
-    func profileEditSuccess() {
-        setupData()
+    
+    func followingButtonTapped() {
+        followButtonAction(action: .followCancel)
     }
     
-    func followButtonTapped() {
-        print(#function)
+    func followingLabelTapped() {
+        presentFollowVC(type: .following)
+    }
+    
+    func followerLabelTapped() {
+        presentFollowVC(type: .follower)
+    }
+    
+    func followReqButtonTapped() {
+        followButtonAction(action: .follow)
+    }
+    
+    func profileEditSuccess() {
+        setupData()
     }
     
     func messageButtonTapped() {

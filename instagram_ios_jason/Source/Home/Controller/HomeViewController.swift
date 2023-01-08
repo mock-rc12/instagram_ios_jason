@@ -14,17 +14,17 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var homeFeedTableView: UITableView!
     
     var feedDatas: [Feed] = []
-    
     var feedsData: [FeedsResult] = []
-    
     let feedsDataManager = FeedsDataManager()
+    let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         checkLogin()
-        setupData()
+        setupData {_ in ()}
         setupTableView()
         setupNavigationController()
+        initRefresh()
     }
     
     private func checkLogin() {
@@ -41,7 +41,7 @@ class HomeViewController: BaseViewController {
         //        present(vc, animated: true)
     }
     
-    private func setupData() {
+    private func setupData(completion: @escaping (Bool) -> Void?) {
         HomeDataManager.shared.fetchDummyData()
         IndicatorView.shared.show()
         IndicatorView.shared.showIndicator()
@@ -49,6 +49,7 @@ class HomeViewController: BaseViewController {
             self?.feedsData = result
             self?.reloadTableView()
             IndicatorView.shared.dismiss()
+            completion(true)
         }
     }
     
@@ -131,6 +132,21 @@ class HomeViewController: BaseViewController {
         picker.modalTransitionStyle = .coverVertical
         present(picker, animated: true, completion: nil)
     }
+    
+    func initRefresh() {
+        refreshControl.addTarget(self, action: #selector(refreshTable(refresh:)), for: .valueChanged)
+        
+        refreshControl.backgroundColor = .systemBackground
+        refreshControl.tintColor = .label
+        refreshControl.attributedTitle = NSAttributedString(string: "당겨서 새로고침")
+        homeFeedTableView.refreshControl = refreshControl
+    }
+    
+    @objc private func refreshTable(refresh: UIRefreshControl) {
+        setupData { _ in
+            refresh.endRefreshing()
+        }
+    }
 }
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
@@ -168,12 +184,12 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 extension HomeViewController: HomeVCDelegate {
     func feedModifySuccessed() {
         print(#function)
-        setupData()
+        setupData {_ in ()}
     }
     
     func feedUploadSuccessed() {
         print(#function)
-        setupData()
+        setupData {_ in ()}
     }
     
     func likeCountLabelTapped() {
@@ -200,7 +216,7 @@ extension HomeViewController: HomeVCDelegate {
     
     func moreImageTapped(item: FeedsResult) {
         let sheet = BottomSheetViewController()
-
+        
         sheet.modalPresentationStyle = .overFullScreen
         if item.userIdx == Secret.userIdx {
             sheet.feedType = .myProfile
@@ -226,6 +242,6 @@ extension HomeViewController: FeedMenuDelegate {
     }
     
     func deleteDone() {
-        setupData()
+        setupData {_ in ()}
     }
 }

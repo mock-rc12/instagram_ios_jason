@@ -302,8 +302,8 @@ class BottomSheetViewController: UIViewController {
         let save = UIAlertAction(title: "보관", style: .default) { [weak self] action in
             self?.showTempToast()
         }
-        let cancel = UIAlertAction(title: "취소", style: .cancel) { [weak self] action in
-            self?.showTempToast()
+        let cancel = UIAlertAction(title: "취소", style: .cancel) { action in
+            
         }
         _ = [delete, save, cancel].map({
             alert.addAction($0)

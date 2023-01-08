@@ -24,6 +24,7 @@ struct ProfileResult: Codable {
     let userIdx: Int
     var userId: String
     var name: String?
+    var followStatus: String?
     var introduction, profileImg, website: String?
     var postCount, followerCount, followingCount: Int
     var profilePostImgs: [ProfilePostImg]
@@ -53,4 +54,9 @@ struct EditProfileModle: Codable {
     var profileImg: String?
     var website: String?
     var introduction: String?
+}
+
+struct FollowReqModle: Codable {
+    var followIdx: Int
+    var status: String
 }

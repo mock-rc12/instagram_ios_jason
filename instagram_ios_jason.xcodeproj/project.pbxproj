@@ -28,6 +28,10 @@
 		CD29EB3029687F47004CA667 /* ToastNoti.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD29EB2F29687F47004CA667 /* ToastNoti.swift */; };
 		CD29EB32296880F3004CA667 /* FeedMenuDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD29EB31296880F3004CA667 /* FeedMenuDataManager.swift */; };
 		CD29EB34296887C1004CA667 /* PostViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD29EB33296887C1004CA667 /* PostViewDelegate.swift */; };
+		CD29EB372969AA89004CA667 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = CD29EB362969AA89004CA667 /* Tabman */; };
+		CD29EB422969AF44004CA667 /* Follow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD29EB412969AF44004CA667 /* Follow.storyboard */; };
+		CD29EB442969AF56004CA667 /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD29EB432969AF56004CA667 /* FollowViewController.swift */; };
+		CD29EB462969B083004CA667 /* FollowListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD29EB452969B083004CA667 /* FollowListViewController.swift */; };
 		CD2C992D2964680D006088D8 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C992C2964680D006088D8 /* Constant.swift */; };
 		CD2C992F29646A5F006088D8 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C992E29646A5F006088D8 /* Secret.swift */; };
 		CD2C9931296472CB006088D8 /* SignUpNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C9930296472CB006088D8 /* SignUpNavigationController.swift */; };
@@ -56,6 +60,7 @@
 		CD58A48029644F6C003C29F0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CD58A47F29644F6C003C29F0 /* Alamofire */; };
 		CD58A48329644F77003C29F0 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CD58A48229644F77003C29F0 /* Kingfisher */; };
 		CD58A496296450F4003C29F0 /* FeedsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD58A495296450F4003C29F0 /* FeedsDataManager.swift */; };
+		CD84BB9B2969B4CF00203285 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CD84BB9A2969B4CF00203285 /* SnapKit */; };
 		CDBAA0D329672E560019C7A5 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBAA0D229672E560019C7A5 /* PostViewController.swift */; };
 		CDBAA0D529672E5B0019C7A5 /* Post.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDBAA0D429672E5B0019C7A5 /* Post.storyboard */; };
 		CDBAA0D729672E740019C7A5 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBAA0D629672E740019C7A5 /* PostModel.swift */; };
@@ -120,6 +125,9 @@
 		CD29EB2F29687F47004CA667 /* ToastNoti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastNoti.swift; sourceTree = "<group>"; };
 		CD29EB31296880F3004CA667 /* FeedMenuDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMenuDataManager.swift; sourceTree = "<group>"; };
 		CD29EB33296887C1004CA667 /* PostViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewDelegate.swift; sourceTree = "<group>"; };
+		CD29EB412969AF44004CA667 /* Follow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Follow.storyboard; sourceTree = "<group>"; };
+		CD29EB432969AF56004CA667 /* FollowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
+		CD29EB452969B083004CA667 /* FollowListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowListViewController.swift; sourceTree = "<group>"; };
 		CD2C992C2964680D006088D8 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		CD2C992E29646A5F006088D8 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		CD2C9930296472CB006088D8 /* SignUpNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNavigationController.swift; sourceTree = "<group>"; };
@@ -192,10 +200,12 @@
 				CD237C882966E22B000BD0AD /* FirebaseStorage in Frameworks */,
 				CD58A48329644F77003C29F0 /* Kingfisher in Frameworks */,
 				CD57D7612962729500138449 /* FacebookGamingServices in Frameworks */,
+				CD29EB372969AA89004CA667 /* Tabman in Frameworks */,
 				CD58A48029644F6C003C29F0 /* Alamofire in Frameworks */,
 				CD57D7652962729500138449 /* FacebookShare in Frameworks */,
 				CD57D7632962729500138449 /* FacebookLogin in Frameworks */,
 				CDCB23BD2966B9AF00C37717 /* YPImagePicker in Frameworks */,
+				CD84BB9B2969B4CF00203285 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,9 +310,44 @@
 			path = Custom;
 			sourceTree = "<group>";
 		};
+		CD29EB3D2969AE3F004CA667 /* Follow */ = {
+			isa = PBXGroup;
+			children = (
+				CD29EB3E2969AE66004CA667 /* Model */,
+				CD29EB3F2969AE6C004CA667 /* View */,
+				CD29EB402969AE71004CA667 /* Controller */,
+			);
+			path = Follow;
+			sourceTree = "<group>";
+		};
+		CD29EB3E2969AE66004CA667 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CD29EB3F2969AE6C004CA667 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD29EB412969AF44004CA667 /* Follow.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CD29EB402969AE71004CA667 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CD29EB432969AF56004CA667 /* FollowViewController.swift */,
+				CD29EB452969B083004CA667 /* FollowListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		CD57D74E2961E29700138449 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				CD29EB3D2969AE3F004CA667 /* Follow */,
 				CDCB23B02965FCE400C37717 /* CustomDelegate */,
 				CD58A47129632560003C29F0 /* Model */,
 				CD58A47229632566003C29F0 /* View */,
@@ -503,6 +548,7 @@
 			children = (
 				CDCB239D2964AACE00C37717 /* ProfileInfoCell.xib */,
 				CDCB23A129651E5B00C37717 /* ContentsCell.xib */,
+				CDCB23A52965D2AF00C37717 /* ProfileTabHeaderView.xib */,
 			);
 			path = Nib;
 			sourceTree = "<group>";
@@ -512,7 +558,6 @@
 			children = (
 				CDCB239C2964AACE00C37717 /* ProfileInfoCell.swift */,
 				CDCB23A029651E5B00C37717 /* ContentsCell.swift */,
-				CDCB23A52965D2AF00C37717 /* ProfileTabHeaderView.xib */,
 				CDCB23A42965D2AF00C37717 /* ProfileTabHeaderView.swift */,
 				CDCB23B72966030D00C37717 /* EditProfileInfoCell.swift */,
 			);
@@ -548,15 +593,14 @@
 			isa = PBXGroup;
 			children = (
 				CD026EE3296058C300C6C359 /* Main.storyboard */,
-				CD29EB232968609E004CA667 /* FeedMenuBottomSheet */,
-				CDBAA0CE29672DF60019C7A5 /* Post */,
-				CDEC3281296086640030E035 /* Splash */,
-				CDEC32822960867C0030E035 /* Home */,
-				CD57D74E2961E29700138449 /* Profile */,
-				CD57D7582961E77B00138449 /* LikeList */,
 				CD57D7672962762600138449 /* Login */,
 				CDFFCE6A296292D20063A53B /* SignUp */,
+				CDEC32822960867C0030E035 /* Home */,
+				CD57D74E2961E29700138449 /* Profile */,
+				CDBAA0CE29672DF60019C7A5 /* Post */,
 				CD58A47D2963265F003C29F0 /* NewPost */,
+				CD29EB232968609E004CA667 /* FeedMenuBottomSheet */,
+				CD57D7582961E77B00138449 /* LikeList */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -595,6 +639,7 @@
 				CDEC3277296086030030E035 /* Device.swift */,
 				CDEC326F296086030030E035 /* Extension */,
 				CDEC328729609AC60030E035 /* Custom */,
+				CDEC3281296086640030E035 /* Splash */,
 				CD29EB2F29687F47004CA667 /* ToastNoti.swift */,
 			);
 			path = Util;
@@ -708,6 +753,8 @@
 				CD58A48229644F77003C29F0 /* Kingfisher */,
 				CDCB23BC2966B9AF00C37717 /* YPImagePicker */,
 				CD237C872966E22B000BD0AD /* FirebaseStorage */,
+				CD29EB362969AA89004CA667 /* Tabman */,
+				CD84BB9A2969B4CF00203285 /* SnapKit */,
 			);
 			productName = instagram_ios_jason;
 			productReference = CD026EDA296058C300C6C359 /* instagram_ios_jason.app */;
@@ -744,6 +791,8 @@
 				CD58A48129644F77003C29F0 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				CDCB23BB2966B9AF00C37717 /* XCRemoteSwiftPackageReference "YPImagePicker" */,
 				CD237C862966E22B000BD0AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				CD29EB352969AA89004CA667 /* XCRemoteSwiftPackageReference "Tabman" */,
+				CD84BB992969B4CF00203285 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = CD026EDB296058C300C6C359 /* Products */;
 			projectDirPath = "";
@@ -770,6 +819,7 @@
 				CD026EEA296058C400C6C359 /* LaunchScreen.storyboard in Resources */,
 				CD026EE7296058C400C6C359 /* Assets.xcassets in Resources */,
 				CD026EE5296058C300C6C359 /* Main.storyboard in Resources */,
+				CD29EB422969AF44004CA667 /* Follow.storyboard in Resources */,
 				CD237C812966C6B2000BD0AD /* PostEdit.storyboard in Resources */,
 				CDEC3296296121750030E035 /* FeedCell.xib in Resources */,
 				CDBAA0D529672E5B0019C7A5 /* Post.storyboard in Resources */,
@@ -821,6 +871,7 @@
 				CD57D74D2961D2F600138449 /* FeedMediaCell.swift in Sources */,
 				CDCB23C32966BEA000C37717 /* PostEditViewController.swift in Sources */,
 				CD57D7692962764500138449 /* LoginViewController.swift in Sources */,
+				CD29EB442969AF56004CA667 /* FollowViewController.swift in Sources */,
 				CD57D7492961BF5600138449 /* HomeDataManager.swift in Sources */,
 				CD58A46E2962BF1C003C29F0 /* SignUpViewController.swift in Sources */,
 				CD026EE0296058C300C6C359 /* SceneDelegate.swift in Sources */,
@@ -846,6 +897,7 @@
 				CD2C993529647942006088D8 /* SignUpNetworkManager.swift in Sources */,
 				CDEC328B29609B3E0030E035 /* UIBarButtonItem.swift in Sources */,
 				CDEC327C296086030030E035 /* UIButton.swift in Sources */,
+				CD29EB462969B083004CA667 /* FollowListViewController.swift in Sources */,
 				CD2C993729647AB7006088D8 /* UserDataModel.swift in Sources */,
 				CDEC3295296121750030E035 /* FeedCell.swift in Sources */,
 			);
@@ -1079,6 +1131,14 @@
 				kind = branch;
 			};
 		};
+		CD29EB352969AA89004CA667 /* XCRemoteSwiftPackageReference "Tabman" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/uias/Tabman.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		CD57D75D2962729500138449 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
@@ -1101,6 +1161,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 7.0.0;
+			};
+		};
+		CD84BB992969B4CF00203285 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
 			};
 		};
 		CDCB23BB2966B9AF00C37717 /* XCRemoteSwiftPackageReference "YPImagePicker" */ = {
@@ -1126,6 +1194,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CD237C862966E22B000BD0AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		CD29EB362969AA89004CA667 /* Tabman */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD29EB352969AA89004CA667 /* XCRemoteSwiftPackageReference "Tabman" */;
+			productName = Tabman;
 		};
 		CD57D75E2962729500138449 /* FacebookCore */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -1156,6 +1229,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CD58A48129644F77003C29F0 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		CD84BB9A2969B4CF00203285 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD84BB992969B4CF00203285 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 		CDCB23BC2966B9AF00C37717 /* YPImagePicker */ = {
 			isa = XCSwiftPackageProductDependency;

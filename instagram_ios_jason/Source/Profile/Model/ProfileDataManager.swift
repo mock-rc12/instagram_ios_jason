@@ -9,9 +9,9 @@ import Foundation
 import Alamofire
 
 class ProfileDataManager {
-    func getProfileNetworkData(userIdx: Int, completion: @escaping (ProfileResult) -> Void) {
+    func getProfileNetworkData(profileIdx: Int, userIdx: Int, completion: @escaping (ProfileResult) -> Void) {
         
-        let url = "\(Constant.BASE_URL)\(Constant.pathProfilesGet)\(userIdx)"
+        let url = "\(Constant.BASE_URL)\(Constant.pathProfilesGet)?profileIdx=\(profileIdx)&userIdx=\(userIdx)"
         let header = HTTPHeader(name: "X-ACCESS-TOKEN", value: Secret.xAcessToken)
         let headers = HTTPHeaders([header])
 
@@ -35,6 +35,29 @@ class ProfileDataManager {
         let headers = HTTPHeaders([header])
         
         AF.request(url, method: .patch, parameters: param, encoder: JSONParameterEncoder.default, headers: headers)
+            .responseDecodable(of: DefaultResponse.self) { response in
+                switch response.result {
+                case .success(let response):
+                    if response.isSuccess == true {
+                        completion(true)
+                    } else {
+                        print("에러 발생")
+                    }
+                case .failure(let error):
+                    print("에러 발생 \(error)")
+                }
+            }
+    }
+    
+    func followReqNetworkData(param: FollowReqModle, idx: Int, completion: @escaping (Bool) -> Void) {
+        
+        let url = "\(Constant.BASE_URL)/\(idx)\(Constant.pathPostFollow)"
+        let header = HTTPHeader(name: "X-ACCESS-TOKEN", value: Secret.xAcessToken)
+        let headers = HTTPHeaders([header])
+        
+        print("🔥🔥🔥🔥🔥🔥URL: \(url)")
+        
+        AF.request(url, method: .post, parameters: param, encoder: JSONParameterEncoder.default, headers: headers)
             .responseDecodable(of: DefaultResponse.self) { response in
                 switch response.result {
                 case .success(let response):

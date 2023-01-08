@@ -13,7 +13,8 @@ class ProfileInfoCell: UICollectionViewCell {
     var profileType: ProfileType = .myProfile
     var item: ProfileResult?
     var delegate: ProfileVCDelegate?
-
+    var indexpath: IndexPath?
+    
     // 프로필
     @IBOutlet weak var profileImageView: UIImageView!
     
@@ -27,12 +28,25 @@ class ProfileInfoCell: UICollectionViewCell {
     @IBOutlet weak var introductionLabel: UILabel!
     @IBOutlet weak var websiteLabel: UILabel!
     
+    // 스택뷰
+    @IBOutlet weak var followerStackView: UIStackView!
+    @IBOutlet weak var followingStackView: UIStackView!
+    
     private var followButton: UIButton = {
         let button = UIButton()
         button.setTitle("읽어들이는 중", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 15, weight: .bold)
         button.setTitleColor(.white, for: .normal)
-        button.addTarget(nil, action: #selector(followButtonTapped), for: .touchUpInside)
+        button.backgroundColor = #colorLiteral(red: 0.149019599, green: 0.149019599, blue: 0.149019599, alpha: 1)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    private var followingButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("읽어들이는 중", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 15, weight: .bold)
+        button.setTitleColor(.white, for: .normal)
         button.backgroundColor = #colorLiteral(red: 0.149019599, green: 0.149019599, blue: 0.149019599, alpha: 1)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -70,11 +84,19 @@ class ProfileInfoCell: UICollectionViewCell {
         return stack
     }()
     
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        print(#function)
+        buttonStack.arrangedSubviews.forEach {
+            buttonStack.removeArrangedSubview($0)
+        }
+    }
+    
+    override func prepareForReuse() {
+        print(#function)
+        buttonStack.arrangedSubviews.forEach {
+            buttonStack.removeArrangedSubview($0)
+        }
     }
     
     func configure() {
@@ -100,17 +122,44 @@ class ProfileInfoCell: UICollectionViewCell {
             introductionLabel.text = safeItem.introduction ?? "비어있음"
             websiteLabel.text = safeItem.website ?? "비어있음"
         }
+        
+        followingStackView.isUserInteractionEnabled = true
+        followerStackView.isUserInteractionEnabled = true
+        let followingGesture = UITapGestureRecognizer(target: self, action: #selector(followingLabelTapped(_:)))
+        let followerGesture = UITapGestureRecognizer(target: self, action: #selector(followerLabelTapped(_:)))
+        followingStackView.addGestureRecognizer(followingGesture)
+        followerStackView.addGestureRecognizer(followerGesture)
+    }
+    
+    @objc func followingLabelTapped(_ sender: UITapGestureRecognizer) {
+        delegate?.followingLabelTapped()
+    }
+    
+    @objc func followerLabelTapped(_ sender: UITapGestureRecognizer) {
+        delegate?.followerLabelTapped()
     }
     
     private func setupButton() {
         self.addSubview(buttonStack)
-        
-        switch profileType {
-        case .otherUserProfile:
+        print("🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥ITEM")
+        dump(item!.followStatus)
+        switch item!.followStatus {
+        case "ACTIVE":
+            print("🔥🔥🔥여기 안걸리냐")
+            setupButtonUI(button: [followingButton, messageButton])
+            followingButton.backgroundColor = #colorLiteral(red: 0.149019599, green: 0.149019599, blue: 0.149019599, alpha: 1)
+            followingButton.setTitle("팔로잉 ▼", for: .normal)
+            followingButton.addTarget(nil, action: #selector(followingButtonTapped), for: .touchUpInside)
+        case "INACTIVE":
             setupButtonUI(button: [followButton, messageButton])
-        case .myProfile:
+            followButton.backgroundColor = #colorLiteral(red: 0, green: 0.3905753791, blue: 0.8777532578, alpha: 1)
+            followButton.setTitle("팔로우", for: .normal)
+            followButton.addTarget(nil, action: #selector(followButtonTapped), for: .touchUpInside)
+        default:
             setupButtonUI(button: [editProfileButton])
         }
+        
+        
         buttonConstraints()
     }
     
@@ -131,13 +180,17 @@ class ProfileInfoCell: UICollectionViewCell {
         ])
     }
     
-    func imageViewRound() {
+    private func imageViewRound() {
         profileImageView.layer.cornerRadius = profileImageView.bounds.width / 2
         profileImageView.clipsToBounds = true
     }
     
     @objc private func followButtonTapped() {
-        delegate?.followButtonTapped()
+        delegate?.followReqButtonTapped()
+    }
+    
+    @objc private func followingButtonTapped() {
+        delegate?.followingButtonTapped()
     }
     
     @objc private func messageButtonTapped() {
@@ -147,4 +200,9 @@ class ProfileInfoCell: UICollectionViewCell {
     @objc private func editProfileButtonTapped() {
         delegate?.editProfileButtonTapped()
     }
+    //
+    //    func followButtonChange() {
+    //        followButton.setTitle("팔로우 중", for: .normal)
+    //        followButton.backgroundColor = #colorLiteral(red: 0.149019599, green: 0.149019599, blue: 0.149019599, alpha: 1)
+    //    }
 }

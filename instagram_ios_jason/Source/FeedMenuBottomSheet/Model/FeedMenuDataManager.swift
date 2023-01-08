@@ -3,7 +3,7 @@
 //  instagram_ios_jason
 //
 //  Created by 김지수 on 2023/01/07.
-//  userIdx=?postIdx="
+
 
 import Foundation
 import Alamofire

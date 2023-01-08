@@ -88,7 +88,7 @@ class FeedCell: UITableViewCell {
             
             // 댓글 개수
             if item.commentCount != 0 {
-                commentCountLabel.text = "댓글 \(item.commentCount)개 모두보기"
+                commentCountLabel.text = "댓글 \(item.commentCount ?? 0)개 모두보기"
             } else {
                 commentCountLabel.text = ""
             }

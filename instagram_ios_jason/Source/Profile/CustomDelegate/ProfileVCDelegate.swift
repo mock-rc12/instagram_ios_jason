@@ -8,10 +8,13 @@
 import Foundation
 
 protocol ProfileVCDelegate {
-    func followButtonTapped()
+    func followReqButtonTapped()
+    func followingButtonTapped()
     func messageButtonTapped()
     func editProfileButtonTapped()
     func profileEditSuccess()
+    func followingLabelTapped()
+    func followerLabelTapped()
 }
 
 protocol EditProfileDelegate {
