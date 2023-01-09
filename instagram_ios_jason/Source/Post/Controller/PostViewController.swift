@@ -74,7 +74,7 @@ extension PostViewController: HomeVCDelegate {
         print(#function)
     }
     
-    func commentCountLabelTapped() {
+    func commentCountLabelTapped(user: FeedsResult) {
         print(#function)
     }
     

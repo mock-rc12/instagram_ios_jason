@@ -37,6 +37,11 @@
 		CD2ABD0B296C6FD800999905 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2ABD0A296C6FD800999905 /* SearchViewController.swift */; };
 		CD2ABD0E296C707D00999905 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2ABD0C296C707D00999905 /* SearchResultCell.swift */; };
 		CD2ABD0F296C707D00999905 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2ABD0D296C707D00999905 /* SearchResultCell.xib */; };
+		CD2ABD15296C845600999905 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2ABD14296C845600999905 /* CommentViewController.swift */; };
+		CD2ABD17296C846500999905 /* Comment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD2ABD16296C846500999905 /* Comment.storyboard */; };
+		CD2ABD1E296C89FB00999905 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2ABD1C296C89FB00999905 /* CommentCell.swift */; };
+		CD2ABD1F296C89FB00999905 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2ABD1D296C89FB00999905 /* CommentCell.xib */; };
+		CD2ABD21296C8F1900999905 /* UILabel+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2ABD20296C8F1900999905 /* UILabel+Padding.swift */; };
 		CD2C992D2964680D006088D8 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C992C2964680D006088D8 /* Constant.swift */; };
 		CD2C992F29646A5F006088D8 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C992E29646A5F006088D8 /* Secret.swift */; };
 		CD2C9931296472CB006088D8 /* SignUpNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C9930296472CB006088D8 /* SignUpNavigationController.swift */; };
@@ -142,6 +147,11 @@
 		CD2ABD0A296C6FD800999905 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		CD2ABD0C296C707D00999905 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		CD2ABD0D296C707D00999905 /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
+		CD2ABD14296C845600999905 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		CD2ABD16296C846500999905 /* Comment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Comment.storyboard; sourceTree = "<group>"; };
+		CD2ABD1C296C89FB00999905 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		CD2ABD1D296C89FB00999905 /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
+		CD2ABD20296C8F1900999905 /* UILabel+Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Padding.swift"; sourceTree = "<group>"; };
 		CD2C992C2964680D006088D8 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		CD2C992E29646A5F006088D8 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		CD2C9930296472CB006088D8 /* SignUpNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNavigationController.swift; sourceTree = "<group>"; };
@@ -402,6 +412,41 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		CD2ABD10296C7B1900999905 /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				CD2ABD11296C7B3900999905 /* Model */,
+				CD2ABD12296C7B3E00999905 /* View */,
+				CD2ABD13296C7B4400999905 /* Controller */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
+		CD2ABD11296C7B3900999905 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CD2ABD12296C7B3E00999905 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD2ABD16296C846500999905 /* Comment.storyboard */,
+				CD2ABD1C296C89FB00999905 /* CommentCell.swift */,
+				CD2ABD1D296C89FB00999905 /* CommentCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CD2ABD13296C7B4400999905 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CD2ABD14296C845600999905 /* CommentViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		CD57D74E2961E29700138449 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -651,6 +696,7 @@
 			isa = PBXGroup;
 			children = (
 				CD026EE3296058C300C6C359 /* Main.storyboard */,
+				CD2ABD10296C7B1900999905 /* Comment */,
 				CD2ABD00296C6E3C00999905 /* Search */,
 				CD57D7672962762600138449 /* Login */,
 				CDFFCE6A296292D20063A53B /* SignUp */,
@@ -744,6 +790,7 @@
 				CDEC328829609AEC0030E035 /* CustomNaviBarItem.swift */,
 				CDEC328529608FCF0030E035 /* CustomNavigationController.swift */,
 				CD58A46F2962CAC3003C29F0 /* CustomSkyTextField.swift */,
+				CD2ABD20296C8F1900999905 /* UILabel+Padding.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -874,6 +921,7 @@
 				CD2ABD0F296C707D00999905 /* SearchResultCell.xib in Resources */,
 				CDCB23B42965FE7800C37717 /* EditMyProfile.storyboard in Resources */,
 				CDCB23A72965D2AF00C37717 /* ProfileTabHeaderView.xib in Resources */,
+				CD2ABD17296C846500999905 /* Comment.storyboard in Resources */,
 				CD57D75A2961E7A700138449 /* LikeList.storyboard in Resources */,
 				CD17B9C02961956F0069B8A1 /* StoryTableCell.xib in Resources */,
 				CD379C79296BBB1500E27089 /* FollowCell.xib in Resources */,
@@ -881,6 +929,7 @@
 				CD026EE7296058C400C6C359 /* Assets.xcassets in Resources */,
 				CD026EE5296058C300C6C359 /* Main.storyboard in Resources */,
 				CD237C812966C6B2000BD0AD /* PostEdit.storyboard in Resources */,
+				CD2ABD1F296C89FB00999905 /* CommentCell.xib in Resources */,
 				CDEC3296296121750030E035 /* FeedCell.xib in Resources */,
 				CDBAA0D529672E5B0019C7A5 /* Post.storyboard in Resources */,
 				CD2ABD09296C6FCD00999905 /* Search.storyboard in Resources */,
@@ -899,6 +948,8 @@
 				CD237C852966C759000BD0AD /* NewPostDataManager.swift in Sources */,
 				CD17B9BF2961956F0069B8A1 /* StoryTableCell.swift in Sources */,
 				CD2C993929648E4D006088D8 /* LoginDataModel.swift in Sources */,
+				CD2ABD15296C845600999905 /* CommentViewController.swift in Sources */,
+				CD2ABD1E296C89FB00999905 /* CommentCell.swift in Sources */,
 				CDEC3280296086030030E035 /* Device.swift in Sources */,
 				CD2C9931296472CB006088D8 /* SignUpNavigationController.swift in Sources */,
 				CD379C7B296C0D0B00E27089 /* FollowDataManager.swift in Sources */,
@@ -927,6 +978,7 @@
 				CDCB23AD2965EA1A00C37717 /* Extension ProfileVC + collectionView.swift in Sources */,
 				CD29EB32296880F3004CA667 /* FeedMenuDataManager.swift in Sources */,
 				CD57D74B2961C41200138449 /* UserModel.swift in Sources */,
+				CD2ABD21296C8F1900999905 /* UILabel+Padding.swift in Sources */,
 				CDBAA0D329672E560019C7A5 /* PostViewController.swift in Sources */,
 				CD2C992D2964680D006088D8 /* Constant.swift in Sources */,
 				CDCB23B82966030D00C37717 /* EditProfileInfoCell.swift in Sources */,

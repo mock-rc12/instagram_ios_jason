@@ -197,8 +197,11 @@ extension HomeViewController: HomeVCDelegate {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func commentCountLabelTapped() {
-        
+    func commentCountLabelTapped(user: FeedsResult) {
+        guard let vc = UIStoryboard(name: "Comment", bundle: nil).instantiateViewController(withIdentifier: "CommentViewController") as? CommentViewController else { return }
+        vc.userIdx = user.userIdx
+        vc.postIdx = user.postIdx
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func userIdLabelTapped(user: FeedsResult) {

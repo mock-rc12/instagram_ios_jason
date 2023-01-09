@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" rowHeight="73" id="KGk-i7-Jjw" customClass="CommentCell" customModule="instagram_ios_jason" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="73"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="73"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HTc-Fu-uVn">
+                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="HTc-Fu-uVn" secondAttribute="height" multiplier="1:1" id="fw6-nm-JSD"/>
+                            <constraint firstAttribute="width" constant="40" id="lfa-Z4-yKr"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ejy-rC-24V">
+                        <rect key="frame" x="55" y="0.0" width="40" height="18"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World! He" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SA9-KV-sqe">
+                        <rect key="frame" x="55" y="0.0" width="250" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YZJ-rX-r9S">
+                        <rect key="frame" x="54.999999999999993" y="23" width="122.33333333333331" height="15.666666666666664"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0주" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHl-Uc-pUo">
+                                <rect key="frame" x="0.0" y="0.0" width="19.666666666666668" height="15.666666666666666"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="좋아요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6DS-gX-Dah">
+                                <rect key="frame" x="29.666666666666671" y="0.0" width="34" height="15.666666666666666"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="답글 달기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkg-0A-UPl">
+                                <rect key="frame" x="73.666666666666657" y="0.0" width="48.666666666666657" height="15.666666666666666"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="HTc-Fu-uVn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="5fv-M8-n6A"/>
+                    <constraint firstItem="SA9-KV-sqe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="8ft-dU-6KT"/>
+                    <constraint firstItem="Ejy-rC-24V" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="GcR-eU-UZR"/>
+                    <constraint firstItem="YZJ-rX-r9S" firstAttribute="top" secondItem="SA9-KV-sqe" secondAttribute="bottom" constant="5" id="QUG-Rd-lhL"/>
+                    <constraint firstAttribute="trailing" secondItem="SA9-KV-sqe" secondAttribute="trailing" constant="15" id="TvD-dN-NeP"/>
+                    <constraint firstItem="HTc-Fu-uVn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="XPy-iM-if3"/>
+                    <constraint firstItem="Ejy-rC-24V" firstAttribute="leading" secondItem="HTc-Fu-uVn" secondAttribute="trailing" constant="15" id="jdg-vI-Myk"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="SA9-KV-sqe" secondAttribute="bottom" id="sax-lX-tj7"/>
+                    <constraint firstItem="YZJ-rX-r9S" firstAttribute="leading" secondItem="SA9-KV-sqe" secondAttribute="leading" id="wgR-uO-YZb"/>
+                    <constraint firstItem="SA9-KV-sqe" firstAttribute="leading" secondItem="HTc-Fu-uVn" secondAttribute="trailing" constant="15" id="xtL-0d-FjH"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="bodyLabel" destination="SA9-KV-sqe" id="Bb6-Xk-6xX"/>
+                <outlet property="commentLikeCountLabel" destination="6DS-gX-Dah" id="Exj-Ks-cOw"/>
+                <outlet property="idLabel" destination="Ejy-rC-24V" id="Nwe-Gu-5Ua"/>
+                <outlet property="timeLabel" destination="dHl-Uc-pUo" id="Fjp-rZ-GaN"/>
+                <outlet property="userProfileImageView" destination="HTc-Fu-uVn" id="qDo-M0-SJJ"/>
+            </connections>
+            <point key="canvasLocation" x="4.5801526717557248" y="29.929577464788736"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

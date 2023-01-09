@@ -110,7 +110,7 @@ class ProfileInfoCell: UICollectionViewCell {
                 profileImageView.kf.setImage(with: imageUrl)
                 imageViewRound()
             } else {
-                profileImageView.kf.setImage(with: URL(string: Constant.defaultImage))
+                profileImageView.image = Constant.defaultImage
                 imageViewRound()
             }
             

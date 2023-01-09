@@ -162,13 +162,13 @@ class FeedCell: UITableViewCell {
             print("좋아요 카운트 눌림")
             delegate?.likeCountLabelTapped()
         case commentCountLabel:
-            print("댓글 보기 버튼 눌림")
+            delegate?.commentCountLabelTapped(user: item)
         case profileImageView:
             print("프로필 이미지 눌림")
         case moreImageView:
             delegate?.moreImageTapped(item: item)
         default:
-            print("할당되지 않음")
+            delegate?.commentCountLabelTapped(user: item)
         }
     }
 }
