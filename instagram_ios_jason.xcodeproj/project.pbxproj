@@ -29,7 +29,6 @@
 		CD29EB32296880F3004CA667 /* FeedMenuDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD29EB31296880F3004CA667 /* FeedMenuDataManager.swift */; };
 		CD29EB34296887C1004CA667 /* PostViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD29EB33296887C1004CA667 /* PostViewDelegate.swift */; };
 		CD29EB372969AA89004CA667 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = CD29EB362969AA89004CA667 /* Tabman */; };
-		CD29EB422969AF44004CA667 /* Follow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD29EB412969AF44004CA667 /* Follow.storyboard */; };
 		CD29EB442969AF56004CA667 /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD29EB432969AF56004CA667 /* FollowViewController.swift */; };
 		CD29EB462969B083004CA667 /* FollowListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD29EB452969B083004CA667 /* FollowListViewController.swift */; };
 		CD2C992D2964680D006088D8 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C992C2964680D006088D8 /* Constant.swift */; };
@@ -40,6 +39,10 @@
 		CD2C993729647AB7006088D8 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C993629647AB7006088D8 /* UserDataModel.swift */; };
 		CD2C993929648E4D006088D8 /* LoginDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C993829648E4D006088D8 /* LoginDataModel.swift */; };
 		CD2C993B29648F63006088D8 /* LoginNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C993A29648F63006088D8 /* LoginNetworkManager.swift */; };
+		CD379C78296BBB1500E27089 /* FollowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD379C76296BBB1500E27089 /* FollowCell.swift */; };
+		CD379C79296BBB1500E27089 /* FollowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD379C77296BBB1500E27089 /* FollowCell.xib */; };
+		CD379C7B296C0D0B00E27089 /* FollowDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD379C7A296C0D0B00E27089 /* FollowDataManager.swift */; };
+		CD379C7D296C148D00E27089 /* FollowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD379C7C296C148D00E27089 /* FollowModel.swift */; };
 		CD57D7472961BAFE00138449 /* FeedsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD57D7462961BAFE00138449 /* FeedsModel.swift */; };
 		CD57D7492961BF5600138449 /* HomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD57D7482961BF5600138449 /* HomeDataManager.swift */; };
 		CD57D74B2961C41200138449 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD57D74A2961C41200138449 /* UserModel.swift */; };
@@ -125,7 +128,6 @@
 		CD29EB2F29687F47004CA667 /* ToastNoti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastNoti.swift; sourceTree = "<group>"; };
 		CD29EB31296880F3004CA667 /* FeedMenuDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMenuDataManager.swift; sourceTree = "<group>"; };
 		CD29EB33296887C1004CA667 /* PostViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewDelegate.swift; sourceTree = "<group>"; };
-		CD29EB412969AF44004CA667 /* Follow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Follow.storyboard; sourceTree = "<group>"; };
 		CD29EB432969AF56004CA667 /* FollowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
 		CD29EB452969B083004CA667 /* FollowListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowListViewController.swift; sourceTree = "<group>"; };
 		CD2C992C2964680D006088D8 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -136,6 +138,10 @@
 		CD2C993629647AB7006088D8 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		CD2C993829648E4D006088D8 /* LoginDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataModel.swift; sourceTree = "<group>"; };
 		CD2C993A29648F63006088D8 /* LoginNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNetworkManager.swift; sourceTree = "<group>"; };
+		CD379C76296BBB1500E27089 /* FollowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowCell.swift; sourceTree = "<group>"; };
+		CD379C77296BBB1500E27089 /* FollowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowCell.xib; sourceTree = "<group>"; };
+		CD379C7A296C0D0B00E27089 /* FollowDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowDataManager.swift; sourceTree = "<group>"; };
+		CD379C7C296C148D00E27089 /* FollowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowModel.swift; sourceTree = "<group>"; };
 		CD57D7462961BAFE00138449 /* FeedsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsModel.swift; sourceTree = "<group>"; };
 		CD57D7482961BF5600138449 /* HomeDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataManager.swift; sourceTree = "<group>"; };
 		CD57D74A2961C41200138449 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -323,6 +329,8 @@
 		CD29EB3E2969AE66004CA667 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CD379C7A296C0D0B00E27089 /* FollowDataManager.swift */,
+				CD379C7C296C148D00E27089 /* FollowModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -330,7 +338,8 @@
 		CD29EB3F2969AE6C004CA667 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CD29EB412969AF44004CA667 /* Follow.storyboard */,
+				CD379C76296BBB1500E27089 /* FollowCell.swift */,
+				CD379C77296BBB1500E27089 /* FollowCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -816,10 +825,10 @@
 				CDCB23A72965D2AF00C37717 /* ProfileTabHeaderView.xib in Resources */,
 				CD57D75A2961E7A700138449 /* LikeList.storyboard in Resources */,
 				CD17B9C02961956F0069B8A1 /* StoryTableCell.xib in Resources */,
+				CD379C79296BBB1500E27089 /* FollowCell.xib in Resources */,
 				CD026EEA296058C400C6C359 /* LaunchScreen.storyboard in Resources */,
 				CD026EE7296058C400C6C359 /* Assets.xcassets in Resources */,
 				CD026EE5296058C300C6C359 /* Main.storyboard in Resources */,
-				CD29EB422969AF44004CA667 /* Follow.storyboard in Resources */,
 				CD237C812966C6B2000BD0AD /* PostEdit.storyboard in Resources */,
 				CDEC3296296121750030E035 /* FeedCell.xib in Resources */,
 				CDBAA0D529672E5B0019C7A5 /* Post.storyboard in Resources */,
@@ -840,6 +849,7 @@
 				CD2C993929648E4D006088D8 /* LoginDataModel.swift in Sources */,
 				CDEC3280296086030030E035 /* Device.swift in Sources */,
 				CD2C9931296472CB006088D8 /* SignUpNavigationController.swift in Sources */,
+				CD379C7B296C0D0B00E27089 /* FollowDataManager.swift in Sources */,
 				CD29EB2229685766004CA667 /* CenterButton.swift in Sources */,
 				CDEC327A296086030030E035 /* UIColor.swift in Sources */,
 				CDEC3279296086030030E035 /* Date.swift in Sources */,
@@ -851,6 +861,7 @@
 				CD57D7472961BAFE00138449 /* FeedsModel.swift in Sources */,
 				CDCB23A229651E5B00C37717 /* ContentsCell.swift in Sources */,
 				CD58A496296450F4003C29F0 /* FeedsDataManager.swift in Sources */,
+				CD379C78296BBB1500E27089 /* FollowCell.swift in Sources */,
 				CDBAA0DB2967D71A0019C7A5 /* BottomSheetViewController.swift in Sources */,
 				CDEC328629608FCF0030E035 /* CustomNavigationController.swift in Sources */,
 				CD026EDE296058C300C6C359 /* AppDelegate.swift in Sources */,
@@ -875,6 +886,7 @@
 				CD57D7492961BF5600138449 /* HomeDataManager.swift in Sources */,
 				CD58A46E2962BF1C003C29F0 /* SignUpViewController.swift in Sources */,
 				CD026EE0296058C300C6C359 /* SceneDelegate.swift in Sources */,
+				CD379C7D296C148D00E27089 /* FollowModel.swift in Sources */,
 				CDEC328929609AEC0030E035 /* CustomNaviBarItem.swift in Sources */,
 				CD57D75C2961E7B200138449 /* LikeListViewController.swift in Sources */,
 				CDEC327B296086030030E035 /* String.swift in Sources */,

@@ -56,7 +56,7 @@ class ProfileDataManager {
         let headers = HTTPHeaders([header])
         
         print("🔥🔥🔥🔥🔥🔥URL: \(url)")
-        
+        print("🔥🔥🔥🔥🔥🔥param: \(param)")
         AF.request(url, method: .post, parameters: param, encoder: JSONParameterEncoder.default, headers: headers)
             .responseDecodable(of: DefaultResponse.self) { response in
                 switch response.result {

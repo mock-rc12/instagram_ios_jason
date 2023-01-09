@@ -129,9 +129,9 @@ class ProfileViewController: BaseViewController {
     func presentFollowVC(type: FollowListViewController.followType) {
         let vc = FollowViewController()
         vc.profile = profileItem!
+        vc.pageType = type
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
 }
 
 
