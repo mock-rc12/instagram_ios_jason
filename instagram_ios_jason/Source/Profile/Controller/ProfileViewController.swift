@@ -60,6 +60,7 @@ class ProfileViewController: BaseViewController {
     
     private func setupUI(id: String) {
         self.navigationItem.title = id
+        self.navigationController?.navigationBar.isHidden = false
     }
     
     func setupCollectionView() {

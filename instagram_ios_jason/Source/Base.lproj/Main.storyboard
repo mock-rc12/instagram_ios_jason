@@ -40,33 +40,15 @@
             </objects>
             <point key="canvasLocation" x="-645.03816793893122" y="395.77464788732397"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="siF-Ca-D2X">
+        <!--Search-->
+        <scene sceneID="0E9-Yx-HUP">
             <objects>
-                <viewController id="cAC-Rm-PKz" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7Qq-1N-wOv">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEARCH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YL2-Yt-IVI">
-                                <rect key="frame" x="163.66666666666666" y="426" width="66" height="20.333333333333314"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="lhb-kJ-0qv"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="YL2-Yt-IVI" firstAttribute="centerX" secondItem="lhb-kJ-0qv" secondAttribute="centerX" id="dzY-9t-rJf"/>
-                            <constraint firstItem="YL2-Yt-IVI" firstAttribute="centerY" secondItem="lhb-kJ-0qv" secondAttribute="centerY" id="zCj-8j-If4"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="gxS-wb-e0l"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1XB-zq-jgQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Search" id="fH1-bu-rcL" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="DCZ-mY-H3N"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hIt-jm-XWk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="246.56488549618319" y="395.77464788732397"/>
+            <point key="canvasLocation" x="239" y="337"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="GfZ-if-zuf">
@@ -177,10 +159,10 @@
             </objects>
             <point key="canvasLocation" x="-645" y="-1118"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Custom Navigation Controller-->
         <scene sceneID="ga8-yb-uRz">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PGf-J7-D6t" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PGf-J7-D6t" customClass="CustomNavigationController" customModule="instagram_ios_jason" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" id="SrS-aH-dKr"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HK7-e0-ldo">
@@ -189,7 +171,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="cAC-Rm-PKz" kind="relationship" relationship="rootViewController" id="aBQ-om-kWO"/>
+                        <segue destination="fH1-bu-rcL" kind="relationship" relationship="rootViewController" id="4qs-UK-rGU"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1A6-qq-tb4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

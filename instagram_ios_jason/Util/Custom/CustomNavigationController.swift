@@ -27,6 +27,8 @@ class CustomNavigationController: UINavigationController, UINavigationController
             self.navigationBar.isHidden = true
         } else if ((viewController as? SignUpViewController) != nil) {
             self.navigationBar.isHidden = true
+        } else if ((viewController as? SearchViewController) != nil) {
+            self.navigationBar.isHidden = true
         } else {
             self.navigationBar.isHidden = false
         }

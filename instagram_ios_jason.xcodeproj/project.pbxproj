@@ -31,6 +31,12 @@
 		CD29EB372969AA89004CA667 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = CD29EB362969AA89004CA667 /* Tabman */; };
 		CD29EB442969AF56004CA667 /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD29EB432969AF56004CA667 /* FollowViewController.swift */; };
 		CD29EB462969B083004CA667 /* FollowListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD29EB452969B083004CA667 /* FollowListViewController.swift */; };
+		CD2ABD05296C6E5800999905 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2ABD04296C6E5800999905 /* SearchModel.swift */; };
+		CD2ABD07296C6ED400999905 /* SearchDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2ABD06296C6ED400999905 /* SearchDataManager.swift */; };
+		CD2ABD09296C6FCD00999905 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD2ABD08296C6FCD00999905 /* Search.storyboard */; };
+		CD2ABD0B296C6FD800999905 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2ABD0A296C6FD800999905 /* SearchViewController.swift */; };
+		CD2ABD0E296C707D00999905 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2ABD0C296C707D00999905 /* SearchResultCell.swift */; };
+		CD2ABD0F296C707D00999905 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2ABD0D296C707D00999905 /* SearchResultCell.xib */; };
 		CD2C992D2964680D006088D8 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C992C2964680D006088D8 /* Constant.swift */; };
 		CD2C992F29646A5F006088D8 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C992E29646A5F006088D8 /* Secret.swift */; };
 		CD2C9931296472CB006088D8 /* SignUpNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C9930296472CB006088D8 /* SignUpNavigationController.swift */; };
@@ -130,6 +136,12 @@
 		CD29EB33296887C1004CA667 /* PostViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewDelegate.swift; sourceTree = "<group>"; };
 		CD29EB432969AF56004CA667 /* FollowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
 		CD29EB452969B083004CA667 /* FollowListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowListViewController.swift; sourceTree = "<group>"; };
+		CD2ABD04296C6E5800999905 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		CD2ABD06296C6ED400999905 /* SearchDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDataManager.swift; sourceTree = "<group>"; };
+		CD2ABD08296C6FCD00999905 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		CD2ABD0A296C6FD800999905 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		CD2ABD0C296C707D00999905 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		CD2ABD0D296C707D00999905 /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		CD2C992C2964680D006088D8 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		CD2C992E29646A5F006088D8 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		CD2C9930296472CB006088D8 /* SignUpNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNavigationController.swift; sourceTree = "<group>"; };
@@ -351,6 +363,43 @@
 				CD29EB452969B083004CA667 /* FollowListViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		CD2ABD00296C6E3C00999905 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				CD2ABD03296C6E4A00999905 /* Model */,
+				CD2ABD02296C6E4800999905 /* View */,
+				CD2ABD01296C6E4500999905 /* Controller */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		CD2ABD01296C6E4500999905 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CD2ABD0A296C6FD800999905 /* SearchViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CD2ABD02296C6E4800999905 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD2ABD08296C6FCD00999905 /* Search.storyboard */,
+				CD2ABD0C296C707D00999905 /* SearchResultCell.swift */,
+				CD2ABD0D296C707D00999905 /* SearchResultCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CD2ABD03296C6E4A00999905 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CD2ABD04296C6E5800999905 /* SearchModel.swift */,
+				CD2ABD06296C6ED400999905 /* SearchDataManager.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		CD57D74E2961E29700138449 /* Profile */ = {
@@ -602,6 +651,7 @@
 			isa = PBXGroup;
 			children = (
 				CD026EE3296058C300C6C359 /* Main.storyboard */,
+				CD2ABD00296C6E3C00999905 /* Search */,
 				CD57D7672962762600138449 /* Login */,
 				CDFFCE6A296292D20063A53B /* SignUp */,
 				CDEC32822960867C0030E035 /* Home */,
@@ -821,6 +871,7 @@
 				CDCB23A329651E5B00C37717 /* ContentsCell.xib in Resources */,
 				CD57D7522961E32000138449 /* Profile.storyboard in Resources */,
 				CDCB239F2964AACE00C37717 /* ProfileInfoCell.xib in Resources */,
+				CD2ABD0F296C707D00999905 /* SearchResultCell.xib in Resources */,
 				CDCB23B42965FE7800C37717 /* EditMyProfile.storyboard in Resources */,
 				CDCB23A72965D2AF00C37717 /* ProfileTabHeaderView.xib in Resources */,
 				CD57D75A2961E7A700138449 /* LikeList.storyboard in Resources */,
@@ -832,6 +883,7 @@
 				CD237C812966C6B2000BD0AD /* PostEdit.storyboard in Resources */,
 				CDEC3296296121750030E035 /* FeedCell.xib in Resources */,
 				CDBAA0D529672E5B0019C7A5 /* Post.storyboard in Resources */,
+				CD2ABD09296C6FCD00999905 /* Search.storyboard in Resources */,
 				CD237C8A2966E24E000BD0AD /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -851,6 +903,7 @@
 				CD2C9931296472CB006088D8 /* SignUpNavigationController.swift in Sources */,
 				CD379C7B296C0D0B00E27089 /* FollowDataManager.swift in Sources */,
 				CD29EB2229685766004CA667 /* CenterButton.swift in Sources */,
+				CD2ABD07296C6ED400999905 /* SearchDataManager.swift in Sources */,
 				CDEC327A296086030030E035 /* UIColor.swift in Sources */,
 				CDEC3279296086030030E035 /* Date.swift in Sources */,
 				CDEC326C296085D50030E035 /* BaseViewController.swift in Sources */,
@@ -863,6 +916,7 @@
 				CD58A496296450F4003C29F0 /* FeedsDataManager.swift in Sources */,
 				CD379C78296BBB1500E27089 /* FollowCell.swift in Sources */,
 				CDBAA0DB2967D71A0019C7A5 /* BottomSheetViewController.swift in Sources */,
+				CD2ABD0E296C707D00999905 /* SearchResultCell.swift in Sources */,
 				CDEC328629608FCF0030E035 /* CustomNavigationController.swift in Sources */,
 				CD026EDE296058C300C6C359 /* AppDelegate.swift in Sources */,
 				CD57D7572961E42100138449 /* HomeVCDelegate.swift in Sources */,
@@ -896,6 +950,7 @@
 				CDCB23A62965D2AF00C37717 /* ProfileTabHeaderView.swift in Sources */,
 				CD17B9C22961964F0069B8A1 /* StoryCell.swift in Sources */,
 				CD29EB2C29686B49004CA667 /* FeedMenuCell.swift in Sources */,
+				CD2ABD05296C6E5800999905 /* SearchModel.swift in Sources */,
 				CDCB239E2964AACE00C37717 /* ProfileInfoCell.swift in Sources */,
 				CD29EB2E29687A56004CA667 /* FeedMenuDelegate.swift in Sources */,
 				CD29EB2A29686108004CA667 /* FeedMenuModel.swift in Sources */,
@@ -907,6 +962,7 @@
 				CD29EB3029687F47004CA667 /* ToastNoti.swift in Sources */,
 				CDCB23B62965FF9D00C37717 /* EditMyProfileViewController.swift in Sources */,
 				CD2C993529647942006088D8 /* SignUpNetworkManager.swift in Sources */,
+				CD2ABD0B296C6FD800999905 /* SearchViewController.swift in Sources */,
 				CDEC328B29609B3E0030E035 /* UIBarButtonItem.swift in Sources */,
 				CDEC327C296086030030E035 /* UIButton.swift in Sources */,
 				CD29EB462969B083004CA667 /* FollowListViewController.swift in Sources */,
