@@ -13,7 +13,6 @@ class HomeViewController: BaseViewController {
     
     @IBOutlet weak var homeFeedTableView: UITableView!
     
-    var feedDatas: [Feed] = []
     var feedsData: [FeedsResult] = []
     let feedsDataManager = FeedsDataManager()
     let refreshControl = UIRefreshControl()
@@ -35,10 +34,10 @@ class HomeViewController: BaseViewController {
             let vc = UIStoryboard(name: "Login", bundle: .none).instantiateViewController(withIdentifier: "LoginNavigation")
             present(vc, animated: true)
         }
-        //         임시
-        //        let vc = UIStoryboard(name: "Login", bundle: .none).instantiateViewController(withIdentifier: "LoginNavigation")
-        //        vc.modalPresentationStyle = .fullScreen
-        //        present(vc, animated: true)
+//                 임시
+//                let vc = UIStoryboard(name: "Login", bundle: .none).instantiateViewController(withIdentifier: "LoginNavigation")
+//                vc.modalPresentationStyle = .fullScreen
+//                present(vc, animated: true)
     }
     
     private func setupData(completion: @escaping (Bool) -> Void?) {
@@ -182,6 +181,26 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension HomeViewController: HomeVCDelegate {
+    func likeButtonTapped(data: FeedsResult) {
+        PostDataManager().likeNetworkData(userIdx: Secret.userIdx, postIdx: data.postIdx) { [weak self] isSuccess in
+            if isSuccess == true {
+                self?.setupData(completion: { isSuccess in
+                    if isSuccess == true {
+                        dump(self?.feedsData)
+                    }
+                })
+            }
+        }
+    }
+    
+    func shareButtonTapped() {
+        
+    }
+    
+    func messageButtonTapped() {
+        
+    }
+    
     func feedModifySuccessed() {
         print(#function)
         setupData {_ in ()}

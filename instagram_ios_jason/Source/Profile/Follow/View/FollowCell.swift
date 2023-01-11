@@ -141,6 +141,7 @@ class FollowCell: UITableViewCell {
         followButton.clipsToBounds = true
         
         followButton.addTarget(self, action: #selector(followButtonTapped), for: .touchUpInside)
+        
     }
     
     @objc func followButtonTapped() {

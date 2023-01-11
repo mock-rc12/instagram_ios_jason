@@ -10,8 +10,40 @@ import Kingfisher
 
 class FeedCell: UITableViewCell {
     
+    enum LikeStatus {
+        case likeY
+        case likeN
+        
+        var likeImage: UIImage? {
+            switch self {
+            case .likeN:
+                return UIImage(systemName: "heart")
+            case .likeY:
+                return UIImage(systemName: "heart.fill")
+            }
+        }
+        
+        var likeColor: UIColor {
+            switch self {
+            case .likeN:
+                return UIColor.label
+            case .likeY:
+                return UIColor.red
+            }
+        }
+    }
+    
     var feedsItem: FeedsResult?
     var delegate: HomeVCDelegate?
+    var likeStatus: LikeStatus? {
+        didSet {
+            if likeStatus == .likeY {
+                likeEnableUI()
+            } else if likeStatus == .likeN {
+                likeDisableUI()
+            }
+        }
+    }
     
     // User
     @IBOutlet weak var profileImageView: UIImageView!
@@ -42,10 +74,10 @@ class FeedCell: UITableViewCell {
         setupProfile()
         setupButtons(button: [likeButton, messageButton, sendButton, bookmarkButton])
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -54,13 +86,36 @@ class FeedCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
-//        self.addSubview(commentCountLabel)
+        likeDisableUI()
     }
     
     func setupButtons(button: [UIButton]) {
         button.forEach { button in
             button.setTitle("", for: .normal)
         }
+    }
+    
+    func likeCheck() {
+        if let item = feedsItem {
+            PostDataManager().likeUserListNetworkData(userIdx: Secret.userIdx, postIdx: item.postIdx) { result in
+                dump(result)
+                result.forEach { [weak self] item in
+                    if Secret.userIdx == item.userIdx {
+                        self?.likeStatus = .likeY
+                    }
+                }
+            }
+        }
+    }
+    
+    func likeEnableUI() {
+        likeButton.tintColor = LikeStatus.likeY.likeColor
+        likeButton.setImage(LikeStatus.likeY.likeImage, for: .normal)
+    }
+    
+    func likeDisableUI() {
+        likeButton.tintColor = LikeStatus.likeN.likeColor
+        likeButton.setImage(LikeStatus.likeN.likeImage, for: .normal)
     }
     
     func setupProfile() {
@@ -99,15 +154,17 @@ class FeedCell: UITableViewCell {
             // 제스쳐 셋업
             setupGesture(view: [idLabel, likeCountLabel, commentCountLabel, bodyLabel, profileImageView, moreImageView, bodyIdLabel])
         }
+        
+        likeCheck()
     }
     
     func kingfisher() {
-
+        
         if let item = feedsItem {
             
             let url = URL(string: item.profileImgUrl ?? "")
             let processor = DownsamplingImageProcessor(size: profileImageView.bounds.size)
-                         |> RoundCornerImageProcessor(cornerRadius: 20)
+            |> RoundCornerImageProcessor(cornerRadius: 20)
             profileImageView.kf.indicatorType = .activity
             profileImageView.kf.setImage(
                 with: url,
@@ -171,6 +228,17 @@ class FeedCell: UITableViewCell {
             delegate?.commentCountLabelTapped(user: item)
         }
     }
+    
+    @IBAction func likeButtonTapped(_ sender: UIButton) {
+        delegate?.likeButtonTapped(data: feedsItem!)
+    }
+    
+    @IBAction func messageButtonTapped(_ sender: UIButton) {
+    }
+    
+    @IBAction func shareButtonTapped(_ sender: UIButton) {
+    }
+    
 }
 
 extension FeedCell: UICollectionViewDataSource, UICollectionViewDelegate {

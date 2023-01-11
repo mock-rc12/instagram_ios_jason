@@ -123,6 +123,7 @@ class SignUpViewController: BaseViewController {
                 self?.userInfoTextField.removeFromSuperview()
                 self?.nextButton.setTitle("완료", for: .normal)
             } else {
+                IndicatorView.shared.dismiss()
                 print("🚨🚨🚨🚨🚨🚨🚨🚨🚨 가입 실패")
                 self?.infoType = .failure
                 self?.setupUI()

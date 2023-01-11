@@ -19,7 +19,6 @@ class CommentViewController: UIViewController {
     var postResult: PostResult?
     let dataManager = PostDataManager()
     
-    
     var textFieldBtn: UIButton = {
         let button = UIButton()
         button.setTitle("게시", for: .normal)
@@ -44,7 +43,6 @@ class CommentViewController: UIViewController {
         tableView.register(UINib(nibName: "CommentCell", bundle: nil), forCellReuseIdentifier: "CommentCell")
         tableView.delegate = self
         tableView.dataSource = self
-//        tableView.rowHeight = 200
     }
     
     func setupUI() {

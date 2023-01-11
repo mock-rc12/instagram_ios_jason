@@ -32,4 +32,52 @@ class PostDataManager {
                 }
             })
     }
+    
+    func likeNetworkData(userIdx: Int, postIdx: Int, completion: @escaping (Bool) -> Void) {
+        
+        let url = "\(Constant.BASE_URL)\(Constant.pathPatchLike)userIdx=\(userIdx)&postIdx=\(postIdx)"
+        let header = HTTPHeader(name: "X-ACCESS-TOKEN", value: Secret.xAcessToken)
+        let headers = HTTPHeaders([header])
+        
+        print(url)
+        
+        AF.request(url, method: .patch, headers: headers)
+            .responseDecodable(of: LikeResponse.self, completionHandler: { response in
+                switch response.result {
+                case .success(let response):
+                    if response.isSuccess == true {
+                        completion(true)
+                    } else {
+                        print("====실패===")
+                    }
+                case .failure(let error):
+                    print("====실패===")
+                    print(error)
+                }
+            })
+    }
+    
+    func likeUserListNetworkData(userIdx: Int, postIdx: Int, completion: @escaping ([LikeListResult]) -> Void) {
+        
+        let url = "\(Constant.BASE_URL)\(Constant.pathLikeList)userIdx=\(userIdx)&postIdx=\(postIdx)"
+        let header = HTTPHeader(name: "X-ACCESS-TOKEN", value: Secret.xAcessToken)
+        let headers = HTTPHeaders([header])
+        
+        print(url)
+        
+        AF.request(url, headers: headers)
+            .responseDecodable(of: LikeListModel.self, completionHandler: { response in
+                switch response.result {
+                case .success(let response):
+                    if response.isSuccess == true {
+                        completion(response.result)
+                    } else {
+                        print("====실패===")
+                    }
+                case .failure(let error):
+                    print("====실패===")
+                    print(error)
+                }
+            })
+    }
 }

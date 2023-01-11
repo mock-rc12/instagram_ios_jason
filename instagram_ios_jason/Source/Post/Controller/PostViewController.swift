@@ -66,6 +66,18 @@ extension PostViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension PostViewController: HomeVCDelegate {
+    func likeButtonTapped(data: FeedsResult) {
+        
+    }
+    
+    func shareButtonTapped() {
+        
+    }
+    
+    func messageButtonTapped() {
+        
+    }
+    
     func feedModifySuccessed() {
         setupData()
     }
