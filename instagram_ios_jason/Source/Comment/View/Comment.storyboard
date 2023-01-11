@@ -18,20 +18,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="J6S-U0-5wp">
-                                <rect key="frame" x="0.0" y="59" width="393" height="689"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="709"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PxR-W3-BgB">
-                                <rect key="frame" x="0.0" y="748" width="393" height="70"/>
+                                <rect key="frame" x="0.0" y="768" width="393" height="50"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kDK-cy-Qjy">
-                                        <rect key="frame" x="15" y="0.0" width="70" height="70"/>
+                                        <rect key="frame" x="15" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="kDK-cy-Qjy" secondAttribute="height" multiplier="1:1" id="7ol-ex-j2v"/>
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="댓글 달기..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d6u-xE-Pec">
-                                        <rect key="frame" x="100" y="5" width="278" height="60"/>
+                                        <rect key="frame" x="80" y="5" width="298" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -45,7 +45,7 @@
                                     <constraint firstItem="kDK-cy-Qjy" firstAttribute="top" secondItem="PxR-W3-BgB" secondAttribute="top" id="rMf-kw-fWz"/>
                                     <constraint firstAttribute="bottom" secondItem="kDK-cy-Qjy" secondAttribute="bottom" id="sDr-nu-Sly"/>
                                     <constraint firstItem="d6u-xE-Pec" firstAttribute="top" secondItem="PxR-W3-BgB" secondAttribute="top" constant="5" id="t3k-CO-J9l"/>
-                                    <constraint firstAttribute="height" constant="70" id="vuE-TR-043"/>
+                                    <constraint firstAttribute="height" constant="50" id="vuE-TR-043"/>
                                 </constraints>
                             </view>
                         </subviews>

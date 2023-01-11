@@ -19,6 +19,17 @@ class CommentViewController: UIViewController {
     var postResult: PostResult?
     let dataManager = PostDataManager()
     
+    
+    var textFieldBtn: UIButton = {
+        let button = UIButton()
+        button.setTitle("게시", for: .normal)
+        button.tintColor = #colorLiteral(red: 0, green: 0.3905753791, blue: 0.8777532578, alpha: 1)
+        button.titleLabel?.font = .systemFont(ofSize: 12, weight: .bold)
+        button.backgroundColor = .clear
+
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,6 +37,7 @@ class CommentViewController: UIViewController {
         setupTableView()
         setupData()
         setupMyProfile()
+        setupTextField()
     }
     
     func setupTableView() {
@@ -49,14 +61,42 @@ class CommentViewController: UIViewController {
     }
     
     func setupMyProfile() {
+        // 기본 이미지
+        self.myProfileImageView.image = UIImage(named: "default_profile")
+        myProfileImageView.layer.cornerRadius = myProfileImageView.frame.height / 2
+        myProfileImageView.clipsToBounds = true
+        
         ProfileDataManager().getProfileNetworkData(profileIdx: Secret.userIdx, userIdx: Secret.userIdx) { [weak self] result in
             if result.profileImg != nil || result.profileImg != "" {
                 let url = URL(string: result.profileImg ?? "")
                 self?.myProfileImageView.kf.setImage(with: url)
-            } else {
-                self?.myProfileImageView.image = UIImage(named: "default_profile")
             }
         }
+    }
+    
+    func setupTextField() {
+        commentTextField.delegate = self
+        textFieldBtn.addTarget(self, action: #selector(uploadComment), for: .touchUpInside)
+        commentTextField.rightView = textFieldBtn
+        commentTextField.rightViewMode = .whileEditing
+    }
+
+
+    @objc func uploadComment() {
+        IndicatorView.shared.show()
+        IndicatorView.shared.showIndicator()
+        let comment = commentTextField.text
+        if comment != nil && comment != "" {
+            guard let post = postResult else { return }
+            let model = CommentDataModel(reply: comment!, depth: 0, commentAIdx: 0)
+            CommentDataManasger().commentNetworkData(userIdx: Secret.userIdx, postIdx: post.postIdx, param: model) { [weak self] isSuccess in
+                if isSuccess == true {
+                    IndicatorView.shared.dismiss()
+                    self?.setupData()
+                }
+            }
+        }
+        commentTextField.text = ""
     }
 }
 
@@ -76,19 +116,24 @@ extension CommentViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        var height: CGFloat = 0
-        
         if let item = postResult {
-            let tempLabel = UILabel()
-            tempLabel.font = UIFont.systemFont(ofSize: 14, weight: .bold)
-            guard let comment = item.postContentRes else { return 0 }
-            tempLabel.text = "\(comment[indexPath.row].reply ?? "") \(comment[indexPath.row].userId ?? "")"
-            height += tempLabel.intrinsicContentSize.height + 50
-            print(tempLabel.intrinsicContentSize.height)
-            return height
+            let label: UILabel = UILabel(frame: CGRectMake(0, 0, tableView.frame.width - 70, CGFloat.greatestFiniteMagnitude))
+            label.numberOfLines = 0
+            label.lineBreakMode = NSLineBreakMode.byTruncatingTail
+            label.font = .systemFont(ofSize: 15, weight: .regular)
+            
+            guard let comment = item.postContentRes?[indexPath.row] else { return 0 }
+            
+            label.text = "\(comment.userId ?? "")  \(comment.reply ?? "")"
+            label.sizeToFit()
+            
+            return label.frame.height + 50
         } else {
-            return CGFloat(0)
+            return 0
         }
     }
+}
+
+extension CommentViewController: UITextFieldDelegate {
+    
 }

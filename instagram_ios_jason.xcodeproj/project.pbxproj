@@ -42,6 +42,8 @@
 		CD2ABD1E296C89FB00999905 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2ABD1C296C89FB00999905 /* CommentCell.swift */; };
 		CD2ABD1F296C89FB00999905 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2ABD1D296C89FB00999905 /* CommentCell.xib */; };
 		CD2ABD21296C8F1900999905 /* UILabel+Padding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2ABD20296C8F1900999905 /* UILabel+Padding.swift */; };
+		CD2ABD23296E42EC00999905 /* CommentDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2ABD22296E42EC00999905 /* CommentDataManager.swift */; };
+		CD2ABD25296E435400999905 /* CommentDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2ABD24296E435400999905 /* CommentDataModel.swift */; };
 		CD2C992D2964680D006088D8 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C992C2964680D006088D8 /* Constant.swift */; };
 		CD2C992F29646A5F006088D8 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C992E29646A5F006088D8 /* Secret.swift */; };
 		CD2C9931296472CB006088D8 /* SignUpNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C9930296472CB006088D8 /* SignUpNavigationController.swift */; };
@@ -152,6 +154,8 @@
 		CD2ABD1C296C89FB00999905 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		CD2ABD1D296C89FB00999905 /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
 		CD2ABD20296C8F1900999905 /* UILabel+Padding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Padding.swift"; sourceTree = "<group>"; };
+		CD2ABD22296E42EC00999905 /* CommentDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDataManager.swift; sourceTree = "<group>"; };
+		CD2ABD24296E435400999905 /* CommentDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentDataModel.swift; sourceTree = "<group>"; };
 		CD2C992C2964680D006088D8 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		CD2C992E29646A5F006088D8 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		CD2C9930296472CB006088D8 /* SignUpNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNavigationController.swift; sourceTree = "<group>"; };
@@ -425,6 +429,8 @@
 		CD2ABD11296C7B3900999905 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CD2ABD22296E42EC00999905 /* CommentDataManager.swift */,
+				CD2ABD24296E435400999905 /* CommentDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -981,6 +987,7 @@
 				CD2ABD21296C8F1900999905 /* UILabel+Padding.swift in Sources */,
 				CDBAA0D329672E560019C7A5 /* PostViewController.swift in Sources */,
 				CD2C992D2964680D006088D8 /* Constant.swift in Sources */,
+				CD2ABD25296E435400999905 /* CommentDataModel.swift in Sources */,
 				CDCB23B82966030D00C37717 /* EditProfileInfoCell.swift in Sources */,
 				CDCB23AB2965DD6B00C37717 /* ProfileDataManager.swift in Sources */,
 				CD2C993B29648F63006088D8 /* LoginNetworkManager.swift in Sources */,
@@ -1015,6 +1022,7 @@
 				CDCB23B62965FF9D00C37717 /* EditMyProfileViewController.swift in Sources */,
 				CD2C993529647942006088D8 /* SignUpNetworkManager.swift in Sources */,
 				CD2ABD0B296C6FD800999905 /* SearchViewController.swift in Sources */,
+				CD2ABD23296E42EC00999905 /* CommentDataManager.swift in Sources */,
 				CDEC328B29609B3E0030E035 /* UIBarButtonItem.swift in Sources */,
 				CDEC327C296086030030E035 /* UIButton.swift in Sources */,
 				CD29EB462969B083004CA667 /* FollowListViewController.swift in Sources */,

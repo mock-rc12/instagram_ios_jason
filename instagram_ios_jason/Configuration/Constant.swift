@@ -30,4 +30,6 @@ struct Constant {
     static let pathGetFollower = "/followers"              // 팔로워 조회 API
     static let pathGetFollowing = "/followings"              // 팔로잉 조회 API
     static let getSearchData = "/searches"
+    
+    static let pathPostComment = "/comments?"
 }
