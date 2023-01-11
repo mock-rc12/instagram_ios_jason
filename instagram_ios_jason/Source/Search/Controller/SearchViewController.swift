@@ -14,6 +14,8 @@ class SearchViewController: BaseViewController {
     
     let dataManager = SearchDataManager()
     
+    @IBOutlet weak var containerView: UIView!
+    
     private var searchResult: [SearchResult] = []
     
     override func viewDidLoad() {
@@ -21,7 +23,7 @@ class SearchViewController: BaseViewController {
         
         setupTableView()
         setupSearchBar()
-//        self.navigationController?.navigationBar.isHidden = true
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     func setupTableView() {
@@ -29,6 +31,8 @@ class SearchViewController: BaseViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 80
+        tableView.allowsSelection = true
+        tableView.allowsSelectionDuringEditing = true
     }
     
     func setupSearchBar() {
@@ -61,6 +65,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(#function)
         let data = searchResult[indexPath.row]
         viewProfileVC(data: data)
     }
@@ -72,11 +77,20 @@ extension SearchViewController: UISearchBarDelegate {
         if searchText == "" {
             self.searchResult = []
             self.tableView.reloadData()
+            self.containerView.alpha = 1
+            self.view.bringSubviewToFront(containerView)
         } else {
+            self.containerView.alpha = 0
+            self.view.bringSubviewToFront(tableView)
             dataManager.getSearchNetworkData(userIdx: Secret.userIdx, word: searchText) { [weak self] result in
                 self?.searchResult = result
                 self?.tableView.reloadData()
             }
         }
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        print(#function)
+        dismissKeyboardWhenTappedAround()
     }
 }

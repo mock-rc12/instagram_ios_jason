@@ -14,10 +14,15 @@ extension UIViewController {
             UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
 //        tap.cancelsTouchesInView = false
         self.view.addGestureRecognizer(tap)
+        removeTapGesture(tap: tap)
     }
     
     @objc func dismissKeyboard() {
         self.view.endEditing(false)
+    }
+    
+    func removeTapGesture(tap: UITapGestureRecognizer) {
+        self.view.removeGestureRecognizer(tap)
     }
     
     // MARK: 취소와 확인이 뜨는 UIAlertController

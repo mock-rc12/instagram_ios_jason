@@ -78,6 +78,8 @@
 		CD58A496296450F4003C29F0 /* FeedsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD58A495296450F4003C29F0 /* FeedsDataManager.swift */; };
 		CD6848E4296EAFCC000FDB43 /* LikeListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6848E3296EAFCC000FDB43 /* LikeListModel.swift */; };
 		CD6848E6296EB022000FDB43 /* LikeListDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6848E5296EB022000FDB43 /* LikeListDataManager.swift */; };
+		CD6848E8296EEBB2000FDB43 /* RecommnadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6848E7296EEBB2000FDB43 /* RecommnadViewController.swift */; };
+		CD6848EA296EEDC5000FDB43 /* RecommandFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6848E9296EEDC5000FDB43 /* RecommandFeedCell.swift */; };
 		CD84BB9B2969B4CF00203285 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CD84BB9A2969B4CF00203285 /* SnapKit */; };
 		CDBAA0D329672E560019C7A5 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBAA0D229672E560019C7A5 /* PostViewController.swift */; };
 		CDBAA0D529672E5B0019C7A5 /* Post.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDBAA0D429672E5B0019C7A5 /* Post.storyboard */; };
@@ -187,6 +189,8 @@
 		CD58A495296450F4003C29F0 /* FeedsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsDataManager.swift; sourceTree = "<group>"; };
 		CD6848E3296EAFCC000FDB43 /* LikeListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeListModel.swift; sourceTree = "<group>"; };
 		CD6848E5296EB022000FDB43 /* LikeListDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeListDataManager.swift; sourceTree = "<group>"; };
+		CD6848E7296EEBB2000FDB43 /* RecommnadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommnadViewController.swift; sourceTree = "<group>"; };
+		CD6848E9296EEDC5000FDB43 /* RecommandFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandFeedCell.swift; sourceTree = "<group>"; };
 		CDBAA0D229672E560019C7A5 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		CDBAA0D429672E5B0019C7A5 /* Post.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Post.storyboard; sourceTree = "<group>"; };
 		CDBAA0D629672E740019C7A5 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
@@ -397,6 +401,7 @@
 			isa = PBXGroup;
 			children = (
 				CD2ABD0A296C6FD800999905 /* SearchViewController.swift */,
+				CD6848E7296EEBB2000FDB43 /* RecommnadViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -407,6 +412,7 @@
 				CD2ABD08296C6FCD00999905 /* Search.storyboard */,
 				CD2ABD0C296C707D00999905 /* SearchResultCell.swift */,
 				CD2ABD0D296C707D00999905 /* SearchResultCell.xib */,
+				CD6848E9296EEDC5000FDB43 /* RecommandFeedCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -993,6 +999,7 @@
 				CD026EDE296058C300C6C359 /* AppDelegate.swift in Sources */,
 				CD57D7572961E42100138449 /* HomeVCDelegate.swift in Sources */,
 				CDCB23A92965DC0F00C37717 /* UserProfileModel.swift in Sources */,
+				CD6848E8296EEBB2000FDB43 /* RecommnadViewController.swift in Sources */,
 				CDBAA0D92967308B0019C7A5 /* PostDataManager.swift in Sources */,
 				CDBAA0D729672E740019C7A5 /* PostModel.swift in Sources */,
 				CD2C992F29646A5F006088D8 /* Secret.swift in Sources */,
@@ -1009,6 +1016,7 @@
 				CD2C993B29648F63006088D8 /* LoginNetworkManager.swift in Sources */,
 				CD2C9933296473F4006088D8 /* SignUpDataManager.swift in Sources */,
 				CD57D74D2961D2F600138449 /* FeedMediaCell.swift in Sources */,
+				CD6848EA296EEDC5000FDB43 /* RecommandFeedCell.swift in Sources */,
 				CDCB23C32966BEA000C37717 /* PostEditViewController.swift in Sources */,
 				CD57D7692962764500138449 /* LoginViewController.swift in Sources */,
 				CD29EB442969AF56004CA667 /* FollowViewController.swift in Sources */,

@@ -36,4 +36,6 @@ struct Constant {
     static let pathLikeList = "/posts/likes?"
     
     static let pathFollowTogether = "/followers/together/"
+    
+    static let recommandFeed = "/posts/randFeeds"
 }

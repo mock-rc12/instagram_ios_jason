@@ -28,20 +28,31 @@
                                 <rect key="frame" x="0.0" y="115" width="393" height="703"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ac-uV-bpU">
+                                <rect key="frame" x="0.0" y="115" width="393" height="703"/>
+                                <connections>
+                                    <segue destination="oeX-ly-0Mf" kind="embed" id="HJA-ZR-8Cc"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="9ac-uV-bpU" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="2AC-sJ-W0E"/>
                             <constraint firstItem="yaq-oM-4gi" firstAttribute="top" secondItem="FyF-mi-Vdd" secondAttribute="bottom" id="7tO-0i-SM7"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="FyF-mi-Vdd" secondAttribute="trailing" id="BZg-7L-IXE"/>
                             <constraint firstItem="FyF-mi-Vdd" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="FBl-A6-r17"/>
+                            <constraint firstItem="9ac-uV-bpU" firstAttribute="top" secondItem="FyF-mi-Vdd" secondAttribute="bottom" id="L7x-97-m9A"/>
                             <constraint firstItem="FyF-mi-Vdd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="QUe-ON-EBq"/>
                             <constraint firstItem="yaq-oM-4gi" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="c6l-9Y-Ses"/>
                             <constraint firstItem="yaq-oM-4gi" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="d5i-7G-BPO"/>
+                            <constraint firstItem="9ac-uV-bpU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fon-WM-Zx5"/>
                             <constraint firstItem="yaq-oM-4gi" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="ig8-SI-i7a"/>
+                            <constraint firstItem="9ac-uV-bpU" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="tpm-9W-o9F"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="containerView" destination="9ac-uV-bpU" id="Yl2-lT-bZC"/>
                         <outlet property="searchBar" destination="FyF-mi-Vdd" id="z8Y-ed-A48"/>
                         <outlet property="tableView" destination="yaq-oM-4gi" id="sJ8-KI-DNn"/>
                     </connections>
@@ -49,6 +60,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6.8702290076335872" y="-2.1126760563380285"/>
+        </scene>
+        <!--Recommand View Controller-->
+        <scene sceneID="FSX-Yo-Y4V">
+            <objects>
+                <viewController storyboardIdentifier="RecommandViewController" id="oeX-ly-0Mf" customClass="RecommandViewController" customModule="instagram_ios_jason" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="44C-eh-kTo">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="703"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xDX-B4-8t5">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="703"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KUd-LS-iGF">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="R1r-Ty-MGe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="xDX-B4-8t5" secondAttribute="trailing" id="iIZ-tz-Hyv"/>
+                            <constraint firstItem="xDX-B4-8t5" firstAttribute="leading" secondItem="44C-eh-kTo" secondAttribute="leading" id="qHy-IX-GPr"/>
+                            <constraint firstAttribute="bottom" secondItem="xDX-B4-8t5" secondAttribute="bottom" id="zEU-xV-Z29"/>
+                            <constraint firstItem="xDX-B4-8t5" firstAttribute="top" secondItem="44C-eh-kTo" secondAttribute="top" id="zTf-1O-dKC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="xDX-B4-8t5" id="5u8-k0-Ha1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eqE-mi-yh2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6.8702290076335872" y="659.50704225352115"/>
         </scene>
     </scenes>
     <resources>

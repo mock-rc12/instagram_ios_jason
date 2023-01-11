@@ -22,3 +22,18 @@ struct SearchResult: Codable {
     let img: String?
     let cnt: Int
 }
+
+// MARK: - RecommnadFeedModel
+struct RecommandFeedModel: Codable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+    let result: [RecommandFeedResult]
+}
+
+// MARK: - Result
+struct RecommandFeedResult: Codable {
+    let postIdx: Int
+    let postImg: String?
+}
+
