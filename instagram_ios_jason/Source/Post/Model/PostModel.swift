@@ -34,6 +34,7 @@ struct PostContentRe: Codable {
     let reply: String?
     let depth, userIdx: Int?
     let userId: String?
+    let updatedAt: String?
     let commentLikeCount: Int?
     let profileImg: String?
     let commentIdxA: Int?

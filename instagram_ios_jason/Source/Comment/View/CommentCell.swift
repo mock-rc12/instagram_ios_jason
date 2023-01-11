@@ -53,6 +53,7 @@ class CommentCell: UITableViewCell {
             } else {
                 commentLikeCountLabel.text = "좋아요 \(count)개"
             }
+            timeLabel.text = data.updatedAt
             setupLabel(data: data)
         }
         
@@ -66,8 +67,8 @@ class CommentCell: UITableViewCell {
         tempLabel.font = UIFont.systemFont(ofSize: idLabel.font.pointSize, weight: .bold)
         tempLabel.text = data.userId
         
-        let text = "Hello World! Hello World! Hee Hello World! Hello World! Hee Hello World! Hello World! Hee Hello World! Hello World! Hee"
-        let attString = NSMutableAttributedString(string: text)
+        let text = data.reply
+        let attString = NSMutableAttributedString(string: text ?? "")
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.firstLineHeadIndent = tempLabel.intrinsicContentSize.width + 8
         attString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range:NSMakeRange(0, attString.length))

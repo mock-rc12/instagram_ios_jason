@@ -38,23 +38,23 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YZJ-rX-r9S">
-                        <rect key="frame" x="54.999999999999993" y="23" width="122.33333333333331" height="15.666666666666664"/>
+                        <rect key="frame" x="55.000000000000007" y="27.999999999999996" width="114.66666666666669" height="14.333333333333332"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0주" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHl-Uc-pUo">
-                                <rect key="frame" x="0.0" y="0.0" width="19.666666666666668" height="15.666666666666666"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <rect key="frame" x="0.0" y="0.0" width="18.666666666666668" height="14.333333333333334"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="좋아요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6DS-gX-Dah">
-                                <rect key="frame" x="29.666666666666671" y="0.0" width="34" height="15.666666666666666"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <rect key="frame" x="28.666666666666671" y="0.0" width="31.333333333333329" height="14.333333333333334"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="답글 달기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkg-0A-UPl">
-                                <rect key="frame" x="73.666666666666657" y="0.0" width="48.666666666666657" height="15.666666666666666"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <rect key="frame" x="70" y="0.0" width="44.666666666666657" height="14.333333333333334"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -65,7 +65,7 @@
                     <constraint firstItem="HTc-Fu-uVn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="5fv-M8-n6A"/>
                     <constraint firstItem="SA9-KV-sqe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="8ft-dU-6KT"/>
                     <constraint firstItem="Ejy-rC-24V" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="GcR-eU-UZR"/>
-                    <constraint firstItem="YZJ-rX-r9S" firstAttribute="top" secondItem="SA9-KV-sqe" secondAttribute="bottom" constant="5" id="QUG-Rd-lhL"/>
+                    <constraint firstItem="YZJ-rX-r9S" firstAttribute="top" secondItem="SA9-KV-sqe" secondAttribute="bottom" constant="10" id="QUG-Rd-lhL"/>
                     <constraint firstAttribute="trailing" secondItem="SA9-KV-sqe" secondAttribute="trailing" constant="15" id="TvD-dN-NeP"/>
                     <constraint firstItem="HTc-Fu-uVn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="XPy-iM-if3"/>
                     <constraint firstItem="Ejy-rC-24V" firstAttribute="leading" secondItem="HTc-Fu-uVn" secondAttribute="trailing" constant="15" id="jdg-vI-Myk"/>

@@ -32,7 +32,7 @@ class CommentViewController: UIViewController {
         tableView.register(UINib(nibName: "CommentCell", bundle: nil), forCellReuseIdentifier: "CommentCell")
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight = 200
+//        tableView.rowHeight = 200
     }
     
     func setupUI() {
@@ -73,5 +73,22 @@ extension CommentViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        var height: CGFloat = 0
+        
+        if let item = postResult {
+            let tempLabel = UILabel()
+            tempLabel.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+            guard let comment = item.postContentRes else { return 0 }
+            tempLabel.text = "\(comment[indexPath.row].reply ?? "") \(comment[indexPath.row].userId ?? "")"
+            height += tempLabel.intrinsicContentSize.height + 50
+            print(tempLabel.intrinsicContentSize.height)
+            return height
+        } else {
+            return CGFloat(0)
+        }
     }
 }
