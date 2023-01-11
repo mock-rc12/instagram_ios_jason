@@ -32,6 +32,7 @@ class UserListViewController: BaseViewController {
     enum FollowType {
         case following
         case follower
+        case followTogether
     }
     
     var pageType: PageType?
@@ -84,13 +85,21 @@ class UserListViewController: BaseViewController {
     }
     
     func setupData() {
-        
         switch pageType {
         case .follow:
-            dataManager.getFollowNetworkData(type: followContentType!, userIdx: profileResult!.userIdx) { [weak self] resultArray in
-                self?.followData = resultArray
-                self?.tableView.reloadData()
+            switch followContentType {
+            case .followTogether:
+                dataManager.getFollowNetworkData(type: followContentType!, userIdx: Secret.userIdx, followIdx: profileResult?.userIdx) { [weak self] resultArray in
+                    self?.followData = resultArray
+                    self?.tableView.reloadData()
+                }
+            default:
+                dataManager.getFollowNetworkData(type: followContentType!, userIdx: profileResult!.userIdx, followIdx: profileResult?.userIdx) { [weak self] resultArray in
+                    self?.followData = resultArray
+                    self?.tableView.reloadData()
+                }
             }
+
         case .like:
             if let post = postResult {
                 LikeListDataManager().likeUserListNetworkData(userIdx: Secret.userIdx, postIdx: post.postIdx) { [weak self] result in

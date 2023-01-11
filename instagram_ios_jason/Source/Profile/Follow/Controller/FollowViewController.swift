@@ -12,10 +12,12 @@ import Pageboy
 
 class FollowViewController: TabmanViewController {
     
-    var pageType: UserListViewController.FollowType?
+    var profileType: ProfileType!
     var profile: ProfileResult?
-    var viewControllers: [UIViewController] = []
     
+    var pageType: UserListViewController.FollowType?
+    
+    var viewControllers: [UIViewController] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +35,17 @@ class FollowViewController: TabmanViewController {
             
             let followerConfig = FollowConfig(followResult: data, type: .follower)
             let followerVC = UserListViewController(pageType: .follow, followConfig: followerConfig, likeConfig: nil)
-            
-            viewControllers = [followingVC, followerVC]
+        
+            switch profileType {
+            case .myProfile:
+                viewControllers = [followingVC, followerVC]
+            case .otherUserProfile:
+                let followTogetherConfig = FollowConfig(followResult: data, type: .followTogether)
+                let followTogetherVC = UserListViewController(pageType: .follow, followConfig: followTogetherConfig, likeConfig: nil)
+                viewControllers = [followTogetherVC, followingVC, followerVC]
+            case .none:
+                print("")
+            }
             self.navigationItem.title = data.userId
         }
     }
@@ -65,14 +76,32 @@ extension FollowViewController: PageboyViewControllerDataSource, TMBarDataSource
     func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
         
         if profile != nil {
-            switch index {
-            case 0:
-                return TMBarItem(title: "팔로워")
-            case 1:
-                return TMBarItem(title: "팔로잉")
+            
+            switch profileType {
+                // 다른사람 프로필일 때
+            case .otherUserProfile:
+                switch index {
+                case 0:
+                    return TMBarItem(title: "함께 아는 친구")
+                case 1:
+                    return TMBarItem(title: "팔로워")
+                case 2:
+                    return TMBarItem(title: "팔로잉")
+                default:
+                    let title = "Page \(index)"
+                    return TMBarItem(title: title)
+                }
+                // 내 프로필일 때
             default:
-                let title = "Page \(index)"
-                return TMBarItem(title: title)
+                switch index {
+                case 0:
+                    return TMBarItem(title: "팔로워")
+                case 1:
+                    return TMBarItem(title: "팔로잉")
+                default:
+                    let title = "Page \(index)"
+                    return TMBarItem(title: title)
+                }
             }
         } else {
             let title = "Page \(index)"
@@ -91,10 +120,29 @@ extension FollowViewController: PageboyViewControllerDataSource, TMBarDataSource
     
     func defaultPage(for pageboyViewController: Pageboy.PageboyViewController) -> Pageboy.PageboyViewController.Page? {
         
-        if pageType == .follower {
-            return .first
-        } else {
-            return .last
+        switch profileType {
+        case .otherUserProfile:
+            switch pageType {
+            case .followTogether:
+                return .first
+            case .follower:
+                return .at(index: 1)
+            case .following:
+                return .last
+            default:
+                return .none
+            }
+        case .myProfile:
+            switch pageType {
+            case .follower:
+                return .first
+            case .following:
+                return .last
+            default:
+                return .none
+            }
+        default:
+            return .none
         }
     }
     

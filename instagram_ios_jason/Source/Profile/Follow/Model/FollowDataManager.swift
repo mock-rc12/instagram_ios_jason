@@ -9,15 +9,24 @@ import UIKit
 import Alamofire
 
 class FollowDataManager {
-    func getFollowNetworkData(type: UserListViewController.FollowType, userIdx: Int, completion: @escaping ([FollowResult]) -> Void) {
+    func getFollowNetworkData(type: UserListViewController.FollowType, userIdx: Int, followIdx: Int? = nil, completion: @escaping ([FollowResult]) -> Void) {
+        var url = ""
         var pathUrl = ""
         switch type {
+        case .followTogether:
+            pathUrl = Constant.pathFollowTogether
         case .follower:
             pathUrl = Constant.pathGetFollower
         case .following:
             pathUrl = Constant.pathGetFollowing
         }
-        let url = "\(Constant.BASE_URL)/\(userIdx)\(pathUrl)"
+        
+        if type == .followTogether {
+            guard let followIdx = followIdx else { return }
+            url = "\(Constant.BASE_URL)/\(userIdx)\(pathUrl)\(followIdx)"
+        } else {
+            url = "\(Constant.BASE_URL)/\(userIdx)\(pathUrl)"
+        }
         print("💡💡💡\(url)")
         let header = HTTPHeader(name: "X-ACCESS-TOKEN", value: Secret.xAcessToken)
         let headers = HTTPHeaders([header])
