@@ -9,7 +9,7 @@ import UIKit
 import Alamofire
 
 class FollowDataManager {
-    func getFollowNetworkData(type: FollowListViewController.followType, userIdx: Int, completion: @escaping ([FollowResult]) -> Void) {
+    func getFollowNetworkData(type: UserListViewController.FollowType, userIdx: Int, completion: @escaping ([FollowResult]) -> Void) {
         var pathUrl = ""
         switch type {
         case .follower:

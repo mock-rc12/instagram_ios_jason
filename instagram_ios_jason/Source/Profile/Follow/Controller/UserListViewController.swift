@@ -13,27 +13,55 @@ protocol FollowStateDelegate {
     func unfollowTapped(data: FollowResult)
 }
 
-class FollowListViewController: BaseViewController {
+struct FollowConfig {
+    var followResult: ProfileResult
+    var type: UserListViewController.FollowType
+}
+
+struct LikeConfig {
+    var post: FeedsResult
+}
+
+class UserListViewController: BaseViewController {
     
-    enum followType {
+    enum PageType {
+        case follow
+        case like
+    }
+    
+    enum FollowType {
         case following
         case follower
     }
     
-    var contentType: followType!
-    var profileResult: ProfileResult!
-    let dataManager = FollowDataManager()
+    var pageType: PageType?
+    
+    // 좋아요
+    var postResult: FeedsResult?
+    var likeLists: [LikeListResult] = []
+    
+    // 팔로우
+    var followContentType: FollowType?
+    var profileResult: ProfileResult?
     var followData: [FollowResult] = []
+    let dataManager = FollowDataManager()
     
     var tableView: UITableView = {
         let view = UITableView(frame: .zero)
         return view
     }()
     
-    init(result: ProfileResult, type: followType) {
+    init(pageType: PageType, followConfig: FollowConfig?, likeConfig: LikeConfig?) {
         super.init(nibName: nil, bundle: nil)
-        self.contentType = type
-        self.profileResult = result
+        self.pageType = pageType
+        switch pageType {
+        case .follow:
+            self.followContentType = followConfig?.type
+            self.profileResult = followConfig?.followResult
+        case .like:
+            self.postResult = likeConfig?.post
+        }
+        setupData()
     }
     
     required init?(coder: NSCoder) {
@@ -43,7 +71,6 @@ class FollowListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        setupData()
         setupTableView()
     }
     
@@ -55,12 +82,33 @@ class FollowListViewController: BaseViewController {
     }
     
     func setupData() {
-        dataManager.getFollowNetworkData(type: contentType, userIdx: profileResult.userIdx) { [weak self] resultArray in
-            print("Result ==")
-            print(resultArray)
-            self?.followData = resultArray
-            self?.tableView.reloadData()
+        
+        switch pageType {
+        case .follow:
+            dataManager.getFollowNetworkData(type: followContentType!, userIdx: profileResult!.userIdx) { [weak self] resultArray in
+                self?.followData = resultArray
+                self?.tableView.reloadData()
+            }
+        case .like:
+            if let post = postResult {
+                LikeListDataManager().likeUserListNetworkData(userIdx: Secret.userIdx, postIdx: post.postIdx) { [weak self] result in
+                    self?.likeLists = result
+                    self?.likeDataTrans(data: result)
+                    self?.tableView.reloadData()
+                }
+            }
+            self.navigationItem.title = "좋아요"
+        default:
+            print("")
         }
+    }
+    
+    func likeDataTrans(data: [LikeListResult]) {
+        var defaultItem: [FollowResult] = []
+        data.forEach {
+            defaultItem.append(FollowResult(userIdx: $0.userIdx, name: $0.userId, profileImg: $0.profileImg, id: $0.userId, status: "0", followYn: $0.followStatus))
+        }
+        followData = defaultItem
     }
     
     func setupTableView() {
@@ -83,22 +131,23 @@ class FollowListViewController: BaseViewController {
     }
 }
 
-extension FollowListViewController: UITableViewDelegate, UITableViewDataSource {
+extension UserListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return followData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "FollowCell", for: indexPath) as? FollowCell else { return UITableViewCell() }
-        cell.contentType = contentType
-        cell.delegate = self
+        
         cell.followData = followData[indexPath.row]
+        cell.delegate = self
         cell.configure()
         return cell
     }
 }
 
-extension FollowListViewController: FollowStateDelegate {
+extension UserListViewController: FollowStateDelegate {
     func followTapped(data: FollowResult) {
         followReq(data: data, type: "ACTIVE")
     }

@@ -15,7 +15,7 @@ class ProfileViewController: BaseViewController {
     }
     
     var profileType: ProfileType = .myProfile
-
+    let refreshControl = UIRefreshControl()
     var userIdx: Int?
     var userId: String?
     let dataManager = ProfileDataManager()
@@ -33,6 +33,12 @@ class ProfileViewController: BaseViewController {
         profileCollectionView.register(UINib(nibName: "ProfileTabHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "ProfileTabHeaderView")
         
         setupCollectionView()
+        initRefresh()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupData()
     }
     
     func setupData() {
@@ -46,6 +52,9 @@ class ProfileViewController: BaseViewController {
                     IndicatorView.shared.dismiss()
                     self?.profileItem = result
                     self?.profileCollectionView.reloadData()
+                    if self?.refreshControl.isRefreshing == true {
+                        self?.refreshControl.endRefreshing()
+                    }
                 }
             }
         case .myProfile: // 임시
@@ -54,6 +63,9 @@ class ProfileViewController: BaseViewController {
                 self?.profileItem = result
                 self?.setupUI(id: result.userId)
                 self?.profileCollectionView.reloadData()
+                if self?.refreshControl.isRefreshing == true {
+                    self?.refreshControl.endRefreshing()
+                }
             }
         }
     }
@@ -127,11 +139,24 @@ class ProfileViewController: BaseViewController {
         }
     }
     
-    func presentFollowVC(type: FollowListViewController.followType) {
+    func presentFollowVC(type: UserListViewController.FollowType) {
         let vc = FollowViewController()
         vc.profile = profileItem!
         vc.pageType = type
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func initRefresh() {
+        refreshControl.addTarget(self, action: #selector(refreshTable(refresh:)), for: .valueChanged)
+        
+        refreshControl.backgroundColor = .systemBackground
+        refreshControl.tintColor = .label
+        refreshControl.attributedTitle = NSAttributedString(string: "당겨서 새로고침")
+        profileCollectionView.refreshControl = refreshControl
+    }
+    
+    @objc private func refreshTable(refresh: UIRefreshControl) {
+        setupData()
     }
 }
 

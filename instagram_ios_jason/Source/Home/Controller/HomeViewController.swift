@@ -181,6 +181,12 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension HomeViewController: HomeVCDelegate {
+    func likeCountLabelTapped(item: FeedsResult) {
+        let config = LikeConfig(post: item)
+        let vc = UserListViewController(pageType: .like, followConfig: nil, likeConfig: config)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func likeButtonTapped(data: FeedsResult) {
         PostDataManager().likeNetworkData(userIdx: Secret.userIdx, postIdx: data.postIdx) { [weak self] isSuccess in
             if isSuccess == true {
@@ -210,12 +216,7 @@ extension HomeViewController: HomeVCDelegate {
         print(#function)
         setupData {_ in ()}
     }
-    
-    func likeCountLabelTapped() {
-        guard let vc = UIStoryboard(name: "LikeList", bundle: .none).instantiateViewController(withIdentifier: "LikeListViewController") as? LikeListViewController else { return }
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
+
     func commentCountLabelTapped(user: FeedsResult) {
         guard let vc = UIStoryboard(name: "Comment", bundle: nil).instantiateViewController(withIdentifier: "CommentViewController") as? CommentViewController else { return }
         vc.userIdx = user.userIdx

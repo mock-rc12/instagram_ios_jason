@@ -97,7 +97,7 @@ class FeedCell: UITableViewCell {
     
     func likeCheck() {
         if let item = feedsItem {
-            PostDataManager().likeUserListNetworkData(userIdx: Secret.userIdx, postIdx: item.postIdx) { result in
+            LikeListDataManager().likeUserListNetworkData(userIdx: Secret.userIdx, postIdx: item.postIdx) { result in
                 dump(result)
                 result.forEach { [weak self] item in
                     if Secret.userIdx == item.userIdx {
@@ -217,7 +217,7 @@ class FeedCell: UITableViewCell {
             delegate?.userIdLabelTapped(user: item)
         case likeCountLabel:
             print("좋아요 카운트 눌림")
-            delegate?.likeCountLabelTapped()
+            delegate?.likeCountLabelTapped(item: item)
         case commentCountLabel:
             delegate?.commentCountLabelTapped(user: item)
         case profileImageView:

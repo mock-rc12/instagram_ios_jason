@@ -66,6 +66,10 @@ extension PostViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension PostViewController: HomeVCDelegate {
+    func likeCountLabelTapped(item: FeedsResult) {
+        
+    }
+    
     func likeButtonTapped(data: FeedsResult) {
         
     }
@@ -80,10 +84,6 @@ extension PostViewController: HomeVCDelegate {
     
     func feedModifySuccessed() {
         setupData()
-    }
-    
-    func likeCountLabelTapped() {
-        print(#function)
     }
     
     func commentCountLabelTapped(user: FeedsResult) {

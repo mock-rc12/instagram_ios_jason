@@ -30,7 +30,7 @@
 		CD29EB34296887C1004CA667 /* PostViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD29EB33296887C1004CA667 /* PostViewDelegate.swift */; };
 		CD29EB372969AA89004CA667 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = CD29EB362969AA89004CA667 /* Tabman */; };
 		CD29EB442969AF56004CA667 /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD29EB432969AF56004CA667 /* FollowViewController.swift */; };
-		CD29EB462969B083004CA667 /* FollowListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD29EB452969B083004CA667 /* FollowListViewController.swift */; };
+		CD29EB462969B083004CA667 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD29EB452969B083004CA667 /* UserListViewController.swift */; };
 		CD2ABD05296C6E5800999905 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2ABD04296C6E5800999905 /* SearchModel.swift */; };
 		CD2ABD07296C6ED400999905 /* SearchDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2ABD06296C6ED400999905 /* SearchDataManager.swift */; };
 		CD2ABD09296C6FCD00999905 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD2ABD08296C6FCD00999905 /* Search.storyboard */; };
@@ -76,6 +76,8 @@
 		CD58A48029644F6C003C29F0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CD58A47F29644F6C003C29F0 /* Alamofire */; };
 		CD58A48329644F77003C29F0 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CD58A48229644F77003C29F0 /* Kingfisher */; };
 		CD58A496296450F4003C29F0 /* FeedsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD58A495296450F4003C29F0 /* FeedsDataManager.swift */; };
+		CD6848E4296EAFCC000FDB43 /* LikeListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6848E3296EAFCC000FDB43 /* LikeListModel.swift */; };
+		CD6848E6296EB022000FDB43 /* LikeListDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6848E5296EB022000FDB43 /* LikeListDataManager.swift */; };
 		CD84BB9B2969B4CF00203285 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CD84BB9A2969B4CF00203285 /* SnapKit */; };
 		CDBAA0D329672E560019C7A5 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBAA0D229672E560019C7A5 /* PostViewController.swift */; };
 		CDBAA0D529672E5B0019C7A5 /* Post.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDBAA0D429672E5B0019C7A5 /* Post.storyboard */; };
@@ -142,7 +144,7 @@
 		CD29EB31296880F3004CA667 /* FeedMenuDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedMenuDataManager.swift; sourceTree = "<group>"; };
 		CD29EB33296887C1004CA667 /* PostViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewDelegate.swift; sourceTree = "<group>"; };
 		CD29EB432969AF56004CA667 /* FollowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
-		CD29EB452969B083004CA667 /* FollowListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowListViewController.swift; sourceTree = "<group>"; };
+		CD29EB452969B083004CA667 /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		CD2ABD04296C6E5800999905 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		CD2ABD06296C6ED400999905 /* SearchDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDataManager.swift; sourceTree = "<group>"; };
 		CD2ABD08296C6FCD00999905 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
@@ -183,6 +185,8 @@
 		CD58A46D2962BF1C003C29F0 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CD58A46F2962CAC3003C29F0 /* CustomSkyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSkyTextField.swift; sourceTree = "<group>"; };
 		CD58A495296450F4003C29F0 /* FeedsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedsDataManager.swift; sourceTree = "<group>"; };
+		CD6848E3296EAFCC000FDB43 /* LikeListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeListModel.swift; sourceTree = "<group>"; };
+		CD6848E5296EB022000FDB43 /* LikeListDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeListDataManager.swift; sourceTree = "<group>"; };
 		CDBAA0D229672E560019C7A5 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		CDBAA0D429672E5B0019C7A5 /* Post.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Post.storyboard; sourceTree = "<group>"; };
 		CDBAA0D629672E740019C7A5 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
@@ -374,7 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				CD29EB432969AF56004CA667 /* FollowViewController.swift */,
-				CD29EB452969B083004CA667 /* FollowListViewController.swift */,
+				CD29EB452969B083004CA667 /* UserListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -608,6 +612,15 @@
 			path = NewPost;
 			sourceTree = "<group>";
 		};
+		CD6848E2296EAFBD000FDB43 /* UserList */ = {
+			isa = PBXGroup;
+			children = (
+				CD6848E3296EAFCC000FDB43 /* LikeListModel.swift */,
+				CD6848E5296EB022000FDB43 /* LikeListDataManager.swift */,
+			);
+			path = UserList;
+			sourceTree = "<group>";
+		};
 		CDBAA0CE29672DF60019C7A5 /* Post */ = {
 			isa = PBXGroup;
 			children = (
@@ -702,6 +715,7 @@
 			isa = PBXGroup;
 			children = (
 				CD026EE3296058C300C6C359 /* Main.storyboard */,
+				CD6848E2296EAFBD000FDB43 /* UserList */,
 				CD2ABD10296C7B1900999905 /* Comment */,
 				CD2ABD00296C6E3C00999905 /* Search */,
 				CD57D7672962762600138449 /* Login */,
@@ -960,6 +974,7 @@
 				CD2C9931296472CB006088D8 /* SignUpNavigationController.swift in Sources */,
 				CD379C7B296C0D0B00E27089 /* FollowDataManager.swift in Sources */,
 				CD29EB2229685766004CA667 /* CenterButton.swift in Sources */,
+				CD6848E6296EB022000FDB43 /* LikeListDataManager.swift in Sources */,
 				CD2ABD07296C6ED400999905 /* SearchDataManager.swift in Sources */,
 				CDEC327A296086030030E035 /* UIColor.swift in Sources */,
 				CDEC3279296086030030E035 /* Date.swift in Sources */,
@@ -987,6 +1002,7 @@
 				CD2ABD21296C8F1900999905 /* UILabel+Padding.swift in Sources */,
 				CDBAA0D329672E560019C7A5 /* PostViewController.swift in Sources */,
 				CD2C992D2964680D006088D8 /* Constant.swift in Sources */,
+				CD6848E4296EAFCC000FDB43 /* LikeListModel.swift in Sources */,
 				CD2ABD25296E435400999905 /* CommentDataModel.swift in Sources */,
 				CDCB23B82966030D00C37717 /* EditProfileInfoCell.swift in Sources */,
 				CDCB23AB2965DD6B00C37717 /* ProfileDataManager.swift in Sources */,
@@ -1025,7 +1041,7 @@
 				CD2ABD23296E42EC00999905 /* CommentDataManager.swift in Sources */,
 				CDEC328B29609B3E0030E035 /* UIBarButtonItem.swift in Sources */,
 				CDEC327C296086030030E035 /* UIButton.swift in Sources */,
-				CD29EB462969B083004CA667 /* FollowListViewController.swift in Sources */,
+				CD29EB462969B083004CA667 /* UserListViewController.swift in Sources */,
 				CD2C993729647AB7006088D8 /* UserDataModel.swift in Sources */,
 				CDEC3295296121750030E035 /* FeedCell.swift in Sources */,
 			);

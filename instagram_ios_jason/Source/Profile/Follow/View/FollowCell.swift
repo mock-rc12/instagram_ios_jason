@@ -36,7 +36,6 @@ class FollowCell: UITableViewCell {
     
     var delegate: FollowStateDelegate?
     var currentState: FollowState?
-    var contentType: FollowListViewController.followType!
     var followData: FollowResult?
     
     var profileFrame = UIImageView()

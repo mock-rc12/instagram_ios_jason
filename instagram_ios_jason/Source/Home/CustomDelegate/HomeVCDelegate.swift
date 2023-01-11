@@ -8,7 +8,7 @@
 import Foundation
 
 protocol HomeVCDelegate {
-    func likeCountLabelTapped()
+    func likeCountLabelTapped(item: FeedsResult)
     func commentCountLabelTapped(user: FeedsResult)
     func userIdLabelTapped(user: FeedsResult)
     func moreImageTapped(item: FeedsResult)

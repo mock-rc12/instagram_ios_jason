@@ -12,7 +12,7 @@ import Pageboy
 
 class FollowViewController: TabmanViewController {
     
-    var pageType: FollowListViewController.followType?
+    var pageType: UserListViewController.FollowType?
     var profile: ProfileResult?
     var viewControllers: [UIViewController] = []
     
@@ -28,8 +28,12 @@ class FollowViewController: TabmanViewController {
     func setupVC() {
         
         if let data = profile {
-            let followingVC = FollowListViewController(result: data, type: .following)
-            let followerVC = FollowListViewController(result: data, type: .follower)
+            let followingConfig = FollowConfig(followResult: data, type: .following)
+            let followingVC = UserListViewController(pageType: .follow, followConfig: followingConfig, likeConfig: nil)
+            
+            let followerConfig = FollowConfig(followResult: data, type: .follower)
+            let followerVC = UserListViewController(pageType: .follow, followConfig: followerConfig, likeConfig: nil)
+            
             viewControllers = [followingVC, followerVC]
             self.navigationItem.title = data.userId
         }
