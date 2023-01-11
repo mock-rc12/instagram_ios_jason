@@ -26,6 +26,7 @@ struct LikeListModel: Codable {
 struct LikeListResult: Codable {
     let userIdx: Int
     let userId: String
+    let name: String?
     let profileImg: String?
     let followStatus: String
 }

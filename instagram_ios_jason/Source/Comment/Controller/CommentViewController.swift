@@ -109,7 +109,7 @@ extension CommentViewController: UITableViewDelegate, UITableViewDataSource {
             cell.comment = data.postContentRes?[indexPath.row]
             cell.configure()
         }
-        
+        cell.selectionStyle = .none
         return cell
     }
     

@@ -36,6 +36,9 @@ class UserListViewController: BaseViewController {
     
     var pageType: PageType?
     
+    // Default 데이터 전달 모델
+    var followData: [FollowResult] = []
+    
     // 좋아요
     var postResult: FeedsResult?
     var likeLists: [LikeListResult] = []
@@ -43,7 +46,6 @@ class UserListViewController: BaseViewController {
     // 팔로우
     var followContentType: FollowType?
     var profileResult: ProfileResult?
-    var followData: [FollowResult] = []
     let dataManager = FollowDataManager()
     
     var tableView: UITableView = {
@@ -106,7 +108,7 @@ class UserListViewController: BaseViewController {
     func likeDataTrans(data: [LikeListResult]) {
         var defaultItem: [FollowResult] = []
         data.forEach {
-            defaultItem.append(FollowResult(userIdx: $0.userIdx, name: $0.userId, profileImg: $0.profileImg, id: $0.userId, status: "0", followYn: $0.followStatus))
+            defaultItem.append(FollowResult(userIdx: $0.userIdx, name: $0.name, profileImg: $0.profileImg, id: $0.userId, status: "0", followYn: $0.followStatus))
         }
         followData = defaultItem
     }
@@ -116,7 +118,7 @@ class UserListViewController: BaseViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 80
-        tableView.allowsSelection = false
+        tableView.allowsSelection = true
     }
     
     func followReq(data: FollowResult, type: String) {
@@ -142,8 +144,20 @@ extension UserListViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.followData = followData[indexPath.row]
         cell.delegate = self
+        cell.selectionStyle = .none
         cell.configure()
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("선택됨")
+        let selected = followData[indexPath.row]
+        guard let vc = UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController else { return }
+        if selected.userIdx != Secret.userIdx {
+            vc.profileType = .otherUserProfile
+        }
+        vc.userIdx = selected.userIdx
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

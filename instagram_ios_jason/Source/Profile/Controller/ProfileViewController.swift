@@ -14,6 +14,7 @@ class ProfileViewController: BaseViewController {
         case followCancel
     }
     
+    var followResult: FollowResult?
     var profileType: ProfileType = .myProfile
     let refreshControl = UIRefreshControl()
     var userIdx: Int?
@@ -52,6 +53,7 @@ class ProfileViewController: BaseViewController {
                     IndicatorView.shared.dismiss()
                     self?.profileItem = result
                     self?.profileCollectionView.reloadData()
+                    self?.setupUI(id: result.userId)
                     if self?.refreshControl.isRefreshing == true {
                         self?.refreshControl.endRefreshing()
                     }
