@@ -9,6 +9,8 @@ import UIKit
 
 class AccountInfoCell: UITableViewCell {
     
+    var delegate: SettingCustomDelegate?
+    
     var loginLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 16, weight: .bold)
@@ -79,10 +81,11 @@ class AccountInfoCell: UITableViewCell {
     }
     
     @objc func addAccountButtonTapped() {
-        print(#function)
+        delegate?.addAccountTapped()
     }
     
     @objc func logoutButtonTapped() {
         print(#function)
+        delegate?.logoutTapped()
     }
 }

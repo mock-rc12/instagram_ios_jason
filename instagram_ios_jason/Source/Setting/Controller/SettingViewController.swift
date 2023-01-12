@@ -27,6 +27,9 @@ class SettingViewController: UIViewController {
     func setupUI() {
         self.data = SettingDataManager().getSettingData()
         self.navigationItem.title = "설정"
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil) // title 부분 수정
+        backBarButtonItem.tintColor = .label
+        self.navigationItem.backBarButtonItem = backBarButtonItem
     }
     
     func setupTableView() {
@@ -89,6 +92,7 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
         case 3:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AccountInfoCell", for: indexPath) as? AccountInfoCell else { return UITableViewCell() }
             cell.setupUI()
+            cell.delegate = self
             cell.selectionStyle = .none
             return cell
         default:
@@ -107,5 +111,32 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
         default:
             return 150
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 1:
+            let selectedType = data[indexPath.row].settingType
+            switch selectedType {
+            case .account:
+                let vc = AccountSettingViewController()
+                self.navigationController?.pushViewController(vc, animated: true)
+            default:
+                ToastNoti.showToast("준비중입니다.", withDuration: 1.5, delay: 1, vc: self)
+            }
+            
+        default:
+            ToastNoti.showToast("준비중입니다.", withDuration: 1.5, delay: 1, vc: self)
+        }
+    }
+}
+
+extension SettingViewController: SettingCustomDelegate {
+    func addAccountTapped() {
+        ToastNoti.showToast("준비중입니다.", withDuration: 1.5, delay: 1, vc: self)
+    }
+    
+    func logoutTapped() {
+        ToastNoti.showToast("준비중입니다.", withDuration: 1.5, delay: 1, vc: self)
     }
 }

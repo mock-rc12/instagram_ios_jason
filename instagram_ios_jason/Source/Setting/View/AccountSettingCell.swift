@@ -1,5 +1,5 @@
 //
-//  SearchCell.swift
+//  AccountSettingCell.swift
 //  instagram_ios_jason
 //
 //  Created by 김지수 on 2023/01/12.
@@ -8,28 +8,20 @@
 import UIKit
 import SnapKit
 
-class SettingCell: UITableViewCell {
+class AccountSettingCell: UITableViewCell {
     
-    var data: SettingModel?
-    var delegate: SettingCustomDelegate?
-    
-    var iconImageView: UIImageView = {
-        let view = UIImageView()
-        view.contentMode = .scaleAspectFit
-        view.tintColor = .label
-        return view
-    }()
+    var settingTitle: String?
     
     var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 16, weight: .light)
+        label.font = .systemFont(ofSize: 16, weight: .regular)
         return label
     }()
     
-    var moreImageView: UIImageView = {
+    var arrowImageView: UIImageView = {
         let view = UIImageView()
-        view.contentMode = .scaleAspectFit
         view.image = UIImage(systemName: "chevron.right")
+        view.contentMode = .scaleAspectFit
         view.tintColor = .label
         return view
     }()
@@ -37,15 +29,13 @@ class SettingCell: UITableViewCell {
     lazy var stackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
-        stack.distribution = .fill
         stack.spacing = 10
         return stack
     }()
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        self.contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15))
+        self.contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 5, left: 15, bottom: 5, right: 15))
     }
 
     override func awakeFromNib() {
@@ -59,25 +49,27 @@ class SettingCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setupUI() {
+    func configure() {
         self.contentView.addSubview(stackView)
-        stackView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+        stackView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
         
-        _ = [iconImageView, titleLabel, moreImageView].map({
+        _ = [titleLabel, arrowImageView].map({
             stackView.addArrangedSubview($0)
         })
         
-        iconImageView.snp.makeConstraints {
-            $0.width.equalTo(iconImageView.snp.height)
+        if let title = settingTitle {
+            titleLabel.text = title
         }
         
-        moreImageView.snp.makeConstraints { make in
-            make.width.equalTo(15)
+        arrowImageView.snp.makeConstraints { make in
+            make.width.equalTo(10)
         }
-        
-        iconImageView.image = data?.image
-        titleLabel.text = data?.title
+    }
+    
+    func setupSpecial() {
+        titleLabel.textColor = #colorLiteral(red: 0, green: 0.3905753791, blue: 0.8777532578, alpha: 1)
+        arrowImageView.removeFromSuperview()
     }
 }
