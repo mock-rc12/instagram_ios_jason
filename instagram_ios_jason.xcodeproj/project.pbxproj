@@ -81,6 +81,7 @@
 		CD6848E8296EEBB2000FDB43 /* RecommnadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6848E7296EEBB2000FDB43 /* RecommnadViewController.swift */; };
 		CD6848EA296EEDC5000FDB43 /* RecommandFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6848E9296EEDC5000FDB43 /* RecommandFeedCell.swift */; };
 		CD84BB9B2969B4CF00203285 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CD84BB9A2969B4CF00203285 /* SnapKit */; };
+		CDB3E6F1297074D20029A0EC /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CDB3E6F0297074D20029A0EC /* IQKeyboardManagerSwift */; };
 		CDB9FCCA296FCF95003F72AE /* RecommandDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9FCC9296FCF95003F72AE /* RecommandDataManager.swift */; };
 		CDB9FCCC296FCFDB003F72AE /* RecomFeedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9FCCB296FCFDB003F72AE /* RecomFeedsViewController.swift */; };
 		CDB9FCD2296FE298003F72AE /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9FCD1296FE298003F72AE /* SettingModel.swift */; };
@@ -270,6 +271,7 @@
 				CD237C882966E22B000BD0AD /* FirebaseStorage in Frameworks */,
 				CD58A48329644F77003C29F0 /* Kingfisher in Frameworks */,
 				CD57D7612962729500138449 /* FacebookGamingServices in Frameworks */,
+				CDB3E6F1297074D20029A0EC /* IQKeyboardManagerSwift in Frameworks */,
 				CD29EB372969AA89004CA667 /* Tabman in Frameworks */,
 				CD58A48029644F6C003C29F0 /* Alamofire in Frameworks */,
 				CD57D7652962729500138449 /* FacebookShare in Frameworks */,
@@ -1012,6 +1014,7 @@
 				CD237C872966E22B000BD0AD /* FirebaseStorage */,
 				CD29EB362969AA89004CA667 /* Tabman */,
 				CD84BB9A2969B4CF00203285 /* SnapKit */,
+				CDB3E6F0297074D20029A0EC /* IQKeyboardManagerSwift */,
 			);
 			productName = instagram_ios_jason;
 			productReference = CD026EDA296058C300C6C359 /* instagram_ios_jason.app */;
@@ -1050,6 +1053,7 @@
 				CD237C862966E22B000BD0AD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				CD29EB352969AA89004CA667 /* XCRemoteSwiftPackageReference "Tabman" */,
 				CD84BB992969B4CF00203285 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				CDB3E6EF297074D20029A0EC /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = CD026EDB296058C300C6C359 /* Products */;
 			projectDirPath = "";
@@ -1342,6 +1346,9 @@
 				DEVELOPMENT_TEAM = 846TMZL7WC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = instagram_ios_jason/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Instagram이 카메라를 사용하고자 합니다";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Instagram이 마이크를를 사용하고자 합니다";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Instagram이 라이브러리를 사용하고자 합니다";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1372,6 +1379,9 @@
 				DEVELOPMENT_TEAM = 846TMZL7WC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = instagram_ios_jason/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Instagram이 카메라를 사용하고자 합니다";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Instagram이 마이크를를 사용하고자 합니다";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Instagram이 라이브러리를 사용하고자 합니다";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1463,6 +1473,14 @@
 				kind = branch;
 			};
 		};
+		CDB3E6EF297074D20029A0EC /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = exactVersion;
+				version = 6.5.0;
+			};
+		};
 		CDCB23BB2966B9AF00C37717 /* XCRemoteSwiftPackageReference "YPImagePicker" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Yummypets/YPImagePicker.git";
@@ -1526,6 +1544,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CD84BB992969B4CF00203285 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		CDB3E6F0297074D20029A0EC /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CDB3E6EF297074D20029A0EC /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 		CDCB23BC2966B9AF00C37717 /* YPImagePicker */ = {
 			isa = XCSwiftPackageProductDependency;
