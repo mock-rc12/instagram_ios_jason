@@ -83,6 +83,14 @@
 		CD84BB9B2969B4CF00203285 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CD84BB9A2969B4CF00203285 /* SnapKit */; };
 		CDB9FCCA296FCF95003F72AE /* RecommandDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9FCC9296FCF95003F72AE /* RecommandDataManager.swift */; };
 		CDB9FCCC296FCFDB003F72AE /* RecomFeedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9FCCB296FCFDB003F72AE /* RecomFeedsViewController.swift */; };
+		CDB9FCD2296FE298003F72AE /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9FCD1296FE298003F72AE /* SettingModel.swift */; };
+		CDB9FCD4296FE346003F72AE /* SettingDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9FCD3296FE346003F72AE /* SettingDataManager.swift */; };
+		CDB9FCD6296FE6CF003F72AE /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9FCD5296FE6CF003F72AE /* SettingViewController.swift */; };
+		CDB9FCD8296FE6F8003F72AE /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9FCD7296FE6F8003F72AE /* SettingCell.swift */; };
+		CDB9FCDA297001C8003F72AE /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9FCD9297001C8003F72AE /* SearchCell.swift */; };
+		CDB9FCDC29700449003F72AE /* AccountInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9FCDB29700449003F72AE /* AccountInfoCell.swift */; };
+		CDB9FCDE29700713003F72AE /* AccountCenterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9FCDD29700713003F72AE /* AccountCenterCell.swift */; };
+		CDB9FCE0297008DE003F72AE /* AccountInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9FCDF297008DE003F72AE /* AccountInfoHeader.swift */; };
 		CDBAA0D329672E560019C7A5 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBAA0D229672E560019C7A5 /* PostViewController.swift */; };
 		CDBAA0D529672E5B0019C7A5 /* Post.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDBAA0D429672E5B0019C7A5 /* Post.storyboard */; };
 		CDBAA0D729672E740019C7A5 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBAA0D629672E740019C7A5 /* PostModel.swift */; };
@@ -195,6 +203,14 @@
 		CD6848E9296EEDC5000FDB43 /* RecommandFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandFeedCell.swift; sourceTree = "<group>"; };
 		CDB9FCC9296FCF95003F72AE /* RecommandDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandDataManager.swift; sourceTree = "<group>"; };
 		CDB9FCCB296FCFDB003F72AE /* RecomFeedsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomFeedsViewController.swift; sourceTree = "<group>"; };
+		CDB9FCD1296FE298003F72AE /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
+		CDB9FCD3296FE346003F72AE /* SettingDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDataManager.swift; sourceTree = "<group>"; };
+		CDB9FCD5296FE6CF003F72AE /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		CDB9FCD7296FE6F8003F72AE /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
+		CDB9FCD9297001C8003F72AE /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		CDB9FCDB29700449003F72AE /* AccountInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoCell.swift; sourceTree = "<group>"; };
+		CDB9FCDD29700713003F72AE /* AccountCenterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCenterCell.swift; sourceTree = "<group>"; };
+		CDB9FCDF297008DE003F72AE /* AccountInfoHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoHeader.swift; sourceTree = "<group>"; };
 		CDBAA0D229672E560019C7A5 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		CDBAA0D429672E5B0019C7A5 /* Post.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Post.storyboard; sourceTree = "<group>"; };
 		CDBAA0D629672E740019C7A5 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
@@ -673,6 +689,45 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		CDB9FCCD296FE25A003F72AE /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				CDB9FCD0296FE277003F72AE /* Model */,
+				CDB9FCCF296FE274003F72AE /* View */,
+				CDB9FCCE296FE272003F72AE /* Controller */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		CDB9FCCE296FE272003F72AE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CDB9FCD5296FE6CF003F72AE /* SettingViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CDB9FCCF296FE274003F72AE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CDB9FCD7296FE6F8003F72AE /* SettingCell.swift */,
+				CDB9FCD9297001C8003F72AE /* SearchCell.swift */,
+				CDB9FCDB29700449003F72AE /* AccountInfoCell.swift */,
+				CDB9FCDD29700713003F72AE /* AccountCenterCell.swift */,
+				CDB9FCDF297008DE003F72AE /* AccountInfoHeader.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CDB9FCD0296FE277003F72AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CDB9FCD1296FE298003F72AE /* SettingModel.swift */,
+				CDB9FCD3296FE346003F72AE /* SettingDataManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CDBAA0CE29672DF60019C7A5 /* Post */ = {
 			isa = PBXGroup;
 			children = (
@@ -767,6 +822,7 @@
 			isa = PBXGroup;
 			children = (
 				CD026EE3296058C300C6C359 /* Main.storyboard */,
+				CDB9FCCD296FE25A003F72AE /* Setting */,
 				CD6848E2296EAFBD000FDB43 /* UserList */,
 				CD2ABD10296C7B1900999905 /* Comment */,
 				CD2ABD00296C6E3C00999905 /* Search */,
@@ -1017,6 +1073,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD237C8C2966E36E000BD0AD /* FirebaseManager.swift in Sources */,
+				CDB9FCD8296FE6F8003F72AE /* SettingCell.swift in Sources */,
 				CD237C852966C759000BD0AD /* NewPostDataManager.swift in Sources */,
 				CD17B9BF2961956F0069B8A1 /* StoryTableCell.swift in Sources */,
 				CD2C993929648E4D006088D8 /* LoginDataModel.swift in Sources */,
@@ -1044,10 +1101,14 @@
 				CD2ABD0E296C707D00999905 /* SearchResultCell.swift in Sources */,
 				CDEC328629608FCF0030E035 /* CustomNavigationController.swift in Sources */,
 				CD026EDE296058C300C6C359 /* AppDelegate.swift in Sources */,
+				CDB9FCDC29700449003F72AE /* AccountInfoCell.swift in Sources */,
 				CD57D7572961E42100138449 /* HomeVCDelegate.swift in Sources */,
+				CDB9FCD6296FE6CF003F72AE /* SettingViewController.swift in Sources */,
 				CDCB23A92965DC0F00C37717 /* UserProfileModel.swift in Sources */,
+				CDB9FCD2296FE298003F72AE /* SettingModel.swift in Sources */,
 				CD6848E8296EEBB2000FDB43 /* RecommnadViewController.swift in Sources */,
 				CDBAA0D92967308B0019C7A5 /* PostDataManager.swift in Sources */,
+				CDB9FCE0297008DE003F72AE /* AccountInfoHeader.swift in Sources */,
 				CDBAA0D729672E740019C7A5 /* PostModel.swift in Sources */,
 				CD2C992F29646A5F006088D8 /* Secret.swift in Sources */,
 				CDCB23AD2965EA1A00C37717 /* Extension ProfileVC + collectionView.swift in Sources */,
@@ -1071,12 +1132,14 @@
 				CD58A46E2962BF1C003C29F0 /* SignUpViewController.swift in Sources */,
 				CD026EE0296058C300C6C359 /* SceneDelegate.swift in Sources */,
 				CD379C7D296C148D00E27089 /* FollowModel.swift in Sources */,
+				CDB9FCD4296FE346003F72AE /* SettingDataManager.swift in Sources */,
 				CDEC328929609AEC0030E035 /* CustomNaviBarItem.swift in Sources */,
 				CD57D75C2961E7B200138449 /* LikeListViewController.swift in Sources */,
 				CDEC327B296086030030E035 /* String.swift in Sources */,
 				CD237C832966C6C6000BD0AD /* NewPostModel.swift in Sources */,
 				CDCB23BA29667FC000C37717 /* EditDetailViewController.swift in Sources */,
 				CDCB23AF2965FCDC00C37717 /* ProfileVCDelegate.swift in Sources */,
+				CDB9FCDE29700713003F72AE /* AccountCenterCell.swift in Sources */,
 				CDCB23A62965D2AF00C37717 /* ProfileTabHeaderView.swift in Sources */,
 				CD17B9C22961964F0069B8A1 /* StoryCell.swift in Sources */,
 				CD29EB2C29686B49004CA667 /* FeedMenuCell.swift in Sources */,
@@ -1091,6 +1154,7 @@
 				CDBAA0E5296849F10019C7A5 /* CustomMenuButton.swift in Sources */,
 				CD29EB3029687F47004CA667 /* ToastNoti.swift in Sources */,
 				CDCB23B62965FF9D00C37717 /* EditMyProfileViewController.swift in Sources */,
+				CDB9FCDA297001C8003F72AE /* SearchCell.swift in Sources */,
 				CD2C993529647942006088D8 /* SignUpNetworkManager.swift in Sources */,
 				CD2ABD0B296C6FD800999905 /* SearchViewController.swift in Sources */,
 				CD2ABD23296E42EC00999905 /* CommentDataManager.swift in Sources */,

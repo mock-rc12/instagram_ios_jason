@@ -75,6 +75,20 @@ class ProfileViewController: BaseViewController {
     private func setupUI(id: String) {
         self.navigationItem.title = id
         self.navigationController?.navigationBar.isHidden = false
+        
+        if profileType == .myProfile {
+            let userMenuButton = UIBarButtonItem(image: UIImage(systemName: "plus.square"), style: .plain, target: self, action: #selector(userMenuButtonTapped))
+            let userAddButton = UIBarButtonItem(image: UIImage(systemName: "line.3.horizontal"), style: .plain, target: self, action: #selector(userMenuButtonTapped))
+            userMenuButton.tintColor = .label
+            userAddButton.tintColor = .label
+            self.navigationItem.rightBarButtonItems = [userAddButton, userMenuButton]
+            
+        }
+    }
+    
+    @objc func userMenuButtonTapped() {
+        let vc = SettingViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func setupCollectionView() {
