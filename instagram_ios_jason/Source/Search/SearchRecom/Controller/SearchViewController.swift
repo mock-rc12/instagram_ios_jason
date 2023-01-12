@@ -33,6 +33,7 @@ class SearchViewController: BaseViewController {
         tableView.rowHeight = 80
         tableView.allowsSelection = true
         tableView.allowsSelectionDuringEditing = true
+        tableView.keyboardDismissMode = .onDrag
     }
     
     func setupSearchBar() {
@@ -91,6 +92,5 @@ extension SearchViewController: UISearchBarDelegate {
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         print(#function)
-        dismissKeyboardWhenTappedAround()
     }
 }

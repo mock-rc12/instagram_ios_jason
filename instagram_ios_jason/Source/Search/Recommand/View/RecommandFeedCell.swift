@@ -42,3 +42,4 @@ class RecommandFeedCell: UICollectionViewCell {
         self.contentView.clipsToBounds = true
     }
 }
+

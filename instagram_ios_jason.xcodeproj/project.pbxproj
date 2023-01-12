@@ -81,6 +81,8 @@
 		CD6848E8296EEBB2000FDB43 /* RecommnadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6848E7296EEBB2000FDB43 /* RecommnadViewController.swift */; };
 		CD6848EA296EEDC5000FDB43 /* RecommandFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6848E9296EEDC5000FDB43 /* RecommandFeedCell.swift */; };
 		CD84BB9B2969B4CF00203285 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CD84BB9A2969B4CF00203285 /* SnapKit */; };
+		CDB9FCCA296FCF95003F72AE /* RecommandDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9FCC9296FCF95003F72AE /* RecommandDataManager.swift */; };
+		CDB9FCCC296FCFDB003F72AE /* RecomFeedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9FCCB296FCFDB003F72AE /* RecomFeedsViewController.swift */; };
 		CDBAA0D329672E560019C7A5 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBAA0D229672E560019C7A5 /* PostViewController.swift */; };
 		CDBAA0D529672E5B0019C7A5 /* Post.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDBAA0D429672E5B0019C7A5 /* Post.storyboard */; };
 		CDBAA0D729672E740019C7A5 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBAA0D629672E740019C7A5 /* PostModel.swift */; };
@@ -191,6 +193,8 @@
 		CD6848E5296EB022000FDB43 /* LikeListDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeListDataManager.swift; sourceTree = "<group>"; };
 		CD6848E7296EEBB2000FDB43 /* RecommnadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommnadViewController.swift; sourceTree = "<group>"; };
 		CD6848E9296EEDC5000FDB43 /* RecommandFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandFeedCell.swift; sourceTree = "<group>"; };
+		CDB9FCC9296FCF95003F72AE /* RecommandDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommandDataManager.swift; sourceTree = "<group>"; };
+		CDB9FCCB296FCFDB003F72AE /* RecomFeedsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecomFeedsViewController.swift; sourceTree = "<group>"; };
 		CDBAA0D229672E560019C7A5 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		CDBAA0D429672E5B0019C7A5 /* Post.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Post.storyboard; sourceTree = "<group>"; };
 		CDBAA0D629672E740019C7A5 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
@@ -390,9 +394,8 @@
 		CD2ABD00296C6E3C00999905 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				CD2ABD03296C6E4A00999905 /* Model */,
-				CD2ABD02296C6E4800999905 /* View */,
-				CD2ABD01296C6E4500999905 /* Controller */,
+				CDB9FCC5296FCF56003F72AE /* SearchRecom */,
+				CDB9FCC4296FCF3C003F72AE /* Recommand */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -401,7 +404,6 @@
 			isa = PBXGroup;
 			children = (
 				CD2ABD0A296C6FD800999905 /* SearchViewController.swift */,
-				CD6848E7296EEBB2000FDB43 /* RecommnadViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -412,7 +414,6 @@
 				CD2ABD08296C6FCD00999905 /* Search.storyboard */,
 				CD2ABD0C296C707D00999905 /* SearchResultCell.swift */,
 				CD2ABD0D296C707D00999905 /* SearchResultCell.xib */,
-				CD6848E9296EEDC5000FDB43 /* RecommandFeedCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -625,6 +626,51 @@
 				CD6848E5296EB022000FDB43 /* LikeListDataManager.swift */,
 			);
 			path = UserList;
+			sourceTree = "<group>";
+		};
+		CDB9FCC4296FCF3C003F72AE /* Recommand */ = {
+			isa = PBXGroup;
+			children = (
+				CDB9FCC8296FCF77003F72AE /* Model */,
+				CDB9FCC7296FCF72003F72AE /* View */,
+				CDB9FCC6296FCF6E003F72AE /* Controller */,
+			);
+			path = Recommand;
+			sourceTree = "<group>";
+		};
+		CDB9FCC5296FCF56003F72AE /* SearchRecom */ = {
+			isa = PBXGroup;
+			children = (
+				CD2ABD03296C6E4A00999905 /* Model */,
+				CD2ABD02296C6E4800999905 /* View */,
+				CD2ABD01296C6E4500999905 /* Controller */,
+			);
+			path = SearchRecom;
+			sourceTree = "<group>";
+		};
+		CDB9FCC6296FCF6E003F72AE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CD6848E7296EEBB2000FDB43 /* RecommnadViewController.swift */,
+				CDB9FCCB296FCFDB003F72AE /* RecomFeedsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CDB9FCC7296FCF72003F72AE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD6848E9296EEDC5000FDB43 /* RecommandFeedCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CDB9FCC8296FCF77003F72AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CDB9FCC9296FCF95003F72AE /* RecommandDataManager.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		CDBAA0CE29672DF60019C7A5 /* Post */ = {
@@ -983,6 +1029,7 @@
 				CD6848E6296EB022000FDB43 /* LikeListDataManager.swift in Sources */,
 				CD2ABD07296C6ED400999905 /* SearchDataManager.swift in Sources */,
 				CDEC327A296086030030E035 /* UIColor.swift in Sources */,
+				CDB9FCCC296FCFDB003F72AE /* RecomFeedsViewController.swift in Sources */,
 				CDEC3279296086030030E035 /* Date.swift in Sources */,
 				CDEC326C296085D50030E035 /* BaseViewController.swift in Sources */,
 				CDEC3284296087650030E035 /* HomeViewController.swift in Sources */,
@@ -1048,6 +1095,7 @@
 				CD2ABD0B296C6FD800999905 /* SearchViewController.swift in Sources */,
 				CD2ABD23296E42EC00999905 /* CommentDataManager.swift in Sources */,
 				CDEC328B29609B3E0030E035 /* UIBarButtonItem.swift in Sources */,
+				CDB9FCCA296FCF95003F72AE /* RecommandDataManager.swift in Sources */,
 				CDEC327C296086030030E035 /* UIButton.swift in Sources */,
 				CD29EB462969B083004CA667 /* UserListViewController.swift in Sources */,
 				CD2C993729647AB7006088D8 /* UserDataModel.swift in Sources */,

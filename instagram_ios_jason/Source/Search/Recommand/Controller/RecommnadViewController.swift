@@ -36,6 +36,7 @@ class RecommandViewController: BaseViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.collectionViewLayout = generateLayout()
+        collectionView.keyboardDismissMode = .onDrag
     }
     
     func generateLayout() -> UICollectionViewLayout {
@@ -74,6 +75,8 @@ extension RecommandViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(#function)
+        let item = recommandDatas[indexPath.row]
+        let vc = RecomFeedsViewController(postIdx: item.postIdx)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

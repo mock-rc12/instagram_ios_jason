@@ -38,4 +38,5 @@ struct Constant {
     static let pathFollowTogether = "/followers/together/"
     
     static let recommandFeed = "/posts/randFeeds"
+    
 }
