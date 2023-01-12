@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SettingDataManager {
     
@@ -29,5 +30,47 @@ class SettingDataManager {
     func getSettingData() -> [SettingModel] {
         fetchData()
         return settings
+    }
+    
+    
+    func getPersonalInfoNetworkData(userIdx: Int, completion: @escaping (PersonalInfoResult) -> Void) {
+        let url = "\(Constant.BASE_URL)\(Constant.getPersonalInfo)\(userIdx)"
+        let header = HTTPHeader(name: "X-ACCESS-TOKEN", value: Secret.xAcessToken)
+        let headers = HTTPHeaders([header])
+        print(url)
+        AF.request(url, method: .get, headers: headers)
+            .responseDecodable(of: PersonalInfoModel.self) { response in
+                switch response.result {
+                case .success(let response):
+                    if response.isSuccess == true {
+                        print("========성공======")
+                        completion(response.result)
+                    } else {
+                        print("에러 발생 \(response.message)")
+                    }
+                case .failure(let error):
+                    print("에러 발생 \(error)")
+                }
+            }
+    }
+    
+    func patchPersonalInfoNetworkData(userIdx: Int, param: PersonalInfoResult ,completion: @escaping (Bool) -> Void) {
+        let url = "\(Constant.BASE_URL)\(Constant.getPersonalInfo)\(userIdx)"
+        let header = HTTPHeader(name: "X-ACCESS-TOKEN", value: Secret.xAcessToken)
+        let headers = HTTPHeaders([header])
+        
+        AF.request(url, method: .patch, parameters: param, encoder: JSONParameterEncoder.default, headers: headers)
+            .responseDecodable(of: DefaultResponse.self) { response in
+                switch response.result {
+                case .success(let response):
+                    if response.isSuccess == true {
+                        completion(true)
+                    } else {
+                        print("에러 발생")
+                    }
+                case .failure(let error):
+                    print("에러 발생 \(error)")
+                }
+            }
     }
 }

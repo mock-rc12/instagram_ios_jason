@@ -94,6 +94,8 @@
 		CDB9FCE329701108003F72AE /* SettingCustomDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9FCE229701108003F72AE /* SettingCustomDelegate.swift */; };
 		CDB9FCE529703DC0003F72AE /* AccountSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9FCE429703DBF003F72AE /* AccountSettingViewController.swift */; };
 		CDB9FCE729703F3C003F72AE /* AccountSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9FCE629703F3C003F72AE /* AccountSettingCell.swift */; };
+		CDB9FCE9297044F9003F72AE /* PersonalInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDB9FCE8297044F9003F72AE /* PersonalInfo.storyboard */; };
+		CDB9FCEB29704507003F72AE /* PersonalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9FCEA29704507003F72AE /* PersonalInfoViewController.swift */; };
 		CDBAA0D329672E560019C7A5 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBAA0D229672E560019C7A5 /* PostViewController.swift */; };
 		CDBAA0D529672E5B0019C7A5 /* Post.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDBAA0D429672E5B0019C7A5 /* Post.storyboard */; };
 		CDBAA0D729672E740019C7A5 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBAA0D629672E740019C7A5 /* PostModel.swift */; };
@@ -217,6 +219,8 @@
 		CDB9FCE229701108003F72AE /* SettingCustomDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCustomDelegate.swift; sourceTree = "<group>"; };
 		CDB9FCE429703DBF003F72AE /* AccountSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingViewController.swift; sourceTree = "<group>"; };
 		CDB9FCE629703F3C003F72AE /* AccountSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingCell.swift; sourceTree = "<group>"; };
+		CDB9FCE8297044F9003F72AE /* PersonalInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PersonalInfo.storyboard; sourceTree = "<group>"; };
+		CDB9FCEA29704507003F72AE /* PersonalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoViewController.swift; sourceTree = "<group>"; };
 		CDBAA0D229672E560019C7A5 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		CDBAA0D429672E5B0019C7A5 /* Post.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Post.storyboard; sourceTree = "<group>"; };
 		CDBAA0D629672E740019C7A5 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
@@ -711,6 +715,7 @@
 			children = (
 				CDB9FCD5296FE6CF003F72AE /* SettingViewController.swift */,
 				CDB9FCE429703DBF003F72AE /* AccountSettingViewController.swift */,
+				CDB9FCEA29704507003F72AE /* PersonalInfoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -724,6 +729,7 @@
 				CDB9FCDD29700713003F72AE /* AccountCenterCell.swift */,
 				CDB9FCDF297008DE003F72AE /* AccountInfoHeader.swift */,
 				CDB9FCE629703F3C003F72AE /* AccountSettingCell.swift */,
+				CDB9FCE8297044F9003F72AE /* PersonalInfo.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1064,6 +1070,7 @@
 				CD57D7522961E32000138449 /* Profile.storyboard in Resources */,
 				CDCB239F2964AACE00C37717 /* ProfileInfoCell.xib in Resources */,
 				CD2ABD0F296C707D00999905 /* SearchResultCell.xib in Resources */,
+				CDB9FCE9297044F9003F72AE /* PersonalInfo.storyboard in Resources */,
 				CDCB23B42965FE7800C37717 /* EditMyProfile.storyboard in Resources */,
 				CDCB23A72965D2AF00C37717 /* ProfileTabHeaderView.xib in Resources */,
 				CD2ABD17296C846500999905 /* Comment.storyboard in Resources */,
@@ -1141,6 +1148,7 @@
 				CDCB23AB2965DD6B00C37717 /* ProfileDataManager.swift in Sources */,
 				CD2C993B29648F63006088D8 /* LoginNetworkManager.swift in Sources */,
 				CD2C9933296473F4006088D8 /* SignUpDataManager.swift in Sources */,
+				CDB9FCEB29704507003F72AE /* PersonalInfoViewController.swift in Sources */,
 				CD57D74D2961D2F600138449 /* FeedMediaCell.swift in Sources */,
 				CD6848EA296EEDC5000FDB43 /* RecommandFeedCell.swift in Sources */,
 				CDCB23C32966BEA000C37717 /* PostEditViewController.swift in Sources */,

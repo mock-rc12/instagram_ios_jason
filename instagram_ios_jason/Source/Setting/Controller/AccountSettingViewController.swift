@@ -55,4 +55,11 @@ extension AccountSettingViewController: UITableViewDelegate, UITableViewDataSour
         }
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            guard let vc = UIStoryboard(name: "PersonalInfo", bundle: nil).instantiateViewController(withIdentifier: "PersonalInfoViewController") as? PersonalInfoViewController else { return }
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }

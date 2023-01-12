@@ -39,4 +39,5 @@ struct Constant {
     
     static let recommandFeed = "/posts/randFeeds"
     
+    static let getPersonalInfo = "/profiles/userInfo/"
 }

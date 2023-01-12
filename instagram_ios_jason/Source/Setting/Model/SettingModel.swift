@@ -24,3 +24,18 @@ struct SettingModel {
     var title: String
     var settingType: Setting
 }
+
+// MARK: - PersonalInfoModel
+struct PersonalInfoModel: Codable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+    let result: PersonalInfoResult
+}
+
+// MARK: - Result
+struct PersonalInfoResult: Codable {
+    let userIdx: Int
+    let email, phone, sex: String?
+    let birth: String?
+}
