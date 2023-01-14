@@ -81,7 +81,7 @@ class LoginViewController: BaseViewController {
             let manager = LoginNetworkManager()
             manager.postLoginNetworkData(param: userInfo) { isSuccess in
                 if isSuccess == true {
-                    self.navigationController?.dismiss(animated: true)
+                    self.loginSuccess()
                 } else {
                     print("로그인 실패")
                 }
@@ -89,6 +89,12 @@ class LoginViewController: BaseViewController {
         } else {
             showToast("영역을 모두 채워주세요", withDuration: 2, delay: 1.5)
         }
+    }
+    
+    func loginSuccess() {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Main")
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true)
     }
     
     // MARK: - 페이스북 로그인
@@ -127,7 +133,7 @@ class LoginViewController: BaseViewController {
                 print("email: ", email ?? "no email")
                 print("prfile_image: ", profile)
                 
-                self.dismiss(animated: true)
+                self.loginSuccess()
             }
         }
     }

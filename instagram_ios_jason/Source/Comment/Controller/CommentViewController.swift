@@ -93,6 +93,9 @@ class CommentViewController: UIViewController {
                     self?.setupData()
                 }
             }
+        } else {
+            IndicatorView.shared.dismiss()
+            ToastNoti.showToast("댓글을 입력해주세요", withDuration: 1.5, delay: 1, vc: self)
         }
         commentTextField.text = ""
     }

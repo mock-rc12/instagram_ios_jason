@@ -51,7 +51,7 @@ class FollowViewController: TabmanViewController {
     }
     
     private func setupBar() {
-        self.view.backgroundColor = .clear
+        self.view.backgroundColor = .systemBackground
         let bar = TMBar.ButtonBar()
         bar.layout.contentInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
         bar.layout.contentMode = .fit

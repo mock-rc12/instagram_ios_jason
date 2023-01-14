@@ -35,6 +35,7 @@ class ProfileViewController: BaseViewController {
         
         setupCollectionView()
         initRefresh()
+        self.navigationController?.navigationBar.backgroundColor = .systemBackground
     }
     
     override func viewWillAppear(_ animated: Bool) {

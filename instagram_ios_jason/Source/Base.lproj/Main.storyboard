@@ -139,7 +139,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="ALH-AD-V06">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="kvo-bW-lmi" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Main" automaticallyAdjustsScrollViewInsets="NO" id="kvo-bW-lmi" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="ZwR-v0-ERb">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

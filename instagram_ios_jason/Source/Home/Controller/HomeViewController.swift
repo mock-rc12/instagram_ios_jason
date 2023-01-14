@@ -28,16 +28,16 @@ class HomeViewController: BaseViewController {
     
     private func checkLogin() {
         
-        if let token = AccessToken.current, !token.isExpired {
-            
-        } else {
-            let vc = UIStoryboard(name: "Login", bundle: .none).instantiateViewController(withIdentifier: "LoginNavigation")
-            present(vc, animated: true)
-        }
-//                 임시
-//                let vc = UIStoryboard(name: "Login", bundle: .none).instantiateViewController(withIdentifier: "LoginNavigation")
-//                vc.modalPresentationStyle = .fullScreen
-//                present(vc, animated: true)
+//        if let token = AccessToken.current, !token.isExpired {
+//            
+//        } else {
+//            let vc = UIStoryboard(name: "Login", bundle: .none).instantiateViewController(withIdentifier: "LoginNavigation")
+//            present(vc, animated: true)
+//        }
+////                 임시
+////                let vc = UIStoryboard(name: "Login", bundle: .none).instantiateViewController(withIdentifier: "LoginNavigation")
+////                vc.modalPresentationStyle = .fullScreen
+////                present(vc, animated: true)
     }
     
     private func setupData(completion: @escaping (Bool) -> Void?) {

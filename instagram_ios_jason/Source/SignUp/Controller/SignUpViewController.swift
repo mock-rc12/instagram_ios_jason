@@ -45,6 +45,7 @@ class SignUpViewController: BaseViewController {
                 // 회원가입 완료 여부 체크
                 sendSignUpData()
             case .failure:
+                userInfoTextField.removeFromSuperview()
                 configure(data: guideDatas.fail)
             }
         }
@@ -94,7 +95,9 @@ class SignUpViewController: BaseViewController {
                     self?.pushVC(type: .sucess)
                 }
             case .sucess:
-                self.navigationController?.dismiss(animated: true)
+                let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Main")
+                vc.modalPresentationStyle = .overFullScreen
+                self.present(vc, animated: true)
             case .failure:
                 self.navigationController?.popToRootViewController(animated: true)
             }

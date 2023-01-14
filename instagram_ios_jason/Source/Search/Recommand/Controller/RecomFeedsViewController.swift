@@ -24,6 +24,7 @@ class RecomFeedsViewController: BaseViewController {
         super.init(nibName: nil, bundle: nil)
         setupDatas()
         setupTableView()
+        self.navigationItem.title = "추천 게시글"
     }
     
     required init?(coder: NSCoder) {

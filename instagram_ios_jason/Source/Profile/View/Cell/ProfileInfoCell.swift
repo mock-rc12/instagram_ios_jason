@@ -119,8 +119,8 @@ class ProfileInfoCell: UICollectionViewCell {
             followingCountLabel.text = "\(safeItem.followingCount)"
             
             nameLabel.text = safeItem.name
-            introductionLabel.text = safeItem.introduction ?? "비어있음"
-            websiteLabel.text = safeItem.website ?? "비어있음"
+            introductionLabel.text = safeItem.introduction ?? ""
+            websiteLabel.text = safeItem.website ?? ""
         }
         
         followingStackView.isUserInteractionEnabled = true

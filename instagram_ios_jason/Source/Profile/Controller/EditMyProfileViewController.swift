@@ -17,7 +17,7 @@ enum EditType {
     case privateSetting
 }
 
-class EditMyProfileViewController: UIViewController {
+class EditMyProfileViewController: BaseViewController {
     
     var myProfile: ProfileResult!
     var delegate: ProfileVCDelegate?

@@ -25,7 +25,7 @@ class BaseViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = false
         
         changeStatusBarBgColor(bgColor: .systemBackground)
-        
+        self.navigationController?.navigationBar.backgroundColor = .systemBackground
     }
     
     func changeStatusBarBgColor(bgColor: UIColor?) {
